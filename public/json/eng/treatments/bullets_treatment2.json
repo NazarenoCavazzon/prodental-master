@@ -1,0 +1,43 @@
+[
+    {
+        "title":"Sobremordida",
+        "desc": "Las coronas de los dientes antero-superiores cubren casi por completo las coronas de los dientes inferiores.",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Mordida cruzada anterior",
+        "desc": "Se da cuando, al morder, los incisivos inferiores cubren a los superiores en lugar de al contrario",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Mordida cruzada posterior",
+        "desc": "Se presenta cuando al morder normalmente, los dientes superiores no caen ligeramente por fuera de los dientes inferiores posteriores, si no que lo hacen al contrario.",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Mordida abierta",
+        "desc":"Espacio que aparece entre los bordes incisales de los dientes anteriores superiores e inferiores estando los posteriores en oclusión normal.",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Línea media desplazada",
+        "desc": "Se produce cuando la línea que pasa entre ambos incisivos centrales superiores no coincide con la misma de los incisivos centrales inferiores, o cuando una de éstas no se encuentra en armonía con el resto de estructuras centrales de la cara.",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Diastemas",
+        "desc": "Separaciones o espacios entre los dientes como resultado de piezas ausentes o dientes que no ocupan todo el espacio.",
+        "icon": "number"
+    }
+    ,
+    {
+        "title": "Apiñamiento",
+        "desc": "Alteración que se presenta cuando los dientes son demasiado grandes para ser acomodados en el espacio que ofrecen los maxilares o cuando el espacio es insuficiente aunque el tamaño dentario sea normal.",
+        "icon": "number"
+    }
+]

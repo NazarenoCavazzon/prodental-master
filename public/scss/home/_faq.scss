@@ -1,0 +1,108 @@
+.section-faq{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+    width: 100vw;
+    .title-container{
+        width: 100%;
+        h2{
+            font-size: xx-large;
+            font-family: $principal-font;
+            text-align: center;
+            color: $dark-gray;
+        }
+    }
+    .accordion{
+        width:70%;
+        padding: 2em;
+        .accordion-item{
+            border-radius: 15px;
+            font-size: x-large;
+            font-family: $principal-font;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
+            .accordion-item-title{
+                cursor:pointer;
+                padding:0.5em 1em 0 1em;
+                color:$dark-gray;
+                transition: all .5s ease;
+                display: flex;
+                justify-content: space-between;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                p{
+                    margin: 10px 0;
+                }
+                .accordion-item-toggle-icon{
+                    font-size: xx-large;
+                }
+                /* &:hover{
+                    color:var(--color-azul);
+                } */
+            }
+            .accordion-item-content{
+                font-size: large;
+                height: 0;
+                padding:0 50px;
+                overflow: hidden;
+                transition: all .5s ease;
+                color:$light-gray;
+                line-height: 1.5;
+                background: white;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+            &.active{
+                .accordion-item-title{
+                    background: $emerald;
+                    color:white;
+                    margin-bottom: 30px;
+                    
+                }
+                .accordion-item-content{
+                    height: max-content;
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
+
+    .faq-more-button {
+        cursor: pointer;
+        margin-top: 20px;
+        width: 100px;
+        text-align: center;
+        border: 2px solid transparent;
+        padding: 10px 5px;
+        border-radius: 15px;
+        background: $emerald;
+        font-family: $principal-font;
+        font-size: large;
+        color:white;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        box-sizing: border-box;
+        label{
+            cursor: pointer;
+        }
+        &:hover{
+            background-color: white;
+            color: $emerald;
+            border: 2px solid $emerald;
+        }
+    }  
+}
+  
+
+  
+@media (max-width: 576px){
+    .section-faq{
+        .accordion{
+            width: 95%;
+        }
+    }
+
+}

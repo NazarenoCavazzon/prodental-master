@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') -%>
+</head>
+<body>
+
+    <%- include('./partials/navbar') -%>
+    <%- include('./partials/fab') -%>    
+    
+
+    <section class="section-signup">
+        <form action="/signup" method="post" class="auth-form">
+
+            <div class="welcome">
+                <h2><%=authDat.titles[0]%></h2>
+            </div>
+
+            <div class="form">
+
+                <div class="form-title-container">
+                    <h2 class="form-title "><%=authDat.titles[2]%></h2>
+                    <a class="form-title link" href="/login"><h2>/ <%=authDat.titles[1]%></h2></a>
+                </div>
+
+
+                <div class="field-container">
+                    <label for="firstName"><%=authDat.signupLabels[0]%></label>
+                    <input type="text" name="firstName" id="firstName">
+            
+                    <label for="lastName"><%=authDat.signupLabels[1]%></label>
+                    <input type="text" name="lastName" id="lastName">
+            
+                    <label for="email"><%=authDat.signupLabels[2]%></label>
+                    <input type="email" name="email" id="email">
+            
+                    <label for="password"><%=authDat.signupLabels[3]%></label>
+                    <input type="password" name="password" id="password">
+            
+                    <label for="confirm-password"><%=authDat.signupLabels[4]%></label>
+                    <input type="password" name="confirm-password" id="confirm-password">
+            
+                    <label for="address"><%=authDat.signupLabels[5]%></label>
+                    <input type="text" name="address" id="address">
+                </div>
+
+    
+                <button type="submit"><%=authDat.button%></button>
+
+            </div>
+
+        </form>
+    </section>
+
+    <%- include('./partials/footer') -%>  
+</body>
+</html>

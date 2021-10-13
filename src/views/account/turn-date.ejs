@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <%- include('./navbar') -%>
+    <section class="section-turn">
+        
+        <!-- CONFIRM TURN MODAL -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"><%=accountDat.confirmTurnModal[0]%></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4><%=accountDat.confirmTurnModal[1]%></h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><%=accountDat.buttons[2]%></button>
+                        <form action="/account/turn/date"  method="post">
+                            <input name="dateTurn" class="hidden-checkbox-input confirmDateInput">
+                            <button type="submit" class="btn btn-primary"><%=accountDat.buttons[1]%></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="step" data-aos="fade-right"><%=accountDat.steps[2]%></h2>
+        <form action="/account/turn/date" method="POST" data-aos="fade-up" class="container-layout">
+            <div class="container-date">
+                <% for (let i = 0; i < turns.length; i++ ) { %>
+                    <div class="date-column">
+                        <label class="date-day-id"><%=turns[i][0].date%></label>
+                        <% for (let j = 0; j < turns[i].length; j++ ) { %>
+                            <div class="date-field">
+                                <input type="radio" name="dateTurn" value="<%=turns[i][j].id%>" id="turn-<%=turns[i][j].id%>" class="hidden-checkbox-input input-turn">
+                                <label for="turn-<%=turns[i][j].id%>" data-bs-turnId="<%=turns[i][j].id%>" class="label-turn"><%=turns[i][j].time%></label>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            <button class="btn btn-success mt-4 mx-auto" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmModal"><%=accountDat.buttons[1]%></button>
+        </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        
+        let labelsTurns = document.querySelectorAll('.label-turn');
+        let hiddenInputModal = document.querySelector('.confirmDateInput');
+        labelsTurns.forEach((label,i) =>{
+            label.addEventListener('click', ()=>{
+                hiddenInputModal.setAttribute('value', label.getAttribute('data-bs-turnId'));
+            })
+        })
+    </script>
+    <!-- Animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>

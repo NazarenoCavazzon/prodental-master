@@ -1,0 +1,18 @@
+{
+    "companyName": "Clínica Dental DENTALPRO",
+    "companyNameInfo": "Clínica odontológica de alta complejidad",
+    "titlePrincipal":"Quienes somos",
+    "subTitlePrincipal":"Esta es nuestra historia",
+    "whyareusTitle":"Nuestra historia",
+    "whyareus": "Con más de 20 años de experiencia en la salud bucal y la odontología, estamos lanzando una nueva Clínica Dental Modelo orientada a la excelencia, un nuevo concepto que reúne calidad, precio, garantía y eficiencia.",
+    "whyareus2": "Avalados por la trayectoria y permanencia en el mercado desde el año 2001, donde innovamos y fuimos pioneros en ofrecer odontología al alcance de todos, creando la Cadena de Clínicas Odontológicas Prodental, únicas en Centros Comerciales, hoy encaramos este nuevo proyecto en el que decidimos reinventarnos y llevar la odontología a un nivel de superioridad",
+    "howtoTitle":"¿Hacia donde vamos?",
+    "howto": "Mantenernos a la vanguardia en tecnología con el fin de prestar un mejor servicio, actualizando nuestros equipos y capacitándonos constantemente en pro de la satisfacción de nuestros pacientes y en la búsqueda de crear sonrisas radiantes. Queremos resignificar la experiencia del paciente y acercarlo a la Odontología de prestigio, brindando un servicio de excelencia tanto a nuestro público interno como externo, ya que entendemos que la mejor forma de asegurar el éxito es cuidando, capacitando y motivando a nuestros profesionales tanto como a nuestros pacientes.",
+    "whymakeitTitle": "¿Cómo lo logramos?",
+    "whymakeit" : "Capitalizando nuestra experiencia y generando socios estratégicos que nutran y potencien nuestras clínicas, la calidad en la atención y tratamientos que ofrecemos. Es por esto que estamos realizando convenios y alianzas con grandes empresas del mercado en general, mutuales, sindicatos entre otras, para poder ofrecer nuestros servicios y paralelamente que quienes elijan acompañarnos puedan brindar un beneficio a sus empleados, asociados, etc. de altísima calidad con estándares de calidad total fijados.",
+    "whymakeitFooter": "Queremos que sean parte de este nuevo concepto y nos acompañen como partner ship de nuestra marca.",
+    "whyusuniqueTitle":"¿Qué nos hace distintos?",
+    "bulletsUnique" : ["Aranceles Accesibles", "Realizamos Todos los Tratamientos Odontológicos", "Tecnología de Avanzada", "Excelencia y Calidad en Materiales Odontológicos", "Profesionales Especializados y en Permanente Capacitación", "Estrictas Normas de Bioseguridad para Evitar la Contaminación Cruzada", "Protocolo Covid 19- Kit de Material Descartable", "Sala de Relax Pre y Post Tratamiento", "Especialistas en Manejo del “Temor al Odontólogo", "Ubicación estratégica", "Horarios amplios"],
+    "button": "Mas información",
+    "FAicons": ["fal fa-dollar-sign", "fal fa-tooth", "fal fa-microchip", "fal fa-prescription-bottle", "fal fa-user-md", "fal fa-head-side-medical","fal fa-vial", "fal fa-loveseat", "fal fa-user-nurse", "fal fa-map-signs", "fal fa-clock"]
+}

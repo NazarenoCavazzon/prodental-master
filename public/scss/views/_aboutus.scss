@@ -1,0 +1,162 @@
+.view-aboutus{
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0 0 0; 
+    
+    .text-container{
+        width: 100vw;
+        background-image: url('/img/aboutus/background.png');
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .title-container{
+            width: 100%;
+            text-align: center;
+            margin: 50px 0;
+            font-family: $principal-font;
+            color: white;
+            h3{
+                font-size: xx-large;
+            }
+            h4{
+                font-size: x-large;
+            }
+        }
+        .text{
+            text-align: center;
+            margin: 30px auto;
+            width: 500px;
+            font-size: large;
+            font-family: $principal-font;
+            line-height: 1.5;
+            color: white;
+        }
+    }
+    .list{
+        max-width: 1000px;
+        padding: 100px 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        .list-title{
+            font-size: xx-large;
+            font-family: $principal-font;
+            font-weight: 700;
+            color: $dark-gray;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .field{
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 50px silver;
+            padding: 10px;
+            &.par{
+                transform: translateX(+20px);
+            }
+            &.impar{
+                transform: translateX(-20px);
+                
+            }
+            .idIcon{
+                font-family: $principal-font;
+                font-size: x-large;
+                color: white;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $emerald;
+                //border: 3px solid rgb(21, 148, 170);
+                border-radius: 50%;
+            }
+            p{
+                margin-left: 20px;
+                font-family: $principal-font;
+                font-size: x-large;
+                color: $dark-gray;
+            }
+        }
+    }
+    .icons-container{
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 100px;
+        .icon{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 50%;
+            margin: 30px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 0 40px silver;
+            font-family: $principal-font;
+            color: $dark-gray;
+            padding: 40px;
+            img{
+                width: 100px;
+            }
+            .title{
+                font-size: x-large;   
+                margin: 20px auto; 
+                font-weight: bold;           
+            }
+            .desc{
+                text-align: center;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .view-aboutus{
+        .list{
+            width: 80%;
+        }
+        .icons-container{
+            max-width: 100vw;
+            flex-direction: column;
+            align-items: center;
+            .icon{
+                max-width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .view-aboutus{
+        .text-container{
+            .text{
+                width: 90%;
+            }
+        }
+        .list{
+            width: 80%;
+            .field{
+                .idIcon{
+                    background-color: transparent;
+                    padding-left: 10px;
+                    i{
+                        color: $emerald;
+                    }
+                }
+                &.par,&.impar{
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<section class="section-faq" id="faqSection">
+
+    <div class="title-container" data-aos="fade-up">
+      <h2><%=faqDat.title%></h2>
+    </div>
+    <div class="accordion">
+
+
+        <% for (let i = 0; i < faqDat.faqsBodys.length; i++ ) {%>
+    
+          <div class="accordion-item"  data-aos="flip-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="accordion-item-title"><p><%=faqDat.faqsTitles[i]%></p><p class="accordion-item-toggle-icon">+</p></div>
+            <div class="accordion-item-content">
+              <p><%=faqDat.faqsBodys[i]%></p>
+            </div>
+          </div>
+    
+        <% } %>
+    
+      </div>
+    
+      <a href="/faq" class="faq-more-button"><label>MORE</label></a>
+      
+    
+      <script>
+        let accordionItem = document.querySelectorAll('.accordion-item');
+        let accordionTitle = document.querySelectorAll('.accordion-item-title');
+        let accordionToggleIcon = document.querySelectorAll('.accordion-item-toggle-icon');
+    
+        accordionTitle.forEach((title,i) =>{
+          accordionTitle[i].addEventListener('click',()=>{
+            
+            if (accordionItem[i].classList.contains('active')){
+              accordionItem[i].classList.remove('active');
+              accordionToggleIcon[i].innerHTML="+";
+            }else{
+              accordionItem[i].classList.add('active');
+              accordionToggleIcon[i].innerHTML="-";
+            }
+    
+          })
+        })
+      </script>
+</section>

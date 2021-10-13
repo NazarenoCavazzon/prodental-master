@@ -1,0 +1,26 @@
+[
+    {
+        "title":"Prótesis Removible",
+        "desc": "Las prótesis removibles no se encuentran fijadas de forma permanente. Su característica principal es que pueden y deben ser retiradas de la boca, ya que se sujetan a dientes adyacentes mediante ganchos o ataches y en el caso de pacientes que hayan perdido la totalidad de las piezas, las prótesis pueden ser soportadas por la propia mucosa."
+    }
+    ,
+    {
+        "title":"Prótesis Fija",
+        "desc": "Son aquellas que están cementadas y  sólo las puede colocar y retirar el odontólogo."
+    }
+    ,
+    {
+        "title": "Prótesis Mixta",
+        "desc": "Constan de una parte que va fija en la boca y otra que el paciente puede retirar y colocar."
+    }
+    ,
+    {
+        "title": "Protesis sobre Implantes o Implantosoportada",
+        "desc": "Son aquellas que están soportadas por implantes. Pueden estar fijas a los mismos, o ser un dispositivo mixto que pueda retirarse de los implantes con facilidad"
+    }
+    ,
+    {
+        "title": "Prótesis cerámicas en Zirconio (NUEVO)",
+        "desc": "Gracias al uso del zirconio para realizar coronas e implantes se ha logrado sustituir las aleaciones de metal y cerámica que hasta hace poco tiempo eran el único sistema empleado. Ello nos permite ofrecer a nuestros pacientes prótesis de mayor biocompatibilidad que serán mejor toleradas por la encía, evitando el riesgo de alergias a metales. Por cuestión estética recomendamos a nuestros pacientes  la prótesis cerámica en zirconio. Son Prótesis de un material blanco y translúcido que confieren un aspecto natural y luminoso y que al carecer de estructura metálica bajo la cerámica eliminan el riesgo de que se vean antiestéticos bordes grises al retraerse las encías con el paso del tiempo."
+    }
+]

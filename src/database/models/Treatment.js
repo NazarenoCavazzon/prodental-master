@@ -1,0 +1,35 @@
+const {sequelize, DataTypes} = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
+    const Treatment = sequelize.define('Treatment', {
+        title: DataTypes.STRING,
+        subtitle: DataTypes.STRING,
+        image_principal: DataTypes.STRING,
+        short_description: DataTypes.STRING,
+        info: DataTypes.STRING,
+        video: DataTypes.STRING,
+        description: DataTypes.STRING,
+        description_title: DataTypes.STRING,
+        description: DataTypes.STRING,
+        footer: DataTypes.STRING,
+        footer_title: DataTypes.STRING,
+        bullets_title: DataTypes.STRING,
+        bullets_json: DataTypes.STRING,
+    })
+
+    Treatment.associate = (models =>{
+        Treatment.hasMany(models.Turn,{
+            as: 'turns',
+            foreignKey: 'treatment_id'
+        })
+
+        Treatment.belongsToMany(models.Image,{
+            as: 'images',
+            through: 'treatments_images',
+            foreignKey: 'treatment_fk',
+            otherKey: 'image_fk'
+        }); 
+    })
+    
+    return Treatment;
+}

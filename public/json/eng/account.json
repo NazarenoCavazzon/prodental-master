@@ -1,0 +1,8 @@
+{
+    "steps":["WELCOME", "1 - SELECT A TREATMENT", "2 - SELECT DAY AND TIME"],
+    "dropButton": ["PASSWORD", "LOGOUT"],
+    "buttons": ["REQUEST A APPOINTMENT", "CONFIRM", "CANCEL", "CLOSE", "CANCEL TURN", "CONFIRM CANCEL"],
+    "confirmTurnModal": ["CONFIRM", "DO YOU WANT TO CONFIRM THE TURN?"],
+    "turnDetailModal": ["APPOINTMENT DETAIL", "TREATMENT", "DAY AND TIME"],
+    "confirmCancelModal": ["ATTENTION", "DO YOU WANT TO CANCEL THE TURN?", "THIS ACTION CANNOT BE UNDONE"]
+}

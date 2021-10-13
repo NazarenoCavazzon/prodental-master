@@ -1,0 +1,19 @@
+<div class="nav-account">
+    
+    <a href="/" class="logo">
+      <img src="/img/logo.png" alt="Dentalpro Logo">
+    </a>
+    
+   
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <%=user.name%>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item disabled" href="#"><%=accountDat.dropButton[0]%></a></li>
+        <li><a class="dropdown-item" href="/logout"><%=accountDat.dropButton[1]%> <i class="fal fa-sign-out-alt"></i></a></li>
+      </ul>
+    </div>
+  </div>
+

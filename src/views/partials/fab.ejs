@@ -1,0 +1,21 @@
+
+<div class="flab flab-active">
+    <img src="/img/logo.png" alt="">
+</div>     
+
+<div class="box-flab ">
+    <a class="item item-1" href="">
+        <img src="/img/logo.png" alt="">
+    </a>
+
+    <a class="item item-2" href="">
+        <img src="/img/logo.png" alt="">
+    </a>
+</div>
+
+<script>
+    document.querySelector('.flab').addEventListener('click', function(e){
+        document.querySelector('.box-flab').classList.toggle('box-active');
+        document.querySelector('.flab').classList.toggle('flab-active');
+    })
+</script>

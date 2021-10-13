@@ -1,0 +1,95 @@
+.section-principal{
+    height: 100vh;
+    width: 100vw;
+    .splide__slide{
+        .img-principal-container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            img{
+                width: 70%;
+            }
+        }
+    }
+    .text-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 10vw;
+        font-family: $principal-font;
+        h1{
+            font-size: 60px;
+            width: 30%;
+            color: $emerald;
+        }
+        h3{
+            font-size: 40px;
+            width: 30%;
+            color: $dark-gray;
+        }
+        button{
+            @include button('principal');
+            font-size: x-large;
+            padding: 10px 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .section-principal{
+        .text-container{
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            padding-top: 30vh;
+            text-align: center;
+            width: 100%;
+            h1,h3{
+                width: 100%;
+            }
+        }
+        .splide__slide{
+            .img-principal-container{
+                justify-content: flex-end;
+                align-items: center;
+                img{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .section-principal{
+        .text-container{
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+            padding-top: 20vh;
+            text-align: center;
+            width: 100%;
+            h1,h3{
+                width: 100%;
+            }
+        }
+        .splide__slide{
+            .img-principal-container{
+                justify-content: flex-end;
+                align-items: center;
+                img{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

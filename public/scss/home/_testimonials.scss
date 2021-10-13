@@ -1,0 +1,85 @@
+.section-testimonials{
+    width: 100vw;
+    height: auto;
+    margin: 50px 0;
+    padding: 50px 100px;
+    background-image: url('../../img/home/testimonials.png');
+    text-align: center;
+    font-family: $principal-font;
+    .title{
+        font-size: xx-large;
+        font-family: $principal-font;
+        text-align: left;
+        color:white;
+        padding-left: 140px;
+    }
+    .splide-testimonial{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 0;
+        .box{
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px 25px;
+            width: 80%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            justify-content: center;
+            text-align: center;
+            
+            .title{
+                font-size: x-large;
+                color: $dark-gray;
+                margin-bottom: 15px;
+            }
+            .testimonial{
+                font-size: large;
+                color: $light-gray;
+            }
+            .box-pico{
+                align-self: center;
+                position: absolute;
+                bottom: 80px;
+                width: 0; 
+                height: 0; 
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid white;
+            }
+        }
+        .autor{
+            margin-top: 25px;
+            font-size: large;
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .section-testimonials{
+       padding: 50px 10px;
+       .title{
+           padding: 0;
+           text-align: center;
+       }
+       .splide-testimonial{
+            .box{
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px){
+    .section-testimonials{
+       padding: 50px 5px;
+       .splide-testimonial{
+            .box{
+                width: 80%;
+            }
+        }
+    }
+}

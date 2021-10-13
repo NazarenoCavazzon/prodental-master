@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Autoestima",
+        "desc": "El espacio en la dentadura provocado por un diente perdido puede afectar a tu confianza y autoestima. Las personas con dientes ausentes suele cubrir su boca cuando ríen o hablan, intentando no sonreír o mostrar otras emociones que provoquen el enseñar los dientes. Y aunque no resulte evidente, esto puede agriar nuestro carácter y alegría.",
+        "icon": "row"
+    }
+    ,
+    {
+        "title": "Sobreesfuerzo de los otros dientes",
+        "desc": "Cada diente tiene un propósito: cortar, machacar, arrancar comida… Cuando existe una ausencia de dientes afecta al equilibrio entre los dientes que quedan, modificando la presión de la mordida. En consecuencia, los dientes restantes que estén haciendo un sobreesfuerzo, pueden cambiar de posición o desgastarse.",
+        "icon": "row"
+    }
+    ,
+    {
+        "title": "Cambios en la estructura ósea",
+        "desc": "Cuando un diente ya no está, la encía y el hueso que lo sujetaban ya no se estimulan. La mandíbula puede encogerse y la encía retraerse e incrementarse además el riesgo de pérdida de los dientes vecinos. La apariencia personal al modificarse la estructura ósea también se ve afectada negativamente. Y es que la reducción del hueso de la mandíbula hace que la cara parezca más vieja, con las mejillas huecas y más propensas a caerse.",
+        "icon": "row"
+    }
+    ,
+    {
+        "title": "Volver a disfrutar de una dieta variada",
+        "desc": "A muchas personas, la falta de dientes les impide disfrutar de la comida y se ven limitadas a la hora de decidir qué alimentos tomar. Dependiendo del tratamiento elegido para corregir la falta de dientes, nuestros pacientes pueden volver a comer una dieta completa y variada.  Pueden volver a disfrutar de la comida de verdad."        ,
+        "icon": "row"
+    }
+    ,
+    {
+        "title": "La solución puede durar a muy largo plazo",
+        "desc": "Las distintas soluciones para la falta de dientes ofrecen diferentes grados de longevidad. Una prótesis parcial puede parecer una opción adecuada, pero sólo dura cinco años o más en el 40% de los casos. Por lo contrario, los implantes dentales tienen una tasa de éxito del 98% y suelen durar toda la vida. El implante se convierte en parte del hueso maxilar, replicando la función de un diente natural. En el 90% de los casos, los implantes seguirán siendo eficaces 15 años después de su colocación.",
+        "icon": "row"
+    }
+]

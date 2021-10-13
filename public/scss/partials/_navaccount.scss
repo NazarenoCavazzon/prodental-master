@@ -1,0 +1,56 @@
+.nav-account{
+    background: none;
+    height: 100px;
+    width: 100vw;
+    z-index: 12;
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    transition: all .3s ease;
+    text-align: left;
+
+
+    .logo{
+        display: flex;
+        align-items: center;
+        z-index: 12;
+        img{
+            height: 70px;
+        }
+    }
+
+    .dropdown{
+        background-color: white;
+        font-family: $principal-font;
+        .dropdown-button{
+            background-color: white;
+            color: $emerald;
+            text-transform: uppercase;
+        }
+        .dropdown-menu{
+            .dropdown-item{
+                display: flex;
+                align-items: center;
+                .fal{
+                    margin-left: 15px;
+                    display: block;
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .nav-account{
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 576px){
+    .nav-account{
+        padding: 0 25px;
+    }
+}

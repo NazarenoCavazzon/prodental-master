@@ -1,0 +1,62 @@
+<section class="section-contact" id="contactSection">
+    <div class="contact-box" data-aos="fade-up">
+        <div class="info">
+            
+            <div class="title-container">
+                <p class="title"><%=contactDat.titles[0]%></p>
+            </div>
+
+            <div class="contact-date">
+                <div class="contact-field">
+                    <i class="fal fa-map-marked-alt"></i>
+                    <h2 class="contact"><%=contactDat.contactMed[0]%></h2>
+                </div>
+                <div class="contact-field">
+                    <i class="fal fa-envelope"></i>
+                    <h2 class="contact"><%=contactDat.contactMed[1]%></h2>
+                </div>
+                <div class="contact-field">
+                    <i class="fal fa-phone-alt"></i>
+                    <h2 class="contact"><%=contactDat.contactMed[2]%></h2>
+                </div>
+            </div>
+            
+            <div class="social-icons">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+
+        </div>
+        <div class="message">
+            <div class="title-container">
+                <p class="title"><%=contactDat.titles[1]%></p>
+            </div>
+            <div class="field">
+                <label for="first-name"><%=contactDat.messageLabels[0]%></label>
+                <input type="text" id="first-name">
+            </div>
+            <div class="field">
+                <label for="last-name"><%=contactDat.messageLabels[1]%></label>
+                <input type="text" id="last-name">
+            </div>
+            <div class="field">
+                <label for="email"><%=contactDat.messageLabels[2]%></label>
+                <input type="text" id="email">
+            </div>
+            <div class="field">
+                <label for="subject"><%=contactDat.messageLabels[3]%></label>
+                <input type="text" id="subject">
+            </div>
+            <div class="field field-message">
+                <label for="message"><%=contactDat.messageLabels[4]%></label>
+                <textarea id="message" cols="30" rows="10"></textarea>
+                
+            </div>
+            <div class="field field-button">
+                <button><%=contactDat.messageSendButton%></button>
+
+            </div>
+        </div>
+    </div>
+</section>

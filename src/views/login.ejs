@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') -%>
+</head>
+<body>
+    <%- include('./partials/navbar') -%>
+    <%- include('./partials/fab') -%>    
+    
+
+    <section class="section-login">
+        <form action="/login" method="post">
+            <div class="welcome">
+                <h2><%=authDat.titles[0]%></h2>
+            </div>
+            <div class="form">
+
+                <div class="form-title-container">
+                    <h2 class="form-title "><%=authDat.titles[1]%></h2>
+                    <a class="form-title link" href="/signup"><h2>/ <%=authDat.titles[2]%></h2></a>
+                </div>
+
+                <div class="field-container">
+
+                    <label for="email"><%=authDat.loginLabels[0]%></label>
+                    <input type="email" name="email" id="email">
+            
+                    <label for="password"><%=authDat.loginLabels[1]%></label>
+                    <input type="password" name="password" id="password">
+                </div>
+    
+                <button type="submit"><%=authDat.button%></button>
+            </div>
+        </form>
+    </section>
+
+    <%- include('./partials/footer') -%>  
+</body>
+</html>

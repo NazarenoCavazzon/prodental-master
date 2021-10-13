@@ -1,0 +1,64 @@
+<section class="section-treatments" id="treatmentsSection">
+
+    <div class="title-container" data-aos="fade-up">
+      <h2><%=aboutusDat.title%></h2>
+    </div>
+
+    <div class="treatment-carousel-container">
+      <div class="splide" data-splide='{
+        "type" : "loop", 
+        "perMove": 1, 
+        "perPage": 4, 
+        "breakpoints": {
+            "768": {
+                "perPage":2
+            },
+            "576": {
+                "perPage":1
+            }
+        }}'>
+  
+        <!-- <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev arrows-staff">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="splide__arrow splide__arrow--next arrows-staff">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div> -->
+  
+        <div class="splide__track" >
+          <ul class="splide__list">
+            
+            <% for (let i = 0; i < treatments.length; i++ ) { %>
+              <li class="splide__slide">
+                <div class="splide-treatment">
+                  <div class="treatment">
+            
+                    <img class="treatment-background" src="/img/treatments/treatment.png" alt="Treatment 1">
+                    <h2 class="title"><%= treatments[i].title %></h2>
+            
+                    <div class="before">
+                      <img src="/img/treatments/treatment-<%= treatments[i].id %>-icon.png" alt="Treatment 1">
+                    </div>
+            
+                    
+                    <div class="after">
+                      <h6>
+                        <%= treatments[i].short_description %>
+                      </h6>
+                      <a href="/treatments/<%=treatments[i].id%>">Info</a>
+                    </div>
+                  </div>
+
+                </div>
+              </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>

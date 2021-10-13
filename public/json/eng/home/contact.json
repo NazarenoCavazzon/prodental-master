@@ -1,0 +1,6 @@
+{
+    "titles": ["INF. DE CONTACTO", "ENVIAR MENSAJE"],
+    "contactMed": ["Main Street", "INFO@DENTALPRO.COM", "555) 5555-1234"],
+    "messageLabels": ["NOMBRE", "APELLIDO", "CORREO", "ASUNTO", "MENSAJE"],
+    "messageSendButton": "ENVIAR"
+}

@@ -1,0 +1,28 @@
+@mixin button($buttonType) {
+    @if $buttonType == 'principal'{
+        border:3px solid $emerald;
+        border-radius: 25px;
+        
+        color: $emerald;
+        font-weight: 700;
+        transition: all .3s ease;
+        margin-top: 15px;
+        &:hover{
+            cursor: pointer;
+            background: $emerald;
+            color: white;
+        }
+    }    
+}
+
+@mixin arrows($arrowType) {
+    @if $arrowType == 'staff'{
+    
+        background: none!important;
+        color: $dark-gray;
+        font-size: xx-large;
+        
+    }
+
+    
+}

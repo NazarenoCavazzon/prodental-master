@@ -1,0 +1,89 @@
+<!-- SIDEBAR -->
+<div class="flex-shrink-0 p-3 bg-white sidebar">
+    <div class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <span class="fs-5 fw-semibold">Admin panel</span>
+    </div>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1 button-side" id="button-turns">
+        <a href="/admin/turns">
+          <button class="btn">
+            <i class="fal fa-calendar-alt"></i>
+            <span>Turns</span>
+          </button>
+        </a>
+      </li>
+      <li class="mb-1 button-side"  id="button-users">
+        <a href="/admin/users">
+          <button class="btn">
+            <i class="fal fa-user"></i>
+            <span>Users</span>
+          </button>
+        </a>
+      </li>
+      <li class="mb-1 button-side"  id="button-treatments">
+        <a href="/admin/treatments">
+          <button class="btn">
+            <i class="fal fa-tooth"></i>
+            <span>Treatments</span>
+          </button>
+        </a>
+      </li>
+      <li class="mb-1 button-side"  id="button-staff">
+        <a href="/admin/staff">
+          <button class="btn">
+            <i class="fal fa-user-md"></i>
+              <span>Staff<span>
+          </button>
+        </a>
+      </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1 button-side">
+      <a href="/admin/account">
+        <button class="btn">
+          <i class="fal fa-user-cog"></i>
+          <span>Account</span>
+        </button>
+      </a>
+      </li>
+    </ul>
+</div>
+
+
+<script>
+  let buttons = document.querySelectorAll('.button-side');
+  let locate = location.pathname;
+  
+
+  buttons.forEach(button =>{
+    switch(button.id){
+      case "button-turns":
+        if (location.pathname=="/admin/turns"){
+          buttons.forEach(btn=>btn.classList.remove('active'))
+          button.classList.add('active');
+        }
+      break;
+      case "button-users":
+        if (location.pathname=="/admin/users"){
+          buttons.forEach(btn=>btn.classList.remove('active'))
+          button.classList.add('active');
+        }
+      break;
+
+      case "button-treatments":
+        if (location.pathname=="/admin/treatments"){
+          buttons.forEach(btn=>btn.classList.remove('active'))
+          button.classList.add('active');
+        }
+      break;
+
+      case "button-staff":
+        if (location.pathname=="/admin/staff"){
+          buttons.forEach(btn=>btn.classList.remove('active'))
+          button.classList.add('active');
+        }
+      break;
+    }
+  })
+  
+  console.log(locate);
+</script>

@@ -1,0 +1,25 @@
+@import 'partials/base';
+@import 'partials/buttons';
+@import 'partials/navbar';
+@import 'partials/fab';
+@import 'partials/footer';
+@import 'partials/navaccount';
+
+/* HOME */
+@import 'home/principal';
+@import 'home/aboutus';
+@import 'home/treatments';
+@import 'home/staff';
+@import 'home/testimonials';
+@import 'home/faq';
+@import 'home/contact';
+
+/* VIEWS */
+@import 'views/login';
+@import 'views/signup';
+@import 'views/account';
+@import 'views/turn';
+@import 'views/admin';
+@import 'views/aboutus';
+@import 'views/faq';
+@import 'views/treatments';

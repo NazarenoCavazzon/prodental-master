@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') -%>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <%- include('./navbar') -%>
+    <section class="section-turn">
+        <h2 class="step" data-aos="fade-right"><%=accountDat.steps[1]%></h2>
+        <form action="/account/turn/treatment" method="POST" data-aos="fade-up" class="container-layout">
+            <div class="container-treatments">
+                <% for (let i = 0; i < treatments.length; i++ ) { %>
+                    <div class="treatment-field">
+                        <input type="radio" value="<%=treatments[i].id%>" name="treatment" id="treatment-<%=treatments[i].id%>" class="hidden-checkbox-input">
+                        <label for="treatment-<%=treatments[i].id%>" class="treatment treatment-<%=treatments[i].id%>">
+                            <img class="treatment-background" src="/img/treatments/background-image.png" alt="Treatment 1">
+                            <h2 class="title"><%= treatments[i].title_esp %></h2>
+                            <div class="before">
+                            <img src="/img/treatments/treatment-<%= treatments[i].id %>-icon.png" alt="Treatment 1">
+                            </div>                                      
+                            <div class="after">
+                                <h6>
+                                    Desc
+                                </h6>
+                            </div>
+                        </label>
+                    </div>
+                <% } %>
+            </div>
+            <button class="btn btn-success mt-4 mx-auto"><%=accountDat.buttons[1]%></button>
+        </form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    
+    <section class="view-aboutus">
+        <!-- <img src="/img/aboutus/aboutus.jpg" alt=""> -->
+        <div class="text-container">
+            <div class="title-container">
+                <h3><%=aboutusDat.companyName%></h3>
+                <h4><%=aboutusDat.companyNameInfo%></h4>
+            </div>
+            <div class="text">
+                <span><%=aboutusDat.whyareus%></span> 
+                <br>
+                <span><%=aboutusDat.whyareus2%></span> 
+            </div>
+        </div>
+        <div class="list">
+            <p class="list-title"><%=aboutusDat.whyusuniqueTitle%></p>
+            <% for (let i = 0; i < aboutusDat.bulletsUnique.length; i++) { %>
+                <div class="field <%= i%2==0 ? 'par' : 'impar'%> ">
+                    <div class="idIcon"><i class="<%=aboutusDat.FAicons[i]%>"></i></div><p><%=aboutusDat.bulletsUnique[i]%></p>
+                </div>
+            <% } %>
+        </div>
+        <div class="icons-container">
+            <div class="icon">
+                <img src="/img/aboutus/mision.png" alt="">
+                <p class="title"><%=aboutusDat.howtoTitle%></p>
+                <p class="desc"><%=aboutusDat.howto%></p>
+            </div>
+            <div class="icon">
+                <img src="/img/aboutus/vision.png" alt="">
+                <p class="title"><%=aboutusDat.whymakeitTitle%></p>
+                <p class="desc"><%=aboutusDat.whymakeit%></p>
+                <p class="desc"><%=aboutusDat.whymakeitFooter%></p>
+            </div>
+        </div>
+    </section>
+    <%-include('home/contact')%>
+
+    <%- include('partials/fab') %>
+    <%- include('partials/footer') %>
+    <script src="/js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

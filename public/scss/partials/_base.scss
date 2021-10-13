@@ -1,0 +1,23 @@
+body{
+    background-image: url('/img/background.png');
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden-checkbox-input{
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+$emerald: #00BAC6;
+$dark-gray: #686868;
+$light-gray: #A7A7A7;
+$principal-font: 'PT Sans Narrow', sans-serif;

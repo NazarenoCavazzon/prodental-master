@@ -1,0 +1,38 @@
+<section class="section-testimonials">
+
+
+    <h3 class="title" data-aos="fade-down-right"><%=testimonialsDat.title%></h3>
+
+    <div class="splide" data-splide='{
+        "type" : "loop", 
+        "perMove": 1, 
+        "perPage": 1,
+        "autoplay" : "true",
+        "drag":  false
+        }'>
+        <div class="splide__track" >
+          <ul class="splide__list">
+
+            <% for (let i = 0; i < testimonials.length; i ++ ){ %>
+                <li class="splide__slide">
+                    <div class="splide-testimonial">
+                        <div class="box" data-aos="flip-left">
+                            <h5 class="title"><%=testimonials[i].title%></h5>
+                            <h6 class="testimonial">
+                                <%=testimonials[i].description%>
+                            </h6>
+                            <div class="box-pico">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <h5 class="autor"><%=testimonials[i].author%></h5>
+                    </div>
+                </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
+
+
+</section>

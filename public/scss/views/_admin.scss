@@ -1,0 +1,111 @@
+.section-admin{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    .sidebar{
+        width: 15%;
+        height: 100vh;
+        position:fixed;
+        box-shadow: 2px 0px 10px rgba($color: #000000, $alpha: 0.3);
+        
+        ul{
+            li{
+                a{
+                    text-decoration: none;
+                    button{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        .fal{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+                &.active{
+                    background-color: $emerald;
+                    button{
+                        color: white;
+                    }
+                }
+            }
+
+        }
+    }
+    .content{
+        padding-left: 15%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .control-section{
+            width: 100%;
+            display:flex;
+            
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            button, label{
+                margin: 20px 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .section-admin{
+        .sidebar{
+            width: 20%;
+            ul{
+                li{
+                    a{
+                        button{
+                            .fal{
+                                display: none;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .content{
+            padding-left: 20%;
+        }
+    }
+}
+
+
+@media (max-width: 576px){
+    .section-admin{
+        .sidebar{
+            width: 100vw;
+            height: 15%;
+            ul{
+                display:flex;
+                justify-content: space-around;
+                width: 100%;
+                li{
+                    a{
+                        button{
+                            .fal{
+                                display: block;
+                                margin: 0;
+                                font-size: x-large;
+                            }
+                            span{
+                                display:none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content{
+            margin-top: 30%;
+            padding: 10px;
+        }
+    }
+}

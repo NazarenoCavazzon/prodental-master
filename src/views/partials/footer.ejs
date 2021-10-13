@@ -1,0 +1,35 @@
+<footer>
+    <div class="logo-container">
+        <img src="/img/logo.png" alt="">
+    </div>
+
+    <div class="links-container">
+        <div class="links">
+            <% for (let i = 0; i < footerDat.company.length; i++ ) { %> 
+                <p><%=footerDat.company[i]%></p>
+            <% } %>
+        </div>
+
+        <div class="links">
+            <p>FAQ</p>
+            <p>Contact Us</p>
+            <p>News</p>
+        </div>
+
+        <div class="links">
+            <p>Reserve</p>
+            <p>Report a Problem</p>
+            <p>Privacy Policy</p>
+        </div>
+        <div class="links">
+            <p>Install App</p>
+            <p>Get it on Google Play</p>
+            <p>Get it on the App Store</p>
+        </div>
+    </div>
+
+    <div class="copyright-container">
+        <p class="it-tech">Design by IT-TECHGROUP</p>
+
+    </div>
+</footer>

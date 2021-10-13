@@ -1,0 +1,231 @@
+nav{
+    background: none;
+    height: 100px;
+    width: 100vw;
+    z-index: 12;
+    position:fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    transition: all .3s ease;
+    text-align: left;
+
+    
+
+    .logo{
+        display: flex;
+        align-items: center;
+        z-index: 12;
+        img{
+            height: 70px;
+        }
+    }
+    #check{
+        display: none;
+        position: absolute;
+        height: 0;
+        opacity: 0;
+    }
+    .checkbtn{
+        display: none;
+        z-index: 12;
+    }
+    ul{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 9;
+        
+        li{
+            font-family: 'PT Sans Narrow', sans-serif;
+            font-weight: 700;
+            color: $light-gray;
+            list-style: none;
+            margin: 0 5px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            &.log{
+                order:2;
+            }
+            &.lang-li{
+                order:3;
+                button{
+                    background: none;
+                    border:none;
+                    img{
+                        border-radius: 3px;
+                    }
+                }
+            }
+            .login{
+                display: flex;
+                .user{
+                    display: flex;
+                    .welcome{
+                        display: none;
+                    }
+                    .name{
+                        text-transform: uppercase;
+                        color: $emerald;
+                    }
+                    
+                } 
+                .account-button{
+                    display: none;
+                }
+                a{
+                    text-decoration: inherit;
+                    color: inherit;
+                }
+
+            }
+            
+            .fal{
+                display: none;
+            }
+        }
+    }
+    &.scroll{
+        background: white;
+        border-bottom: 2px solid var(--color-cement);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.288);
+        ul{
+            li{
+                color: $dark-gray;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    nav{
+        background: white;
+        border-bottom: 2px solid var(--color-cement);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.288);
+        
+        .checkbtn{
+            display: block;
+            cursor: pointer;
+            font-size: xx-large;
+        }
+        ul{
+            position: fixed;
+            width: 50vw;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: flex-start;
+            top: 0;
+            left: -100vw;
+            overflow: hidden;
+            transition: all .3s ease ;
+            background-color: white;
+            border-right: 2px solid var(--color-cement);
+            box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.288);
+            margin-top: 100px;
+            
+            li{
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 30px;
+                margin-bottom: 25px;
+                a{
+                    font-size: large;
+                }
+                &.log{
+                    order:-1;
+                }
+                
+                .login{
+                    background: $emerald;
+                    width: 100%;
+                    color:white;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 30px 0 30px 30px;
+                    .user{
+                        .fal, .name{
+                            display:none;
+                        }
+                        .welcome{
+                            display: block;
+                            font-size: large;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .account-button{
+                        width: 100%;
+                        display: flex;
+                        button{
+                            display: flex;
+                            align-items: center;
+                            background: white;
+                            color: $emerald;
+                            border: none;
+                            margin-right: 10px;
+                            padding: 5px 20px;
+                            .fal{
+                                margin:0 0 0 5px;
+                                width: auto;
+                            }
+                        }
+                    }
+                    .not-login{
+                        display: flex;
+                        .fal{
+                            margin-right: 20px;
+                            margin-left: 0;
+                        }
+                    }
+                    
+                }
+                .fal{
+                    width: 50px;
+                    display: block;
+                    margin: 0 20px 0 30px;
+                }
+                
+            }
+        }
+
+        #check:checked ~ ul{
+            left: 0;
+        }
+    }
+    
+}
+
+
+@media (max-width: 460px) {
+    nav{
+        ul{
+            width: 85vw;
+            li{
+                .fal{
+                    margin: 0 5px 0 30px;
+                }
+                
+                margin-bottom: 20px;
+                i{
+                    font-size: large;
+                }
+                a{
+                    font-size: large;
+                }
+                .login{
+                    .not-login{
+                        display: flex;
+                        .fal{
+                            margin-right: 0 ;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
