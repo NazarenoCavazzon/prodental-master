@@ -134,4 +134,8 @@ module.exports = {
       }
       res.redirect(dire);
     },
+    experienceDentalPro: async (req,res) =>{
+
+      res.render('./home/dentalpro');
+    }
 }

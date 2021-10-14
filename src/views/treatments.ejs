@@ -13,11 +13,11 @@
         </div>
         <div class="content">
             <img src="/img/treatments/treatment-1-img.png" alt="">
-            <p><%=treatment.info_title%></p>
+            <p class="title"><%=treatment.info_title%></p>
             
 
             <% if(typeof treatment.info != 'undefined'){ %>
-                <p><%=treatment.info%></p>
+                <p class="body"><%=treatment.info%></p>
             <% } %>
 
             <% if(typeof treatment.video != 'undefined'){ %>
@@ -26,24 +26,24 @@
 
             
             <% if(typeof treatment.description_title != 'undefined'){ %>
-                <p><%=treatment.description_title%></p>
+                <p class="description-title title"><%=treatment.description_title%></p>
             <% } %>
 
             <% if(typeof treatment.description != 'undefined'){ %>
-                <p><%=treatment.description%></p>
+                <p class="description-body body"><%=treatment.description%></p>
             <% } %>
 
 
             <% if(typeof treatment.footer_title != 'undefined'){ %>
-                <p><%=treatment.footer_title%></p>
+                <p class="footer-title title"><%=treatment.footer_title%></p>
             <% } %>
 
             <% if(typeof treatment.footer != 'undefined'){ %>
-                <p><%=treatment.footer%></p>
+                <p class="footer-body body"><%=treatment.footer%></p>
             <% } %>
 
             <% if(typeof treatment.bullets_title != 'undefined'){ %>
-                <p><%=treatment.bullets_title%></p>
+                <p class="bullets-title title"><%=treatment.bullets_title%></p>
             <% } %>
 
             <% if(typeof bulletsTreatment != 'undefined'){ %>

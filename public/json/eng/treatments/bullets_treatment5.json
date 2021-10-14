@@ -1,11 +1,13 @@
 [
     {
         "title": "Blanqueamiento en consultorio",
-        "desc": "El deseo de una sonrisa más blanca en nuestra clínica se hace realidad en tan solo 45 minutos. Sin esperas innecesarias nuestros pacientes obtienen una sonrisa más blanca en solo una visita gracias al novedoso método de blanqueamiento con tecnología activada por la luz. Con intensidades ajustables y personalizables  para eliminar la sensibilidad y maximizar la comodidad del paciente este tratamiento, realizado siempre bajo  la supervisión permanente de un profesional  ofrece resultados insuperables. La mejor y la más saludable opción para blanquear sus dientes."
+        "desc": "El deseo de una sonrisa más blanca en nuestra clínica se hace realidad en tan solo 45 minutos. Sin esperas innecesarias nuestros pacientes obtienen una sonrisa más blanca en solo una visita gracias al novedoso método de blanqueamiento con tecnología activada por la luz. Con intensidades ajustables y personalizables  para eliminar la sensibilidad y maximizar la comodidad del paciente este tratamiento, realizado siempre bajo  la supervisión permanente de un profesional  ofrece resultados insuperables. La mejor y la más saludable opción para blanquear sus dientes.",
+        "icon": "row"
     }
     ,
     {
         "title": "Blanqueamiento Ambulatorio",
-        "desc": "Es el realizado por el paciente en su domicilio, es realizado mediante la utilización de cubetas a medida, combinadas con producto de blanqueamiento dental de concentración moderado durante varios días. Tras un diagnóstico previo, y siendo imprescindible tener buena salud dental, y una buena higiene oral, se toman impresiones y confeccionan modelos de la boca. En el laboratorio se construyen unas férulas a medida del paciente. Son una estructura plástica flexible que se ajusta a la forma de nuestros dientes. Kit ambulatorio"
+        "desc": "Es el realizado por el paciente en su domicilio, es realizado mediante la utilización de cubetas a medida, combinadas con producto de blanqueamiento dental de concentración moderado durante varios días. Tras un diagnóstico previo, y siendo imprescindible tener buena salud dental, y una buena higiene oral, se toman impresiones y confeccionan modelos de la boca. En el laboratorio se construyen unas férulas a medida del paciente. Son una estructura plástica flexible que se ajusta a la forma de nuestros dientes. Kit ambulatorio",
+        "icon": "row"
     }
 ]

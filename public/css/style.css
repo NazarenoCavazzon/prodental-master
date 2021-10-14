@@ -459,13 +459,13 @@ footer .copyright-container {
   font-weight: 700;
   transition: all 0.3s ease;
   margin-top: 15px;
-  font-size: x-large;
+  font-size: xx-large;
   padding: 10px 20px;
 }
 .section-principal .text-container button:hover {
-  cursor: pointer;
-  background: #00BAC6;
-  color: white;
+  cursor: pointer !important;
+  background: #00BAC6 !important;
+  color: white !important;
 }
 
 @media (max-width: 768px) {
@@ -508,6 +508,45 @@ footer .copyright-container {
     width: 90%;
   }
 }
+section.dentalpro-experience {
+  margin: 10vh 0;
+  width: 100vw;
+  height: 30vh;
+  padding: 200px none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../img/home/experience-dentalpro.png");
+  background-size: cover;
+  background-position-y: 50%;
+}
+section.dentalpro-experience h3 {
+  font-family: "PT Sans Narrow", sans-serif;
+  text-transform: uppercase;
+  font-size: x-large;
+  margin-bottom: 5vh;
+  color: white;
+}
+section.dentalpro-experience button {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 40px;
+  border: none;
+  color: #00BAC6;
+  text-transform: uppercase;
+  font-size: large;
+  font-family: "PT Sans Narrow", sans-serif;
+  border: 2px solid #00BAC6;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+section.dentalpro-experience button:hover {
+  background-color: #00BAC6;
+  color: white;
+}
+
 .section-aboutus {
   margin: 50px 0;
   width: 100vw;
@@ -772,9 +811,8 @@ footer .copyright-container {
 .section-testimonials .title {
   font-size: xx-large;
   font-family: "PT Sans Narrow", sans-serif;
-  text-align: left;
+  text-align: center;
   color: white;
-  padding-left: 140px;
 }
 .section-testimonials .splide-testimonial {
   display: flex;
@@ -1979,6 +2017,7 @@ footer .copyright-container {
   color: white;
 }
 .treatments-view .title-container .title-desc {
+  width: 60%;
   font-size: large;
   text-align: center;
   color: white;
@@ -2000,6 +2039,15 @@ footer .copyright-container {
 }
 .treatments-view .content hr {
   margin: 50px 0;
+}
+.treatments-view .content .bullets-title {
+  font-size: x-large;
+}
+.treatments-view .content .title {
+  margin-top: 30px;
+}
+.treatments-view .content .body {
+  margin: 20px 0;
 }
 .treatments-view .content .bullets {
   margin: 30px 0;
@@ -2033,12 +2081,13 @@ footer .copyright-container {
   color: white;
 }
 .treatments-view .content .bullets .bullet.row .desc {
+  width: 100%;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0 0 10px silver;
   padding: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 }
 .treatments-view .content .bullets .bullet.row .desc img {
   margin: 0 10px;

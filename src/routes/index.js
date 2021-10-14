@@ -13,6 +13,7 @@ router.get('/signup', authController.signup);
 router.get('/treatments/:id', homeController.treatments);
 router.get('/faq', homeController.faq);
 router.post('/signup', authController.processSignup);
+router.get('/experiencia-dentalpro', homeController.experienceDentalPro);
 router.post('/lang', homeController.langChange)
 
 module.exports = router;

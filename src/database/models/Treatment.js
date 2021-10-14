@@ -22,13 +22,6 @@ module.exports = (sequelize, DataTypes) => {
             as: 'turns',
             foreignKey: 'treatment_id'
         })
-
-        Treatment.belongsToMany(models.Image,{
-            as: 'images',
-            through: 'treatments_images',
-            foreignKey: 'treatment_fk',
-            otherKey: 'image_fk'
-        }); 
     })
     
     return Treatment;
