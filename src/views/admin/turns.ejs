@@ -24,7 +24,7 @@
               <label class="col-form-label" for="treatment">Treatment</label>
               <select class="form-select" id="treatment" name="treatment">
                 <% for (let i = 0; i < treatments.length; i++){ %>
-                  <option value="<%=treatments[i].id%>"><%=treatments[i].title_eng%></option>
+                  <option value="<%=treatments[i].id%>"><%=treatments[i].title%></option>
                 <% } %>
               </select>
 
@@ -122,7 +122,7 @@
               <select name="" id="categoryFilter">
                 <option disabled selected>Selecciona una categoria</option>
                 <% for (let m=0; m < treatments.length; m++) {%>
-                  <option value="<%=treatments[m].id%>">"<%=treatments[m].title_eng%>"</option>
+                  <option value="<%=treatments[m].id%>">"<%=treatments[m].title%>"</option>
                   <% } %>
                 </select>
                 <button class="btn btn-primary"
@@ -143,7 +143,7 @@
                 <tbody>
                   <% for (let i = 0; i < turns.length; i++){ %>
                     <tr class="campoAFiltrar" data-bs-filterID="<%= turns[i].treatment_id %>">
-                      <td><%=turns[i].treatment.title_eng%></td>
+                      <td><%=turns[i].treatment.title%></td>
                       <% if (turns[i].user!=null) { %>
                         <td><%=turns[i].user.name%></td>
                       <% } else { %>
@@ -162,7 +162,7 @@
                         <button class="btn btn-danger turnField"
                           data-bs-toggle="modal" 
                           data-bs-target="#deleteTurnModal"
-                          data-bs-turnTitle="<%=turns[i].treatment.title_esp%>"
+                          data-bs-turnTitle="<%=turns[i].treatment.title%>"
                           data-bs-turnTime="<%=turns[i].date%>"
                           data-bs-idTurn="<%=turns[i].id%>"
                         ><i class="fal fa-trash-alt"></i></button>
