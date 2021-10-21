@@ -16,7 +16,7 @@
 	VALUES
 (
 	'Implantes Dentales', 
-    'El método más moderno para solucionar este problema es la prótesis fijada por implantes dentales.',
+    'Ante la falta o perdida de piezas dentales, se utiliza la protesis fijada por implantes dentales.',
 	'La higiene bucal meticulosa y las visitas regulares odontológicas son esenciales para que los implantes dentales sean exitosos a largo plazo.', 
     'treatment_1',
     '¿Qué son los implantes dentales?',
@@ -148,4 +148,5 @@
     null,
     null,
     null
-)
+),
+(10, 'Halitosis', 'Tratamientos para el mal aliento', null, null, null, null, null, null, null, null, null, null)

@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL, 
-  `email` varchar(20) DEFAULT NULL UNIQUE,
+  `email` varchar(100) DEFAULT NULL UNIQUE,
   `password` varchar(60) NOT NULL,
   `token` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
@@ -38,6 +38,15 @@ CREATE TABLE `staffs` (
   PRIMARY KEY (`id`)
 );
 
+-- ESTRUCTURA TABLA IMAGENES DE TRATAMIENTOS
+
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `ref` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
 -- ESTRUCTURA TABLA TRATAMIENTOS
 
 DROP TABLE IF EXISTS `treatments`;
@@ -59,6 +68,18 @@ CREATE TABLE `treatments` (
   PRIMARY KEY (`id`)
 );
 
+-- ESTRUCTURA TABLA INTERMEDIA TRATAMIENTOS Y FOTOS
+
+DROP TABLE IF EXISTS `treatments_images`;
+CREATE TABLE `treatments_images` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `image_fk` INT NOT NULL,
+  `treatment_fk` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`image_fk`) REFERENCES images(`id`),
+  FOREIGN KEY (`treatment_fk`) REFERENCES treatments(`id`)
+);
+
 
 -- ESTRUCTURA TABLA TURNOS
 
@@ -67,7 +88,7 @@ CREATE TABLE `turns` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `treatment_id` int NOT NULL,
   `user_id` int DEFAULT NULL,
-  `date` DATE,
+  `date` DATETIME,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`treatment_id`) REFERENCES treatments(`id`),
   FOREIGN KEY (`user_id`) REFERENCES users(`id`)
