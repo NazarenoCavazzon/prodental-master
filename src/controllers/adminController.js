@@ -7,17 +7,17 @@ module.exports = {
 
     index: (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
             res.redirect('/admin/users');
-        }
+        // }
     },
     users: async (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
 
             let users = await db.User.findAll({include:['turns']});
 
@@ -27,26 +27,26 @@ module.exports = {
                 title: 'Admin users | Dentalpro',
                 users: users
             });
-        }
+        // }
     },
     staff: async (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
             let staffs = await db.Staff.findAll();
             
             return res.render('admin/staff', {
                 title: 'Admin staff | Dentalpro',
                 staffs: staffs
             });
-        }
+        // }
     },
     turns: async (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
 
             const turns = await db.Turn.findAll({include:['treatment', 'user']});
             const treatments = await db.Treatment.findAll();
@@ -74,23 +74,23 @@ module.exports = {
                 treatments: treatments,
                 users: users
             });
-        }
+        // }
     },
     account: (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
             return res.render('admin/account', {
                 title: 'Admin account | Dentalpro'
             });
-        }
+        // }
     },
     treatments: async (req,res) =>{
 
-        if (req.session.userLog != 0){
-            res.redirect('/account');
-        }else{
+        // if (req.session.userLog != 0){
+        //     res.redirect('/account');
+        // }else{
 
             const treatments = await db.Treatment.findAll();
 
@@ -98,7 +98,7 @@ module.exports = {
                 title: 'Admin treatments | Dentalpro',
                 treatments: treatments
             });
-        }
+        // }
     },
     turnCreate: async (req,res) =>{
         if (req.body.user!='null'){
