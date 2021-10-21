@@ -1,0 +1,13 @@
+[
+    {
+        "title": "Caries",
+        "desc": "Las caries, son una enfermedad dental que consiste en la destrucción del tejido dentario por acción bacteriana y que afecta a gran parte de la población. Las revisiones desde temprana edad son fundamentales para trasmitir a los más pequeños la importancia de la higiene y salud bucodental. Y si es necesario realizar tratamiento de caries en dientes deciduos (de leche) para evitar problemas en el futuro.",
+        "icon": "row"
+    }
+    ,
+    {
+        "title": "Ortodoncia",
+        "desc": "Durante la infancia, los huesos de la cara aún en desarrollo facilitan la intervención y los tratamientos de ortodoncia si fuera necesario.",
+        "icon": "row"
+    }
+]
