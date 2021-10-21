@@ -64,6 +64,7 @@ CREATE TABLE `treatments` (
   `footer` VARCHAR(2000),
   `bullets_title` VARCHAR(255),
   `bullets_json` VARCHAR(60),
+  `lang` VARCHAR(3) NOT NULL,
   PRIMARY KEY (`id`)
 );
 

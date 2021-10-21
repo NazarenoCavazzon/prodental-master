@@ -1,6 +1,5 @@
  INSERT INTO treatments(
 	 title,
-     lang,
      short_description,
 	 subtitle,
 	 image_principal,
@@ -12,7 +11,8 @@
 	 bullets_title, 
 	 bullets_json, 
 	 footer_title, 
-	 footer
+	 footer,
+     lang
 ) 
 	VALUES
 (
@@ -28,7 +28,8 @@
     'Razones para sustituir los dientes perdidos',
     'bullets_treatment1',
     null,
-    'Los implantes dentales tienen el mayor índice de éxito y son también la opción que actúa de forma más parecida a los dientes naturales. Ayudan a mantener los niveles de hueso donde se han extraído los dientes. Tienen un índice de éxito excelente y en la mayoría de los casos, duran toda la vida. En términos de aspecto y función, pueden tratarse exactamente igual que un diente natural. En DENTAL PRO  ofrecemos las mejores técnicas de implantes dentales para que nuestros pacientes recuperen su sonrisa. Si te lo estás planteando, no dudes en llamarnos al 6546432154'
+    'Los implantes dentales tienen el mayor índice de éxito y son también la opción que actúa de forma más parecida a los dientes naturales. Ayudan a mantener los niveles de hueso donde se han extraído los dientes. Tienen un índice de éxito excelente y en la mayoría de los casos, duran toda la vida. En términos de aspecto y función, pueden tratarse exactamente igual que un diente natural. En DENTAL PRO  ofrecemos las mejores técnicas de implantes dentales para que nuestros pacientes recuperen su sonrisa. Si te lo estás planteando, no dudes en llamarnos al 6546432154',
+    'esp'
 ),
 (
 	'Ortodoncia', 
@@ -43,7 +44,8 @@
     'Si tenes alguna de las siguientes afecciones, es probable que necesites un tratamiento ortodóncico:',
     'bullets_treatment2',
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Prótesis Dentales', 
@@ -58,7 +60,8 @@
     'Tipos de Prótesis Dental:',
     'bullets_treatment3',
     '¿Cuándo son aconsejables?',
-    'Estas prótesis son aconsejadas en casos de dientes muy destruidos, por grandes caries o traumatismos, en los que una carilla o un empaste tendrían muy escasa retención. Son adecuadas en dientes endodonciados, para dar consistencia a toda la pieza y evitar posibles fracturas en estas piezas que es muy frecuente que se debiliten con el paso del tiempo. Gracias a su alta estética, se utilizan también dichas prótesis en rehabilitaciones de una o varias piezas cuyo color o anatomía no son del agrado del paciente.'
+    'Estas prótesis son aconsejadas en casos de dientes muy destruidos, por grandes caries o traumatismos, en los que una carilla o un empaste tendrían muy escasa retención. Son adecuadas en dientes endodonciados, para dar consistencia a toda la pieza y evitar posibles fracturas en estas piezas que es muy frecuente que se debiliten con el paso del tiempo. Gracias a su alta estética, se utilizan también dichas prótesis en rehabilitaciones de una o varias piezas cuyo color o anatomía no son del agrado del paciente.',
+    'esp'
 ),
 (
 	'Odontopediatría', 
@@ -73,7 +76,8 @@
     'Tratamientos indicados para los niños:',
     'bullets_treatment4',
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Blanqueamiento Dental', 
@@ -88,7 +92,8 @@
     null,
     'bullets_treatment5',
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Carillas Dentales', 
@@ -103,7 +108,8 @@
     null,
     'bullets_treatment6',
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Odontología Preventiva', 
@@ -118,7 +124,8 @@
     null,
     null,
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Endodoncia', 
@@ -133,7 +140,8 @@
     'Medios técnicos',
     'bullets_treatment8',
     null,
-    null
+    null,
+    'esp'
 ),
 (
 	'Periodoncia', 
@@ -148,6 +156,22 @@
     null,
     null,
     null,
-    null
+    null,
+    'esp'
 ),
-(10, 'Halitosis', 'Tratamientos para el mal aliento', null, null, null, null, null, null, null, null, null, null)
+(
+    'Halitosis',
+    'Tratamientos para el mal aliento',
+    null, 
+    'treatment_10',
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null, 
+    null,
+    null,
+    'esp'
+)
