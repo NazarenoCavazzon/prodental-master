@@ -119,7 +119,7 @@ module.exports = {
         footerDat: language._footer,
         treatment: treatment,
         treatmentInfo: treatmentsJSON[req.params.id-1],
-        bulletsTreatment: bulletTreatment,
+        bulletsTreatment: bullets,
         navbarDat: language._navbar,
         accountDat: language._account,
         treatments: treatments
