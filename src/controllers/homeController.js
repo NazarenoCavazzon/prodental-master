@@ -27,7 +27,7 @@ module.exports = {
       }
       
       let testimonials = await db.Testimonial.findAll();
-      let treatments = await db.Treatment.findAll({includes:["images"]});
+      let treatments = await db.Treatment.findAll({where:{lang:lang}, includes:["images"]});
       let staffs = await db.Staff.findAll();
 
       res.render('home',  
@@ -103,7 +103,7 @@ module.exports = {
       let language = loadLang(lang);
       let bulletTreatment;
       
-      let treatment = await db.Treatment.findByPk(req.params.id);
+      let treatment = await db.Treatment.findOne({title: req.params.title});
       if (treatment.bullets_json){
         bulletTreatment = require('../../public/json/eng/treatments/'+treatment.bullets_json+'.json');
       }else{

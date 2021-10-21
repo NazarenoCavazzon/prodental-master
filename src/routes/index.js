@@ -10,7 +10,7 @@ router.get('/login', authController.login);
 router.get('/logout', authController.logout);
 router.post('/login', authController.processLogin);
 router.get('/signup', authController.signup);
-router.get('/treatments/:id', homeController.treatments);
+router.get('/treatments/:title', homeController.treatments);
 router.get('/faq', homeController.faq);
 router.post('/signup', authController.processSignup);
 router.get('/experiencia-dentalpro', homeController.experienceDentalPro);

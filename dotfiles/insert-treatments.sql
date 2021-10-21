@@ -1,5 +1,6 @@
  INSERT INTO treatments(
 	 title,
+     lang,
      short_description,
 	 subtitle,
 	 image_principal,
