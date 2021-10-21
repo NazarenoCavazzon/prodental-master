@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
+        is_admin: DataTypes.BOOLEAN
     })
 
     User.associate = (models =>{

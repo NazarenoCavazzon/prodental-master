@@ -41,8 +41,8 @@ module.exports = {
         if (user){
             if (bcrypt.compare(req.body.password,user.password)){
                 req.session.userLog = user.id; 
-                if (user.id == 0){
-                    res.redirect('/admin/turns');
+                if (user.dataValues.is_admin){
+                    res.redirect('/admin/');
                 }else{
                     res.redirect('/account');
                 }

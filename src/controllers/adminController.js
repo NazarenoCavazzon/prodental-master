@@ -5,13 +5,14 @@ const tratmentsJSON = require('../../public/json/eng/treatments.json')
 
 module.exports = {
 
-    index: (req,res) =>{
-
-        // if (req.session.userLog != 0){
-        //     res.redirect('/account');
-        // }else{
+    index: async(req,res) =>{
+        const user = await db.User.findOne({where: {id: req.session.userLog}});
+        console.log(user.dataValues);
+        if(user.dataValues.is_admin){
             res.redirect('/admin/users');
-        // }
+        }else{
+            res.redirect('/account');
+        }
     },
     users: async (req,res) =>{
 
