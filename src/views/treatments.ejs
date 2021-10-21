@@ -34,31 +34,38 @@
             <% } %>
 
 
-            <% if(typeof treatment.footer_title != 'undefined'){ %>
+            <!-- <% if(typeof treatment.footer_title != 'undefined'){ %>
                 <p class="footer-title title"><%=treatment.footer_title%></p>
-            <% } %>
+            <% } %> -->
 
-            <% if(typeof treatment.footer != 'undefined'){ %>
+            <!-- <% if(typeof treatment.footer != 'undefined'){ %>
                 <p class="footer-body body"><%=treatment.footer%></p>
-            <% } %>
+            <% } %> -->
 
             <% if(typeof treatment.bullets_title != 'undefined'){ %>
                 <p class="bullets-title title"><%=treatment.bullets_title%></p>
             <% } %>
-
+            
             <% if(typeof bulletsTreatment != 'undefined'){ %>
                 <ul class="bullets">
                         <% for (let i = 0; i < bulletsTreatment.length; i++ ) { %>
                         <li class="bullet <%=bulletsTreatment[i].icon%>">
                             <span class="titulo"><%=bulletsTreatment[i].title%>:</span>
                             <div class="desc">
-                                <% if (bulletsTreatment[i].icon == 'number') { %>
+                                <% if (bulletsTreatment[i].icon) { %>
+                                    <% if (treatment.id > 9){ %>
+                                        <div class="iconWithNumber">
+                                        <!-- <span class="idNumber" id=""><%=i-9%></span> -->
+                                        <img src="/img/treatments/treatment-<%=treatment.id-9%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
+                                        </div>
+                                    <% } else { %>
                                     <div class="iconWithNumber">
-                                        <span class="idNumber" id=""><%=i%></span>
-                                        <img src="/img/treatments/treatment-<%=treatment.id%>-bullet.png" class="imgIcon" alt="">
+                                        <!-- <span class="idNumber" id=""><%=i%></span> -->
+                                        <img src="/img/treatments/treatment-<%=treatment.id%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
                                     </div>
+                                    <% } %>
                                 <% } else { %>
-                                    <img src="/img/treatments/treatment-<%=treatment.id%>-bullet-<%=i+1%>.png" alt="">
+                                    <img src="/img/treatments/<%=treatment.image_principal%>.png" alt="">
                                 <% } %>
                                 <span><%=bulletsTreatment[i].description%></span>
                             </div>
@@ -74,6 +81,22 @@
             <div class="splide-container">
                 <div class="splide" data-splide='{"type" : "fade" , "drag": false , "rewind":true, "autoplay": false, "pagination": false}'>
                     <div class="splide__track" >
+                        <% if(treatment.id > 9) { %>
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="after-before">
+                                    <img src="/img/treatments/treatment-<%=treatment.id-9%>-before.png" alt="before">
+                                    <p>BEFORE</p>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="after-before">
+                                    <img src="/img/treatments/treatment-<%=treatment.id-9%>-after.png" alt="after">
+                                    <p>AFTER</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <% } else { %>
                         <ul class="splide__list">
                             <li class="splide__slide">
                                 <div class="after-before">
@@ -88,6 +111,7 @@
                                 </div>
                             </li>
                         </ul>
+                        <% } %>
                     </div>
                 </div>
             </div>

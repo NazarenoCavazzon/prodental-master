@@ -94,3 +94,15 @@ CREATE TABLE `turns` (
   FOREIGN KEY (`treatment_id`) REFERENCES treatments(`id`),
   FOREIGN KEY (`user_id`) REFERENCES users(`id`)
 );
+
+
+DROP TABLE IF EXISTS `bullets`;
+DROP TABLE IF EXISTS `bullets`;
+CREATE TABLE bullets (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `title` VARCHAR(60),
+  `description` VARCHAR(1000),
+  `icon` VARCHAR(20),
+  `treatment_id` INT,
+  FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
