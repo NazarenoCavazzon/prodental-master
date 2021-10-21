@@ -19,7 +19,8 @@ module.exports = {
                 title: 'Login | Prodental', 
                 langFlag: lang,
                 footerDat: language._footer,
-                authDat: language._auth
+                authDat: language._auth,
+                navbarDat: language._navbar
             });
         }
     },
@@ -68,7 +69,8 @@ module.exports = {
                 title: 'Signup | Prodental', 
                 langFlag: lang,
                 footerDat: language._footer,
-                authDat: language._auth    
+                authDat: language._auth,
+                navbarDat: language._navbar    
             });
         }
     },

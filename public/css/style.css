@@ -21,19 +21,20 @@ nav {
   background: none;
   height: 100px;
   width: 100vw;
-  z-index: 12;
+  z-index: 9999;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   text-align: left;
+  overflow: hidden;
 }
 nav .logo {
   display: flex;
   align-items: center;
-  z-index: 12;
+  overflow: hidden;
 }
 nav .logo img {
   height: 70px;
@@ -425,6 +426,7 @@ footer .copyright-container {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  z-index: 1;
 }
 .section-principal .splide__slide .img-principal-container img {
   width: 70%;
@@ -518,8 +520,10 @@ section.dentalpro-experience {
   align-items: center;
   justify-content: center;
   background-image: url("../../img/home/experience-dentalpro.png");
+  background-position-y: 70%;
+  /* background-position-x: -200%; */
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 50%;
 }
 section.dentalpro-experience h3 {
   font-family: "PT Sans Narrow", sans-serif;
@@ -603,6 +607,10 @@ section.dentalpro-experience button:hover {
 }
 
 @media (max-width: 768px) {
+  * {
+    overflow-x: hidden;
+  }
+
   .section-aboutus {
     margin: 200px 0 100px 0;
     display: flex;
@@ -1015,7 +1023,7 @@ section.dentalpro-experience button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 30%;
+  height: 70%;
 }
 .section-contact .contact-box .info .contact-date .contact-field {
   display: flex;
@@ -2122,11 +2130,13 @@ section.dentalpro-experience button:hover {
   text-align: center;
 }
 .treatments-view .content .splide-container .after-before img {
-  width: 50%;
+  width: 40%;
+  height: 100%;
 }
 .treatments-view .content .splide-container .after-before p {
   font-size: xx-large;
   color: #00BAC6;
+  height: 100%;
 }
 
 @media (max-width: 768px) {

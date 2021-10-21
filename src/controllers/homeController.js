@@ -45,7 +45,8 @@ module.exports = {
           contactDat: language._contact,
           footerDat: language._footer,
           treatments: treatments, 
-          langFlag: lang
+          langFlag: lang,
+          navbarDat: language._navbar
         }
       )
     },
@@ -66,7 +67,8 @@ module.exports = {
         langFlag: lang,
         footerDat: language._footer,
         contactDat: language._contact,
-        aboutusDat: aboutusJSON
+        aboutusDat: aboutusJSON,
+        navbarDat: language._navbar
       });
     },
 
@@ -86,6 +88,7 @@ module.exports = {
         langFlag: lang,
         footerDat: language._footer,
         contactDat: language._contact,
+        navbarDat: language._navbar
       });
     },
 
@@ -114,7 +117,8 @@ module.exports = {
         footerDat: language._footer,
         treatment: treatment,
         treatmentInfo: treatmentsJSON[req.params.id-1],
-        bulletsTreatment: bulletTreatment
+        bulletsTreatment: bulletTreatment,
+        navbarDat: language._navbar
       });
     },
 

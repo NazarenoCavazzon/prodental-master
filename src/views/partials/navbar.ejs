@@ -1,8 +1,8 @@
-<nav>
+<nav style="z-index: 99999; background-color: white">
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn"><i class="fal fa-bars"></i></label>
     <a href="/" class="logo">
-      <img src="/img/logo.png" alt="Dentalpro Logo">
+      <img src="/img/logoFull.png" style="overflow: hidden; transform: scale(2); margin-top: 4vh;" alt="Dentalpro Logo">
     </a>
   
     <ul>
@@ -36,12 +36,12 @@
         </div>
       </li>
 
-      <li><i class="fal fa-home-alt"></i><a id="homeLink">HOME</a></li>
-      <li><i class="fal fa-users"></i><a id="aboutusLink">ABOUT US</a></li>
-      <li><i class="fal fa-tooth"></i><a id="treatmentsLink">TREATMENTS</a></li>
-      <li><i class="fal fa-user-md"></i><a id="staffLink">PROFESSIONALS</a></li>
+      <li><i class="fal fa-home-alt"></i><a id="homeLink"><%- navbarDat.links[0] %></a></li>
+      <li><i class="fal fa-users"></i><a id="aboutusLink"><%- navbarDat.links[1] %></a></li>
+      <li><i class="fal fa-tooth"></i><a id="treatmentsLink"><%- navbarDat.links[2] %></a></li>
+      <li><i class="fal fa-user-md"></i><a id="staffLink"><%- navbarDat.links[3] %></a></li>
       <!-- <li><i class="fal fa-question-circle"></i><a id="faqLink">FAQ</a></li> -->
-      <li><i class="fal fa-envelope"></i><a id="contactLink">CONTACT</a></li>
+      <li onclick="document.getElementById('contactSection').scrollIntoView()"><i class="fal fa-envelope"></i><a id="contactLink"><%- navbarDat.links[4] %></a></li>
       <li class="lang-li">
         <form action="/lang" method="post">
           <input type="text" name="hiddenInput" id="hidden-input-nav" class="hidden-checkbox-input">
