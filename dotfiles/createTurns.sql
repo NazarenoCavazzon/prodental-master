@@ -1,4 +1,4 @@
-INSERT INTO turns VALUES
+INSERT (treatment_id, user_id, date) INTO turns VALUES
 (
   1,
   null,
