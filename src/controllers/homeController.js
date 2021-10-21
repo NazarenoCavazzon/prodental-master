@@ -36,7 +36,7 @@ module.exports = {
           user: user, 
           testimonials: testimonials,
           principalDat: language._principal,
-          aboutusDat: aboutusJSON,
+          aboutusDat: language._aboutus,
           treatmentsDat: language._treatments,
           staffDat: language._staff,
           staffs: staffs,
@@ -59,7 +59,6 @@ module.exports = {
       }else{
         lang=req.cookies.lang;
       }
-
       let language = loadLang(lang);
 
       res.render('aboutus', {
@@ -67,8 +66,8 @@ module.exports = {
         langFlag: lang,
         footerDat: language._footer,
         contactDat: language._contact,
-        aboutusDat: aboutusJSON,
-        navbarDat: language._navbar
+        navbarDat: language._navbar,
+        aboutusDat: language.aboutus
       });
     },
 
