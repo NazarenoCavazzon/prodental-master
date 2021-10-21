@@ -111,6 +111,7 @@ module.exports = {
       }else{
         bulletTreatment = undefined;
       }
+      let treatments = await db.Treatment.findAll();
       
       res.render('treatments', {
         title: 'Treatment | Dentalpro', 
@@ -118,8 +119,10 @@ module.exports = {
         footerDat: language._footer,
         treatment: treatment,
         treatmentInfo: treatmentsJSON[req.params.id-1],
-        bulletsTreatment: bullets,
-        navbarDat: language._navbar
+        bulletsTreatment: bulletTreatment,
+        navbarDat: language._navbar,
+        accountDat: language._account,
+        treatments: treatments
       });
     },
 

@@ -10,6 +10,10 @@ body {
   box-sizing: border-box;
 }
 
+.turn-btn:hover {
+  transform: scale(1.2);
+}
+
 .hidden-checkbox-input {
   position: absolute;
   height: 0;

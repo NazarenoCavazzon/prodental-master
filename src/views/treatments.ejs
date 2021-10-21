@@ -20,7 +20,7 @@
                 <p class="body"><%=treatment.info%></p>
             <% } %>
 
-            <% if(typeof treatment.video != 'undefined'){ %>
+            <% if(treatment.video){ %>
                 <iframe width="420" height="315" src="<%=treatment.video%>"></iframe>
             <% } %>
 
@@ -69,7 +69,7 @@
 
             
             
-            <hr>
+            <!-- <hr> -->
 
             <div class="splide-container">
                 <div class="splide" data-splide='{"type" : "fade" , "drag": false , "rewind":true, "autoplay": false, "pagination": false}'>
@@ -94,9 +94,26 @@
         </div>
             
     </section>
+
+    <section style="margin-top: 15vh; display: flex; align-items: center; justify-content: center; width: 100vw;">
+        <form action="/account/turn/treatment" method="POST" data-aos="fade-up" class="container-layout">
+            <div>
+                <% let i = treatment.id-1 %>
+                    <div>
+                        <input type="radio" checked="checked" value="<%=treatments[i].id%>" name="treatment" id="treatment-<%=treatments[i].id%>" class="hidden-checkbox-input">
+                    </div>
+            </div>
+            <button class="turn-btn" style="transition: 2s; margin-bottom: 10vh; background: none; font-size: 3rem; color: #00BAC6; border: .3vmin solid #00BAC6; padding: 1rem; border-radius: 1.5rem; background: white">SACAR TURNO</button>
+        </form>
+    </section>
     <%- include('partials/fab') %>
     <%- include('partials/footer') %>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
     <!-- Para los carrusels -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
     <script>
