@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
             as: 'user',
             foreignKey: 'user_id'
         })
-    
         Turn.belongsTo(models.Treatment, {
             as: 'treatment',
             foreignKey: 'treatment_id'

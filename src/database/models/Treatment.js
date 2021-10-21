@@ -1,4 +1,5 @@
 const {sequelize, DataTypes} = require('sequelize');
+const Bullets = require('./Bullets');
 
 module.exports = (sequelize, DataTypes) => {
     const Treatment = sequelize.define('Treatment', {
@@ -17,12 +18,17 @@ module.exports = (sequelize, DataTypes) => {
         bullets_json: DataTypes.STRING,
     })
 
-    Treatment.associate = (models =>{
+    Treatment.associate = (models => {
         Treatment.hasMany(models.Turn,{
             as: 'turns',
             foreignKey: 'treatment_id'
         })
+        Treatment.hasMany(models.Bullets,{
+            as: 'bullets', 
+            foreignKey: 'treatment_id'
+        })
     })
+    
     
     return Treatment;
 }

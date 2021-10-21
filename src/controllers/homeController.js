@@ -103,7 +103,9 @@ module.exports = {
       let language = loadLang(lang);
       let bulletTreatment;
       
-      let treatment = await db.Treatment.findOne({title: req.params.title});
+      let treatment = await db.Treatment.findOne({where:{title: req.params.title}});
+      let bullets = await db.Bullets.findAll({where:{treatment_id: treatment.id}});
+      console.log(bullets);
       if (treatment.bullets_json){
         bulletTreatment = require('../../public/json/eng/treatments/'+treatment.bullets_json+'.json');
       }else{
@@ -116,7 +118,7 @@ module.exports = {
         footerDat: language._footer,
         treatment: treatment,
         treatmentInfo: treatmentsJSON[req.params.id-1],
-        bulletsTreatment: bulletTreatment,
+        bulletsTreatment: bullets,
         navbarDat: language._navbar
       });
     },
