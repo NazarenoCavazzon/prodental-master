@@ -11,7 +11,6 @@ CREATE TABLE `users` (
   `name` varchar(20) NOT NULL, 
   `email` varchar(100) DEFAULT NULL UNIQUE,
   `password` varchar(60) NOT NULL,
-  `token` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
