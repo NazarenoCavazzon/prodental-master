@@ -103,12 +103,13 @@ module.exports = {
       let language = loadLang(lang);
       let bulletTreatment;
       
-      let treatment = await db.Treatment.findOne({title: req.params.title});
+      let treatment = await db.Treatment.findOne({where: {title: req.params.title}});
       if (treatment.bullets_json){
         bulletTreatment = require('../../public/json/eng/treatments/'+treatment.bullets_json+'.json');
       }else{
         bulletTreatment = undefined;
       }
+      let treatments = await db.Treatment.findAll();
       
       res.render('treatments', {
         title: 'Treatment | Dentalpro', 
@@ -117,7 +118,9 @@ module.exports = {
         treatment: treatment,
         treatmentInfo: treatmentsJSON[req.params.id-1],
         bulletsTreatment: bulletTreatment,
-        navbarDat: language._navbar
+        navbarDat: language._navbar,
+        accountDat: language._account,
+        treatments: treatments
       });
     },
 
