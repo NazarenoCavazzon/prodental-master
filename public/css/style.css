@@ -1443,8 +1443,9 @@ section.dentalpro-experience button:hover {
   .staff-slide-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+    width: 100vw;
   }
   .section-signup form .welcome {
     width: 100%;
