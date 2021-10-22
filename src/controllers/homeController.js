@@ -141,6 +141,21 @@ module.exports = {
     res.redirect(dire);
   },
   experienceDentalPro: async (req, res) => {
-    res.render("./home/dentalpro");
+    let lang = null;
+    if (req.cookies.lang == undefined) {
+      lang = "eng";
+      res.cookie("lang", "eng");
+    } else {
+      lang = req.cookies.lang;
+    }
+
+    let language = loadLang(lang);
+    res.render("dentalpro", {
+      title: 'Experiencia dentalpro',
+      footerDat: language._footer,
+      langFlag: lang,
+      navbarDat: language._navbar,
+      experienciaDat: language._experiencia
+    });
   },
 };

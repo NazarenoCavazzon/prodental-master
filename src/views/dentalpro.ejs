@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <%-include('partials/head')%>
+</head>
 <body>
-    
+    <%- include('partials/navbar') %>
+    <section class="view-aboutus">
+        <div class="text-container">
+            <div class="title-container">
+                <h3>EXPERIENCIA</h3>
+                <h4>DENTALPRO</h4>
+            </div>
+        </div>
+        <div class="list">
+            <p class="list-title">Porque somos una experiencia unica</p>
+            <% for (let i = 0; i < experienciaDat.bulletsUnique.length; i++) { %>
+                <div class="field <%= i%2==0 ? 'par' : 'impar'%> ">
+                    <div class="idIcon"><i></i></div><p><%=experienciaDat.bulletsUnique[i]%></p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+    <%- include('partials/fab') %>
+    <%- include('partials/footer') %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/navLinks.js"></script>
 </body>
 </html>
