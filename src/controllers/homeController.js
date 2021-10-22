@@ -26,7 +26,7 @@ module.exports = {
     }
 
     let testimonials = await db.Testimonial.findAll({
-      where: { lang: lang }
+      where: { lang: lang },
     });
     let treatments = await db.Treatment.findAll({
       where: { lang: lang },
@@ -50,7 +50,8 @@ module.exports = {
       treatments: treatments,
       langFlag: lang,
       navbarDat: language._navbar,
-      experienciaDat: language.experiencia
+      experienciaDat: language.experiencia,
+      dentalPro: language.dentalPro,
     });
   },
 
@@ -71,7 +72,7 @@ module.exports = {
       contactDat: language._contact,
       navbarDat: language._navbar,
       aboutusDat: language.aboutus,
-      experienciaDat: language._experiencia
+      experienciaDat: language._experiencia,
     });
   },
   experienceDentalPro: async (req, res) => {
@@ -85,7 +86,7 @@ module.exports = {
 
     let language = loadLang(lang);
     res.render("dentalpro", {
-      title: 'Experiencia dentalpro',
+      title: "Experiencia dentalpro",
       experienciaDat: language._experiencia,
       footerDat: language._footer,
       langFlag: lang,
@@ -111,7 +112,7 @@ module.exports = {
       footerDat: language._footer,
       contactDat: language._contact,
       navbarDat: language._navbar,
-      experienciaDat: language._experiencia
+      experienciaDat: language._experiencia,
     });
   },
 
@@ -127,7 +128,7 @@ module.exports = {
     let language = loadLang(lang);
 
     let treatment = await db.Treatment.findOne({
-      where: { treatment: req.params.title , lang: lang },
+      where: { treatment: req.params.title, lang: lang },
     });
     let bullets = await db.Bullets.findAll({
       where: { treatment_id: treatment.id },
@@ -145,7 +146,7 @@ module.exports = {
       accountDat: language._account,
       treatments: treatments,
       buttonText: language._buttonText,
-      experienciaDat: language._experiencia
+      experienciaDat: language._experiencia,
     });
   },
 
