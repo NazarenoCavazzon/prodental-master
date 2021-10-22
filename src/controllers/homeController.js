@@ -49,8 +49,8 @@ module.exports = {
       footerDat: language._footer,
       treatments: treatments,
       langFlag: lang,
-      experienciaDat: language._experiencia,
       navbarDat: language._navbar,
+      experienciaDat: language._experiencia
     });
   },
 
