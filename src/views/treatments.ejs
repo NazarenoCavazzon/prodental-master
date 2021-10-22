@@ -52,17 +52,17 @@
                         <li class="bullet <%=bulletsTreatment[i].icon%>">
                             <span class="titulo"><%=bulletsTreatment[i].title%>:</span>
                             <div class="desc">
-                                <% if (bulletsTreatment[i].icon) { %>
-                                    <% if (treatment.id > 9){ %>
+                                <% if (bulletsTreatment[i].icon == 'number') { %>
+                                    <% if (treatment.id > 9) { %>
                                         <div class="iconWithNumber">
-                                        <!-- <span class="idNumber" id=""><%=i-9%></span> -->
-                                        <img src="/img/treatments/treatment-<%=treatment.id-9%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
+                                            <span class="idNumber"><%=i%></span>
+                                            <img src="/img/treatments/treatment-<%=treatment.id - 9%>-bullet.png" class="imgIcon" alt="">
                                         </div>
                                     <% } else { %>
-                                    <div class="iconWithNumber">
-                                        <!-- <span class="idNumber" id=""><%=i%></span> -->
-                                        <img src="/img/treatments/treatment-<%=treatment.id%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
-                                    </div>
+                                        <div class="iconWithNumber">
+                                            <span class="idNumber"><%=i%></span>
+                                            <img src="/img/treatments/treatment-<%=treatment.id%>-bullet.png" class="imgIcon" alt="">
+                                        </div>
                                     <% } %>
                                 <% } else { %>
                                     <img src="/img/treatments/<%=treatment.image_principal%>.png" alt="">
@@ -127,7 +127,7 @@
                         <input type="radio" checked="checked" value="<%=treatments[i].id%>" name="treatment" id="treatment-<%=treatments[i].id%>" class="hidden-checkbox-input">
                     </div>
             </div>
-            <button class="turn-btn" style="transition: 2s; margin-bottom: 10vh; background: none; font-size: 3rem; color: #00BAC6; border: .3vmin solid #00BAC6; padding: 1rem; border-radius: 1.5rem; background: white">SACAR TURNO</button>
+            <button class="turn-btn" style="transition: 2s; margin-bottom: 10vh; background: none; font-size: 3rem; color: #00BAC6; border: .3vmin solid #00BAC6; padding: 1rem; border-radius: 1.5rem; background: white"><%=buttonText.text%></button>
         </form>
     </section>
     <%- include('partials/fab') %>

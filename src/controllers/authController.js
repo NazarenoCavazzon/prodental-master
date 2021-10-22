@@ -1,20 +1,24 @@
 const db = require('../database/models');
 const bcrypt = require('bcrypt');
 const loadLang = require('./loadLangController');
+const url = require('url');
+
+var cookieParser = require('cookie-parser');
 
 module.exports = {
+
     login: (req,res) =>{
-        if (req.session.userLog){
+        if (req.cookies.logged){
             res.redirect('/account');
         }else{
             let lang = null;
             if (req.cookies.lang == undefined){
-              lang='eng';
+                lang='eng';
             }else{
-              lang=req.cookies.lang;
+                lang=req.cookies.lang;
             }
             let language = loadLang(lang);
-
+            
             res.render('login', {
                 title: 'Login | Prodental', 
                 langFlag: lang,
@@ -25,7 +29,8 @@ module.exports = {
         }
     },
     logout: (req,res) =>{
-        if (req.session.userLog){
+        if (req.cookies.logged){
+            res.clearCookie("logged");
             req.session.destroy();
         }
         res.redirect('/');
@@ -42,8 +47,10 @@ module.exports = {
             if (bcrypt.compare(req.body.password,user.password)){
                 req.session.userLog = user.id; 
                 if (user.dataValues.is_admin){
+                    res.cookie('logged', true, {expire : new Date() + 900000});
                     res.redirect('/admin/');
                 }else{
+                    res.cookie('logged', true, {expire : new Date() + 900000});
                     res.redirect('/account');
                 }
             }
@@ -62,17 +69,14 @@ module.exports = {
 
         let language = loadLang(lang);
 
-        if (req.session.userLog){
-            res.redirect('/account');
-        }else{
-            res.render('signup', {
-                title: 'Signup | Prodental', 
-                langFlag: lang,
-                footerDat: language._footer,
-                authDat: language._auth,
-                navbarDat: language._navbar    
-            });
-        }
+        res.render('signup', {
+            title: 'Signup | Prodental', 
+            langFlag: lang,
+            footerDat: language._footer,
+            authDat: language._auth,
+            navbarDat: language._navbar    
+        });
+        
     },
     processSignup: async (req,res)  =>{
 
@@ -81,9 +85,12 @@ module.exports = {
               name: req.body.firstName + ' '+req.body.lastName,
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password,10) 
-            })
-            
-            res.redirect('/login');
+            });
+
+            req.session.userLog = user.id; 
+            res.cookie('logged', true, {expire : new Date() + 900000});
+
+            res.redirect('/account');
             
           } catch (error) {
             console.log(error);

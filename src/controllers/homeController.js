@@ -25,7 +25,9 @@ module.exports = {
       });
     }
 
-    let testimonials = await db.Testimonial.findAll();
+    let testimonials = await db.Testimonial.findAll({
+      where: { lang: lang }
+    });
     let treatments = await db.Treatment.findAll({
       where: { lang: lang },
       includes: ["images"],
@@ -103,7 +105,7 @@ module.exports = {
     let language = loadLang(lang);
 
     let treatment = await db.Treatment.findOne({
-      where: { title: req.params.title },
+      where: { treatment: req.params.title , lang: lang },
     });
     let bullets = await db.Bullets.findAll({
       where: { treatment_id: treatment.id },
@@ -120,6 +122,7 @@ module.exports = {
       navbarDat: language._navbar,
       accountDat: language._account,
       treatments: treatments,
+      buttonText: language._buttonText,
     });
   },
 
