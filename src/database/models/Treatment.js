@@ -16,8 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         footer_title: DataTypes.STRING,
         bullets_title: DataTypes.STRING,
         bullets_json: DataTypes.STRING,
-        lang: DataTypes.STRING,
-        treatment: DataTypes.INTEGER,
     })
 
     Treatment.associate = (models => {

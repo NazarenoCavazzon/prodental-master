@@ -8,7 +8,6 @@ const loadLang = (lang) =>{
         _principal: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/principal.json'))),
         _aboutus: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/aboutus.json'))),    
         aboutus: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/aboutus.json'))),    
-        _buttonText: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/buttonText.json'))),    
         _treatments: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/treatments.json'))),    
         _staff: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/staff.json'))),    
         _testimonials: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/testimonials.json'))),    
