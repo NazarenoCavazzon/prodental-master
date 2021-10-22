@@ -1,6 +1,6 @@
 {
     "titles": ["INF. DE CONTACTO", "ENVIAR MENSAJE"],
-    "contactMed": ["Main Street", "INFO@DENTALPRO.COM", "555) 5555-1234"],
+    "contactMed": ["Juramento 2089 of.701/703", "INFO@DENTALPRO.COM", "11 3017-2090"],
     "messageLabels": ["NOMBRE", "APELLIDO", "CORREO", "ASUNTO", "MENSAJE"],
     "messageSendButton": "ENVIAR"
 }
