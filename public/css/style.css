@@ -12,6 +12,9 @@ body {
 .login-btn {
   height: 25%;
 }
+.login-btn {
+  height: 15%;
+}
 .turn-btn:hover {
   transform: scale(1.2);
 }
