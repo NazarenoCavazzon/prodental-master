@@ -63,7 +63,7 @@ nav ul {
 nav ul li {
   font-family: "PT Sans Narrow", sans-serif;
   font-weight: 700;
-  color: #A7A7A7;
+  color: #a7a7a7;
   list-style: none;
   margin: 0 5px;
   letter-spacing: 1px;
@@ -93,7 +93,7 @@ nav ul li .login .user .welcome {
 }
 nav ul li .login .user .name {
   text-transform: uppercase;
-  color: #00BAC6;
+  color: #00bac6;
 }
 nav ul li .login .account-button {
   display: none;
@@ -155,7 +155,7 @@ nav.scroll ul li {
     order: -1;
   }
   nav ul li .login {
-    background: #00BAC6;
+    background: #00bac6;
     width: 100%;
     color: white;
     display: flex;
@@ -163,7 +163,8 @@ nav.scroll ul li {
     align-items: flex-start;
     padding: 30px 0 30px 30px;
   }
-  nav ul li .login .user .fal, nav ul li .login .user .name {
+  nav ul li .login .user .fal,
+  nav ul li .login .user .name {
     display: none;
   }
   nav ul li .login .user .welcome {
@@ -179,7 +180,7 @@ nav.scroll ul li {
     display: flex;
     align-items: center;
     background: white;
-    color: #00BAC6;
+    color: #00bac6;
     border: none;
     margin-right: 10px;
     padding: 5px 20px;
@@ -285,13 +286,13 @@ nav.scroll ul li {
 
 .item-1 {
   transition-delay: 0.3s;
-  background: #4FCE5D;
+  background: #4fce5d;
 }
 
 .item-2 {
   transition-delay: 0.2s;
   margin-bottom: 60px;
-  background: #E5E5E5;
+  background: #e5e5e5;
 }
 
 .item-1 img,
@@ -395,7 +396,7 @@ footer .copyright-container {
 }
 .nav-account .dropdown .dropdown-button {
   background-color: white;
-  color: #00BAC6;
+  color: #00bac6;
   text-transform: uppercase;
 }
 .nav-account .dropdown .dropdown-menu .dropdown-item {
@@ -451,7 +452,7 @@ footer .copyright-container {
 .section-principal .text-container h1 {
   font-size: 60px;
   width: 30%;
-  color: #00BAC6;
+  color: #00bac6;
 }
 .section-principal .text-container h3 {
   font-size: 40px;
@@ -459,9 +460,9 @@ footer .copyright-container {
   color: #686868;
 }
 .section-principal .text-container button {
-  border: 3px solid #00BAC6;
+  border: 3px solid #00bac6;
   border-radius: 25px;
-  color: #00BAC6;
+  color: #00bac6;
   font-weight: 700;
   transition: all 0.3s ease;
   margin-top: 15px;
@@ -470,7 +471,7 @@ footer .copyright-container {
 }
 .section-principal .text-container button:hover {
   cursor: pointer !important;
-  background: #00BAC6 !important;
+  background: #00bac6 !important;
   color: white !important;
 }
 
@@ -483,7 +484,8 @@ footer .copyright-container {
     text-align: center;
     width: 100%;
   }
-  .section-principal .text-container h1, .section-principal .text-container h3 {
+  .section-principal .text-container h1,
+  .section-principal .text-container h3 {
     width: 100%;
   }
   .section-principal .splide__slide .img-principal-container {
@@ -503,7 +505,8 @@ footer .copyright-container {
     text-align: center;
     width: 100%;
   }
-  .section-principal .text-container h1, .section-principal .text-container h3 {
+  .section-principal .text-container h1,
+  .section-principal .text-container h3 {
     width: 100%;
   }
   .section-principal .splide__slide .img-principal-container {
@@ -541,17 +544,17 @@ section.dentalpro-experience button {
   border-radius: 10px;
   padding: 10px 40px;
   border: none;
-  color: #00BAC6;
+  color: #00bac6;
   text-transform: uppercase;
   font-size: large;
   font-family: "PT Sans Narrow", sans-serif;
-  border: 2px solid #00BAC6;
+  border: 2px solid #00bac6;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   font-weight: bold;
 }
 section.dentalpro-experience button:hover {
-  background-color: #00BAC6;
+  background-color: #00bac6;
   color: white;
 }
 
@@ -591,22 +594,22 @@ section.dentalpro-experience button:hover {
   font-family: "PT Sans Narrow", sans-serif;
   font-size: 20px;
   line-height: 1.7;
-  color: #A7A7A7;
+  color: #a7a7a7;
 }
 .section-aboutus .text-container a button {
   padding: 5px 10px;
   width: 100%;
   height: 40px;
-  border: 3px solid #00BAC6;
+  border: 3px solid #00bac6;
   border-radius: 25px;
-  color: #00BAC6;
+  color: #00bac6;
   font-weight: 700;
   transition: all 0.3s ease;
   margin-top: 15px;
 }
 .section-aboutus .text-container a button:hover {
   cursor: pointer;
-  background: #00BAC6;
+  background: #00bac6;
   color: white;
 }
 
@@ -626,7 +629,7 @@ section.dentalpro-experience button:hover {
     z-index: 2;
   }
   .section-aboutus .title-container h1 {
-    color: #00BAC6;
+    color: #00bac6;
     font-size: xx-large;
   }
   .section-aboutus .img-container {
@@ -691,7 +694,7 @@ section.dentalpro-experience button:hover {
   justify-content: center;
 }
 .section-treatments .treatment {
-  background-color: #00BAC6;
+  background-color: #00bac6;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   width: 200px;
@@ -727,7 +730,7 @@ section.dentalpro-experience button:hover {
   background-color: white;
 }
 .section-treatments .treatment:hover .title {
-  color: #00BAC6;
+  color: #00bac6;
 }
 .section-treatments .treatment:hover .after {
   display: flex;
@@ -740,7 +743,7 @@ section.dentalpro-experience button:hover {
 .section-treatments .treatment:hover .after a {
   font-size: xx-large;
   text-decoration: none;
-  color: #00BAC6;
+  color: #00bac6;
   font-family: "PT Sans Narrow", sans-serif;
 }
 .section-treatments .treatment:hover .after a:hover {
@@ -851,7 +854,7 @@ section.dentalpro-experience button:hover {
 }
 .section-testimonials .splide-testimonial .box .testimonial {
   font-size: large;
-  color: #A7A7A7;
+  color: #a7a7a7;
 }
 .section-testimonials .splide-testimonial .box .box-pico {
   align-self: center;
@@ -935,7 +938,11 @@ section.dentalpro-experience button:hover {
 .section-faq .accordion .accordion-item .accordion-item-title p {
   margin: 10px 0;
 }
-.section-faq .accordion .accordion-item .accordion-item-title .accordion-item-toggle-icon {
+.section-faq
+  .accordion
+  .accordion-item
+  .accordion-item-title
+  .accordion-item-toggle-icon {
   font-size: xx-large;
 }
 .section-faq .accordion .accordion-item .accordion-item-content {
@@ -944,14 +951,14 @@ section.dentalpro-experience button:hover {
   padding: 0 50px;
   overflow: hidden;
   transition: all 0.5s ease;
-  color: #A7A7A7;
+  color: #a7a7a7;
   line-height: 1.5;
   background: white;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 .section-faq .accordion .accordion-item.active .accordion-item-title {
-  background: #00BAC6;
+  background: #00bac6;
   color: white;
   margin-bottom: 30px;
 }
@@ -967,7 +974,7 @@ section.dentalpro-experience button:hover {
   border: 2px solid transparent;
   padding: 10px 5px;
   border-radius: 15px;
-  background: #00BAC6;
+  background: #00bac6;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: large;
   color: white;
@@ -980,8 +987,8 @@ section.dentalpro-experience button:hover {
 }
 .section-faq .faq-more-button:hover {
   background-color: white;
-  color: #00BAC6;
-  border: 2px solid #00BAC6;
+  color: #00bac6;
+  border: 2px solid #00bac6;
 }
 
 @media (max-width: 576px) {
@@ -1069,7 +1076,7 @@ section.dentalpro-experience button:hover {
   text-align: center;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: xx-large;
-  color: #00BAC6;
+  color: #00bac6;
 }
 .section-contact .contact-box .message .field {
   width: 40%;
@@ -1081,7 +1088,8 @@ section.dentalpro-experience button:hover {
 .section-contact .contact-box .message .field label {
   color: #686868;
 }
-.section-contact .contact-box .message .field input, .section-contact .contact-box .message .field textarea {
+.section-contact .contact-box .message .field input,
+.section-contact .contact-box .message .field textarea {
   border: none;
   border-bottom: 2px solid silver;
 }
@@ -1096,7 +1104,7 @@ section.dentalpro-experience button:hover {
 .section-contact .contact-box .message .field-button button {
   width: 40%;
   height: 30px;
-  background: #00BAC6;
+  background: #00bac6;
   border: none;
   border-radius: 15px;
   color: white;
@@ -1216,11 +1224,11 @@ section.dentalpro-experience button:hover {
   font-size: x-large;
 }
 .section-login form .form .form-title-container .form-title {
-  color: #00BAC6;
+  color: #00bac6;
   justify-self: flex-start;
 }
 .section-login form .form .form-title-container .form-title.link {
-  color: #A7A7A7;
+  color: #a7a7a7;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -1234,7 +1242,8 @@ section.dentalpro-experience button:hover {
   flex-direction: column;
   justify-content: center;
 }
-.section-login form .form input, .section-login form .form label {
+.section-login form .form input,
+.section-login form .form label {
   width: 100%;
   text-align: left;
 }
@@ -1244,7 +1253,7 @@ section.dentalpro-experience button:hover {
   margin-bottom: 20px;
 }
 .section-login form .form button {
-  background: #00BAC6;
+  background: #00bac6;
   border: none;
   border-radius: 10px;
   padding: 5px 30px;
@@ -1335,11 +1344,11 @@ section.dentalpro-experience button:hover {
   font-size: x-large;
 }
 .section-signup form .form .form-title-container .form-title {
-  color: #00BAC6;
+  color: #00bac6;
   justify-self: flex-start;
 }
 .section-signup form .form .form-title-container .form-title.link {
-  color: #A7A7A7;
+  color: #a7a7a7;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -1353,7 +1362,8 @@ section.dentalpro-experience button:hover {
   flex-direction: column;
   justify-content: center;
 }
-.section-signup form .form input, .section-signup form .form label {
+.section-signup form .form input,
+.section-signup form .form label {
   width: 100%;
   text-align: left;
 }
@@ -1363,7 +1373,7 @@ section.dentalpro-experience button:hover {
   margin-bottom: 20px;
 }
 .section-signup form .form button {
-  background: #00BAC6;
+  background: #00bac6;
   border: none;
   border-radius: 10px;
   padding: 5px 30px;
@@ -1422,7 +1432,7 @@ section.dentalpro-experience button:hover {
 }
 .section-account .welcome .welcome-name {
   text-transform: uppercase;
-  color: #00BAC6;
+  color: #00bac6;
 }
 .section-account .container-layout {
   width: 70%;
@@ -1471,18 +1481,18 @@ section.dentalpro-experience button:hover {
 }
 .section-account .container-layout .button-request button {
   background: none;
-  border: 4px solid #00BAC6;
+  border: 4px solid #00bac6;
   font-family: "PT Sans Narrow", sans-serif;
   margin: 20px 0;
   font-weight: bold;
   font-size: large;
-  color: #00BAC6;
+  color: #00bac6;
   padding: 5px 20px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 .section-account .container-layout .button-request button:hover {
-  background: #00BAC6;
+  background: #00bac6;
   color: white;
 }
 .section-account .container-layout .button-request button:active {
@@ -1531,7 +1541,7 @@ section.dentalpro-experience button:hover {
 }
 .section-turn .step .welcome-name {
   text-transform: uppercase;
-  color: #00BAC6;
+  color: #00bac6;
 }
 .section-turn .container-layout {
   width: 70%;
@@ -1560,13 +1570,30 @@ section.dentalpro-experience button:hover {
   display: flex;
   flex-direction: column;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment {
   background-color: white;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment .title {
-  color: #00BAC6;
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment
+  .title {
+  color: #00bac6;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment .after {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment
+  .after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1574,24 +1601,48 @@ section.dentalpro-experience button:hover {
   color: #686868;
   height: 150px;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment .after button {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment
+  .after
+  button {
   width: 50%;
   height: 30px;
   background: none;
-  border: 4px solid #00BAC6;
+  border: 4px solid #00bac6;
   font-weight: bold;
-  color: #00BAC6;
+  color: #00bac6;
   transition: all 0.3s ease;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment .after button:hover {
-  background: #00BAC6;
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment
+  .after
+  button:hover {
+  background: #00bac6;
   color: white;
 }
-.section-turn .container-layout .container-treatments .treatment-field input.hidden-checkbox-input:checked ~ .treatment .before {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  input.hidden-checkbox-input:checked
+  ~ .treatment
+  .before {
   display: none;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment {
-  background-color: #00BAC6;
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment {
+  background-color: #00bac6;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   width: 150px;
@@ -1606,30 +1657,62 @@ section.dentalpro-experience button:hover {
   z-index: 7;
   transition: all 0.3s ease;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .title {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .title {
   z-index: 8;
   font-family: "PT Sans Narrow", sans-serif;
   color: white;
   font-size: medium;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .after {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .after {
   display: none;
   z-index: 8;
   height: 100%;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .after h6 {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .after
+  h6 {
   padding: 10% 5% 0 5%;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: medium;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .before {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .before {
   z-index: 8;
   height: 100%;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .before img {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .before
+  img {
   height: 150px;
 }
-.section-turn .container-layout .container-treatments .treatment-field .treatment .treatment-background {
+.section-turn
+  .container-layout
+  .container-treatments
+  .treatment-field
+  .treatment
+  .treatment-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -1664,13 +1747,24 @@ section.dentalpro-experience button:hover {
   margin: 5px 0;
   width: 100px;
 }
-.section-turn .container-layout .container-date .date-column .date-field .label-turn {
+.section-turn
+  .container-layout
+  .container-date
+  .date-column
+  .date-field
+  .label-turn {
   text-align: center;
   width: 100%;
-  background-color: #A7A7A7;
+  background-color: #a7a7a7;
 }
-.section-turn .container-layout .container-date .date-column .date-field input[type=radio].input-turn:checked ~ label.label-turn {
-  background-color: #00BAC6;
+.section-turn
+  .container-layout
+  .container-date
+  .date-column
+  .date-field
+  input[type="radio"].input-turn:checked
+  ~ label.label-turn {
+  background-color: #00bac6;
   color: white;
 }
 
@@ -1686,7 +1780,11 @@ section.dentalpro-experience button:hover {
   .section-turn .container-layout {
     width: 95%;
   }
-  .section-turn .container-layout .container-treatments .treatment-field .treatment {
+  .section-turn
+    .container-layout
+    .container-treatments
+    .treatment-field
+    .treatment {
     margin: 10px;
     width: 130px;
   }
@@ -1714,7 +1812,7 @@ section.dentalpro-experience button:hover {
   margin-right: 10px;
 }
 .section-admin .sidebar ul li.active {
-  background-color: #00BAC6;
+  background-color: #00bac6;
 }
 .section-admin .sidebar ul li.active button {
   color: white;
@@ -1735,7 +1833,8 @@ section.dentalpro-experience button:hover {
   justify-content: center;
   align-items: center;
 }
-.section-admin .content .control-section button, .section-admin .content .control-section label {
+.section-admin .content .control-section button,
+.section-admin .content .control-section label {
   margin: 20px 0;
 }
 
@@ -1851,7 +1950,7 @@ section.dentalpro-experience button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #00BAC6;
+  background-color: #00bac6;
   border-radius: 50%;
 }
 .view-aboutus .list .field p {
@@ -1917,9 +2016,10 @@ section.dentalpro-experience button:hover {
     padding-left: 10px;
   }
   .view-aboutus .list .field .idIcon i {
-    color: #00BAC6;
+    color: #00bac6;
   }
-  .view-aboutus .list .field.par, .view-aboutus .list .field.impar {
+  .view-aboutus .list .field.par,
+  .view-aboutus .list .field.impar {
     transform: translateX(0px);
   }
 }
@@ -1963,7 +2063,7 @@ section.dentalpro-experience button:hover {
   padding: 30px;
 }
 .faqs .accordion-item .accordion-item-title {
-  color: #00BAC6;
+  color: #00bac6;
   margin-bottom: 30px;
   font-size: x-large;
   font-weight: bold;
@@ -2087,7 +2187,7 @@ section.dentalpro-experience button:hover {
 }
 .treatments-view .content .bullets .bullet.row .titulo {
   font-weight: bold;
-  background-color: #00BAC6;
+  background-color: #00bac6;
   padding: 5px 20px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
@@ -2114,7 +2214,7 @@ section.dentalpro-experience button:hover {
 }
 .treatments-view .content .bullets .bullet.number .desc .iconWithNumber {
   border: 2px solid white;
-  background-color: #00BAC6;
+  background-color: #00bac6;
   border-radius: 50%;
   padding: 40px;
   width: 60px;
@@ -2122,9 +2222,9 @@ section.dentalpro-experience button:hover {
 }
 .treatments-view .content .bullets .bullet.number .desc .idNumber {
   border-radius: 50%;
-  border: 2px solid #00BAC6;
+  border: 2px solid #00bac6;
   background-color: white;
-  color: #00BAC6;
+  color: #00bac6;
 }
 .treatments-view .content .bullets .bullet.number .desc img.imgIcon {
   width: 50px !important;
@@ -2192,4 +2292,42 @@ section.dentalpro-experience button:hover {
   }
 }
 
+.lang-button {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .lang-li {
+    margin-left: 60px;
+  }
+  .lang-li a {
+    margin-left: 40px;
+  }
+}
+.lang-li a {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 700;
+  color: #a7a7a7;
+  list-style: none;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width: 405px) {
+  .logo-container img {
+    margin: 0px !important;
+  }
+}
+@media (max-width: 365px) {
+  footer {
+    padding: 50px 60px;
+  }
+  .logo-container img {
+    margin: 0px !important;
+  }
+}
+@media (max-width: 235px) {
+  .logo-container img {
+    width: 70px !important;
+  }
+}

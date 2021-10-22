@@ -1,69 +1,90 @@
 <nav style="z-index: 99999; background-color: white">
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn"><i class="fal fa-bars"></i></label>
-    <a href="/" class="logo">
-      <img src="/img/logoFull.png" style="margin-left: 5vmin; overflow: hidden; transform: scale(2); margin-top: 4vh;" alt="Dentalpro Logo">
-    </a>
-  
-    <ul>
-      <li class="log">
-        <div class="login">
-          <% if(typeof user != 'undefined'){ %>
-            <div class="user">
-              <i class="fal fa-user-circle"></i>
-              <h4 class="welcome">WELCOME, <%= user.name %></h4>
-              <a href="/account" class="name"><h4 ><%= user.name %></h4></a>
-              
-            </div>
-            <div class="account-button">
-              <a href="/account">
-                <button>
-                  My Account
-                </button>
-              </a>
-              <a href="/logout">
-                <button>
-                  Logout <i class="fal fa-sign-out-alt"></i>
-                </button>
-              </a>
-            </div>
-          <% } else { %>
-            <div class="not-login">
-              <i class="fal fa-user-circle"></i>
-              <a href="/login"><h4>LOGIN</h4></a>
-            </div>
-          <% } %>
+  <input type="checkbox" id="check" />
+  <label for="check" class="checkbtn"><i class="fal fa-bars"></i></label>
+  <a href="/" class="logo">
+    <img
+      src="/img/logoFull.png"
+      style="
+        margin-left: 5vmin;
+        overflow: hidden;
+        transform: scale(2);
+        margin-top: 4vh;
+      "
+      alt="Dentalpro Logo"
+    />
+  </a>
+
+  <ul>
+    <li class="log">
+      <div class="login">
+        <% if(typeof user != 'undefined'){ %>
+        <div class="user">
+          <i class="fal fa-user-circle"></i>
+          <h4 class="welcome">WELCOME, <%= user.name %></h4>
+          <a href="/account" class="name"><h4><%= user.name %></h4></a>
         </div>
-      </li>
-
-      <li><i class="fal fa-home-alt"></i><a id="homeLink" ><%- navbarDat.links[0] %></a></li>
-      <li><i class="fal fa-users"></i><a id="aboutusLink"><%- navbarDat.links[1] %></a></li>
-      <li><i class="fal fa-tooth"></i><a id="treatmentsLink"><%- navbarDat.links[2] %></a></li>
-      <li><i class="fal fa-user-md"></i><a id="staffLink"><%- navbarDat.links[3] %></a></li>
-      <!-- <li><i class="fal fa-question-circle"></i><a id="faqLink">FAQ</a></li> -->
-      <li onclick="document.getElementById('contactSection').scrollIntoView()"><i class="fal fa-envelope"></i><a id="contactLink"><%- navbarDat.links[4] %></a></li>
-      <li class="lang-li">
-        <form action="/lang" method="post">
-          <input type="text" name="hiddenInput" id="hidden-input-nav" class="hidden-checkbox-input">
-          <a href="">
-            <button class="lang-button" type="submit">
-              <img src="/img/icons/<%=langFlag%>.png">
-            </button>
+        <div class="account-button">
+          <a href="/account">
+            <button>My Account</button>
           </a>
-        </form>
-      </li>
-    </ul>
-  </nav>
+          <a href="/logout">
+            <button>Logout <i class="fal fa-sign-out-alt"></i></button>
+          </a>
+        </div>
+        <% } else { %>
+        <div class="not-login">
+          <i class="fal fa-user-circle"></i>
+          <a href="/login"><h4>LOGIN</h4></a>
+        </div>
+        <% } %>
+      </div>
+    </li>
 
+    <li>
+      <i class="fal fa-home-alt"></i
+      ><a id="homeLink"><%- navbarDat.links[0] %></a>
+    </li>
+    <li>
+      <i class="fal fa-users"></i
+      ><a id="aboutusLink"><%- navbarDat.links[1] %></a>
+    </li>
+    <li>
+      <i class="fal fa-tooth"></i
+      ><a id="treatmentsLink"><%- navbarDat.links[2] %></a>
+    </li>
+    <li>
+      <i class="fal fa-user-md"></i
+      ><a id="staffLink"><%- navbarDat.links[3] %></a>
+    </li>
+    <!-- <li><i class="fal fa-question-circle"></i><a id="faqLink">FAQ</a></li> -->
+    <li onclick="document.getElementById('contactSection').scrollIntoView()">
+      <i class="fal fa-envelope"></i
+      ><a id="contactLink"><%- navbarDat.links[4] %></a>
+    </li>
+    <li class="lang-li">
+      <form action="/lang" method="post">
+        <input
+          type="text"
+          name="hiddenInput"
+          id="hidden-input-nav"
+          class="hidden-checkbox-input"
+        />
+        <button class="lang-button" type="submit">
+          <img src="/img/icons/<%=langFlag%>.png" />
+          <a id="languageLink"><%- navbarDat.links[5] %></a>
+        </button>
+      </form>
+    </li>
+  </ul>
+</nav>
 
-  <script>
-    let locPath = window.location.pathname;
-    let langIcon = document.querySelector('.lang-button');
-    let hiddenNavInput = document.querySelector('#hidden-input-nav');
+<script>
+  let locPath = window.location.pathname;
+  let langIcon = document.querySelector(".lang-button");
+  let hiddenNavInput = document.querySelector("#hidden-input-nav");
 
-    /* MANTENER LA DIRECCIÓN AL CAMBIAR DE IDIOMA */
-    langIcon.addEventListener('click',()=>{
-      hiddenNavInput.setAttribute("value",locPath);
-    })
-
-  </script>
+  /* MANTENER LA DIRECCIÓN AL CAMBIAR DE IDIOMA */
+  langIcon.addEventListener("click", () => {
+    hiddenNavInput.setAttribute("value", locPath);
+  });
+</script>
