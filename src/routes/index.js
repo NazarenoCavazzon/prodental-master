@@ -14,6 +14,6 @@ router.get('/treatments/:title', homeController.treatments);
 router.get('/faq', homeController.faq);
 router.post('/signup', authController.processSignup);
 router.get('/experiencia-dentalpro', homeController.experienceDentalPro);
-router.post('/lang', homeController.langChange)
+router.post('/lang', homeController.langChange);
 
 module.exports = router;

@@ -50,7 +50,7 @@ module.exports = {
       treatments: treatments,
       langFlag: lang,
       navbarDat: language._navbar,
-      experienciaDat: language._experiencia
+      exp: language._experiencia
     });
   },
 
