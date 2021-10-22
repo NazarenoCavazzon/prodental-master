@@ -1,14 +1,14 @@
 <section class="section-staff" id="staffSection">
 
     <h2 data-aos="fade-up" ><%=staffDat.title%></h2>
-
-    <div class="splide" data-splide='{
+  <% let count = 1; %>
+    <div class="splide" id="staffCarousel" data-splide='{
         "type" : "loop", 
         "perMove": 1, 
-        "perPage": 3, 
+        "perPage": 1, 
         "breakpoints": {
             "768": {
-                "perPage":2
+                "perPage":1
             },
             "576": {
                 "perPage":1
@@ -27,17 +27,16 @@
         <div class="splide__track staff-track" >
           <ul class="splide__list">
             <% for (let i = 0; i < staffs.length; i++) { %>
-                <li class="splide__slide">
+                <li class="splide__slide staff-slide-container">
                     <div class="splide-staff" data-aos="fade-up">
                         <img src="/img/home/staff-1.png" alt="" class="img-staff">
                         <h4><%=staffs[i].name%></h4>
                         <h5><%=staffs[i].matricula%></h5>
                     </div>
+                    <p style="text-align: center; width: 35%; border: .1vmin solid #00bac6; padding: 1vmin; border-radius: 1vmin;"><%= staffDat[i] %></p>
                 </li>
             <% } %>
           </ul>
         </div>
       </div>
-
-
 </section>

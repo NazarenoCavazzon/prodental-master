@@ -799,6 +799,7 @@ section.dentalpro-experience button:hover {
   padding: 0 20px;
   font-family: "PT Sans Narrow", sans-serif;
   color: #686868;
+  height: 100%;
 }
 .section-staff .splide-staff img {
   width: 200px;
@@ -815,7 +816,7 @@ section.dentalpro-experience button:hover {
     text-align: center;
   }
   .staff-track {
-    height: 35vh;
+    height: 80vh;
   }
 
   .section-staff {
@@ -1369,6 +1370,14 @@ section.dentalpro-experience button:hover {
   justify-content: center;
   font-size: x-large;
 }
+.staff-slide-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+}
 .section-signup form .form .form-title-container .form-title {
   color: #00bac6;
   justify-self: flex-start;
@@ -1429,6 +1438,12 @@ section.dentalpro-experience button:hover {
   .section-signup form {
     flex-direction: column;
     width: 90%;
+  }
+  .staff-slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .section-signup form .welcome {
     width: 100%;
