@@ -74,6 +74,25 @@ module.exports = {
       experienciaDat: language._experiencia
     });
   },
+  experienceDentalPro: async (req, res) => {
+    let lang = null;
+    if (req.cookies.lang == undefined) {
+      lang = "eng";
+      res.cookie("lang", "eng");
+    } else {
+      lang = req.cookies.lang;
+    }
+
+    let language = loadLang(lang);
+    res.render("dentalpro", {
+      title: 'Experiencia dentalpro',
+      footerDat: language._footer,
+      langFlag: lang,
+      navbarDat: language._navbar,
+      contactDat: language._contact, //Added
+      experienciaDat: language._experiencia
+    });
+  },
 
   faq: (req, res) => {
     let lang = null;
@@ -143,24 +162,5 @@ module.exports = {
       console.log(error);
     }
     res.redirect(dire);
-  },
-  experienceDentalPro: async (req, res) => {
-    let lang = null;
-    if (req.cookies.lang == undefined) {
-      lang = "eng";
-      res.cookie("lang", "eng");
-    } else {
-      lang = req.cookies.lang;
-    }
-
-    let language = loadLang(lang);
-    res.render("dentalpro", {
-      title: 'Experiencia dentalpro',
-      footerDat: language._footer,
-      langFlag: lang,
-      navbarDat: language._navbar,
-      contactDat: language._contact, //Added
-      experienciaDat: language._experiencia
-    });
   },
 };
