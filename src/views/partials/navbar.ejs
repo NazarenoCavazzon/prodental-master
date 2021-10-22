@@ -42,7 +42,24 @@
 
     <li>
       <i class="fal fa-home-alt"></i
-      ><a id="homeLink" href="/" style="color: #A7A7A7; text-decoration: none;"><%- navbarDat.links[0] %></a>
+      ><a id="homeLink"><%- navbarDat.links[0] %></a>
+    </li>
+    <li>
+      <i class="fal fa-users"></i
+      ><a id="aboutusLink"><%- navbarDat.links[1] %></a>
+    </li>
+    <li>
+      <i class="fal fa-tooth"></i
+      ><a id="treatmentsLink"><%- navbarDat.links[2] %></a>
+    </li>
+    <li>
+      <i class="fal fa-user-md"></i
+      ><a id="staffLink"><%- navbarDat.links[3] %></a>
+    </li>
+    <!-- <li><i class="fal fa-question-circle"></i><a id="faqLink">FAQ</a></li> -->
+    <li onclick="document.getElementById('contactSection').scrollIntoView()">
+      <i class="fal fa-envelope"></i
+      ><a id="contactLink"><%- navbarDat.links[4] %></a>
     </li>
     <li class="lang-li">
       <form action="/lang" method="post">
