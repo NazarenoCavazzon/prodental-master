@@ -18,7 +18,7 @@ const loadLang = (lang) =>{
         _navbar: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/navbar.json'))),     
         _auth: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/auth.json'))),     
         _account: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/account.json'))),     
-        _experiencia: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/experiencia.json'))),     
+        _experiencia: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/experiencia.json')))
     }
 }
 
