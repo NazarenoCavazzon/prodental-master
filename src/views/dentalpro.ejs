@@ -13,12 +13,24 @@
             </div>
         </div>
         <div class="list">
-            <p class="list-title">Porque somos una experiencia unica</p>
+            <p class="list-title"><%= experienciaDat.bulletTitle %></p>
             <% for (let i = 0; i < experienciaDat.bulletsUnique.length; i++) { %>
                 <div class="field <%= i%2==0 ? 'par' : 'impar'%> ">
                     <div class="idIcon"><i></i></div><p><%=experienciaDat.bulletsUnique[i]%></p>
                 </div>
             <% } %>
+        </div>
+        <div class="box">
+            <div class="list" style="display: flex; flex-direction: column; align-items: center; width: 100vw;">
+                <p class="list-title"><%= experienciaDat.boxTitle %></p>
+                <ul class="itemBox" style="padding: 2vmin; border-radius: 10vmin; box-shadow: 2vmin 2vmin 10vmin grey; border: 1.2vmin solid #00bac6; display: flex; flex-direction: column; width: 75%;">
+                    <% for (let i = 0; i < experienciaDat.boxItems.length; i++) { %>
+                        <li style="list-style: none;">
+                            <p style="font-size: 1.5rem; padding: 1vmin; margin-bottom: 4vh; text-align: center; width: auto; border-radius: 2.5vmin; <%- i%2 ? 'color: white; background: #00bac6;' : 'color: #00bac6; background: white;' %>"><%= experienciaDat.boxItems[i] %></p>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </section>
     <%- include('partials/fab') %>
