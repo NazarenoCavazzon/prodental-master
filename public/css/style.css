@@ -764,6 +764,9 @@ section.dentalpro-experience button:hover {
 .section-treatments .treatment-carousel-container {
   width: 100%;
 }
+.staff-track {
+  height: 50vh;
+}
 
 @media (max-width: 768px) {
   .section-treatments {
@@ -808,6 +811,9 @@ section.dentalpro-experience button:hover {
 @media (max-width: 576px) {
   h2 {
     text-align: center;
+  }
+  .staff-track {
+    height: 35vh;
   }
 
   .section-staff {
