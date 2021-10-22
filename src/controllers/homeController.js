@@ -153,6 +153,7 @@ module.exports = {
     res.render("dentalpro", {
       title: 'Experiencia dentalpro',
       footerDat: language._footer,
+      contactDat: language._contact,
       langFlag: lang,
       navbarDat: language._navbar,
       experienciaDat: language._experiencia
