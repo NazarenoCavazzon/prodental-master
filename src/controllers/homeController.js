@@ -44,7 +44,6 @@ module.exports = {
       staffDat: language._staff,
       staffs: staffs,
       testimonialsDat: language._testimonials,
-      faqDat: language._faq,
       contactDat: language._contact,
       footerDat: language._footer,
       treatments: treatments,
