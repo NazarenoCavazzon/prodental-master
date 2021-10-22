@@ -86,10 +86,10 @@ module.exports = {
     let language = loadLang(lang);
     res.render("dentalpro", {
       title: 'Experiencia dentalpro',
+      experienciaDat: language._experiencia,
       footerDat: language._footer,
       langFlag: lang,
       navbarDat: language._navbar,
-      experienciaDat: language._experiencia,
       contactDat: language._contact, //Added
     });
   },
