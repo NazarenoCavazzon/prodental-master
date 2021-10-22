@@ -42,7 +42,6 @@ module.exports = {
       aboutusDat: language._aboutus,
       treatmentsDat: language._treatments,
       staffDat: language._staff,
-      experienciaDat: language._experiencia,
       staffs: staffs,
       testimonialsDat: language._testimonials,
       faqDat: language._faq,
@@ -50,6 +49,7 @@ module.exports = {
       footerDat: language._footer,
       treatments: treatments,
       langFlag: lang,
+      experienciaDat: language._experiencia,
       navbarDat: language._navbar,
     });
   },
