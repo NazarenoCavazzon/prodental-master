@@ -1218,7 +1218,7 @@ section.dentalpro-experience button:hover {
   overflow: hidden;
 }
 .section-login form .welcome img {
-  height: 80px;
+  height: 100%;
 }
 .section-login form .welcome h2 {
   color: white;
@@ -1285,9 +1285,11 @@ section.dentalpro-experience button:hover {
 @media (max-width: 768px) {
   .section-login form {
     flex-direction: column;
+    height: 80vh;
   }
   .section-login form .welcome {
     width: 100%;
+    height: 20vh;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0;
   }
