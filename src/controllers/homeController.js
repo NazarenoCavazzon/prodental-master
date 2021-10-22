@@ -71,6 +71,7 @@ module.exports = {
       contactDat: language._contact,
       navbarDat: language._navbar,
       aboutusDat: language.aboutus,
+      experienciaDat: language._experiencia
     });
   },
 
@@ -91,6 +92,7 @@ module.exports = {
       footerDat: language._footer,
       contactDat: language._contact,
       navbarDat: language._navbar,
+      experienciaDat: language._experiencia
     });
   },
 
@@ -124,6 +126,7 @@ module.exports = {
       accountDat: language._account,
       treatments: treatments,
       buttonText: language._buttonText,
+      experienciaDat: language._experiencia
     });
   },
 
