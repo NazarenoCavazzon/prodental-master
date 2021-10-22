@@ -37,6 +37,7 @@ module.exports = {
     res.render("home", {
       title: "HOME | Prodental",
       user: user,
+      experienciaDat: language._experiencia,
       testimonials: testimonials,
       principalDat: language._principal,
       aboutusDat: language._aboutus,
@@ -50,7 +51,6 @@ module.exports = {
       treatments: treatments,
       langFlag: lang,
       navbarDat: language._navbar,
-      experienciaDat: language._experiencia
     });
   },
 
