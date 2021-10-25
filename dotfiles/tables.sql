@@ -1,10 +1,3 @@
--- CREAMOS LA BASE DE DATOS Y LA USAMOS
-
-CREATE DATABASE  IF NOT EXISTS `prodental`;
-USE `prodental`;
-
--- ESTRUCTURA TABLA USUARIOS
-
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -15,9 +8,6 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`)
 );
 
-
--- ESTRUCTURA TABLA TESTIMONIOS --
-
 DROP TABLE IF EXISTS `testimonials`;
 CREATE TABLE `testimonials` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -27,9 +17,6 @@ CREATE TABLE `testimonials` (
   PRIMARY KEY (`id`)
 );
 
-
--- ESTRUCTURA TABLA MEDICOS
-
 DROP TABLE IF EXISTS `staffs`;
 CREATE TABLE `staffs` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -38,16 +25,12 @@ CREATE TABLE `staffs` (
   PRIMARY KEY (`id`)
 );
 
--- ESTRUCTURA TABLA IMAGENES DE TRATAMIENTOS
-
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `ref` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
-
--- ESTRUCTURA TABLA TRATAMIENTOS
 
 DROP TABLE IF EXISTS `treatments`;
 CREATE TABLE `treatments` (
@@ -69,8 +52,6 @@ CREATE TABLE `treatments` (
   PRIMARY KEY (`id`)
 );
 
--- ESTRUCTURA TABLA INTERMEDIA TRATAMIENTOS Y FOTOS
-
 DROP TABLE IF EXISTS `treatments_images`;
 CREATE TABLE `treatments_images` (
   `id` INT NOT NULL AUTO_INCREMENT,
@@ -80,9 +61,6 @@ CREATE TABLE `treatments_images` (
   FOREIGN KEY (`image_fk`) REFERENCES images(`id`),
   FOREIGN KEY (`treatment_fk`) REFERENCES treatments(`id`)
 );
-
-
--- ESTRUCTURA TABLA TURNOS
 
 DROP TABLE IF EXISTS `turns`;
 CREATE TABLE `turns` (
@@ -95,8 +73,6 @@ CREATE TABLE `turns` (
   FOREIGN KEY (`user_id`) REFERENCES users(`id`)
 );
 
-
-DROP TABLE IF EXISTS `bullets`;
 DROP TABLE IF EXISTS `bullets`;
 CREATE TABLE bullets (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -105,4 +81,11 @@ CREATE TABLE bullets (
   `icon` VARCHAR(20),
   `treatment_id` INT,
   FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
+
+DROP TABLE IF EXISTS sponsors;
+CREATE TABLE sponsors ( 
+  id INT AUTO_INCREMENT PRIMARY KEY, 
+  image VARCHAR(1000), 
+  name VARCHAR(50) 
 );

@@ -11,6 +11,9 @@ router.get('/treatments', adminController.treatments);
 router.post('/turn', adminController.turnCreate);
 router.put('/turn', adminController.turnEdit);
 router.delete('/turn', adminController.turnDelete);
+router.get('/sponsors', adminController.sponsors);
+router.post('/sponsors', adminController.sponsorCreate);
+router.delete('/sponsors', adminController.sponsorDelete);
 
 module.exports = router;
 

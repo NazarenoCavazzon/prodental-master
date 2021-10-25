@@ -176,5 +176,42 @@ module.exports = {
         } else {
             res.redirect('/login');
         }
-    }
+    },
+
+    sponsors: async (req, res) => {
+        if (req.cookies.logged){
+            const sponsors = await db.Sponsor.findAll();
+            return res.render('admin/sponsors', {
+                sponsors,
+                title: 'Admin sponsors | Dentalpro',
+            })
+        } else {
+            return res.redirect('/login');
+        }
+    },
+    sponsorCreate: async (req,res) =>{
+
+        if (req.cookies.logged){
+            await db.Sponsor.create({
+                name: req.body.name,
+                image: req.body.image
+            })
+            return res.redirect('/admin/sponsors');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    sponsorDelete: async (req,res) =>{
+        console.log('id', req.body.deleteTurnId)
+        if (req.cookies.logged){
+            await db.Sponsor.destroy({
+                where: {
+                    id: req.body.deleteTurnId
+                }
+            })
+            return res.redirect('/admin/sponsors');
+        } else {
+            res.redirect('/login');
+        }
+    },
 }
