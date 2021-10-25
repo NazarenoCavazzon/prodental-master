@@ -23,7 +23,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form  class="row g-3" action="/admin/banners" method="POST">
+          <form  class="row g-3" action="/admin/treatments" method="POST">
             
             <label for="name" class="col-form-label">Titulo</label>
             <input class="form-control" type="text" name="title" id="title">
@@ -90,7 +90,13 @@
                       <td><%=treatments[i].title%></td>
                       <td>
                         <button class="btn btn-warning"><i class="fal fa-pencil"></i></button>
-                        <button class="btn btn-danger turnField"><i class="fal fa-trash-alt"></i></button>
+                        <button class="btn btn-danger turnField"
+                          data-bs-toggle="modal" 
+                          data-bs-target="#deleteTurnModal"
+                          data-bs-turnTitle="<%=treatments[i].title%>"
+                          data-bs-turnTime="<%=treatments[i].short_description%>"
+                          data-bs-idTurn="<%=treatments[i].id%>"
+                        ><i class="fal fa-trash-alt"></i></button>
                       </td>
                     </tr>
                   <% } %>
@@ -98,6 +104,16 @@
             </table>
         </div>
     </div>
+    <script>
+  let deleteModal = document.getElementById('deleteTurnModal')
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let deleteTurn = document.getElementById('deleteTurn');
+    console.log('att', button.getAttribute('data-bs-idTurn'));
+    deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
+    
+  });
+  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

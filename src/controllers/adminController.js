@@ -115,7 +115,7 @@ module.exports = {
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
-                const treatments = await db.Treatment.findAll();
+                const treatments = await db.Treatment.findAll({ where: { lang: req.cookies.lang }});
 
                 return res.render('admin/treatments', {
                     title: 'Admin treatments | Dentalpro',
@@ -129,11 +129,13 @@ module.exports = {
     treatmentsCreate: async (req,res) =>{
 
         if (req.cookies.logged){
-            await db.Sponsor.create({
-                name: req.body.name,
-                image: req.body.image
+            await db.Treatment.create({
+                title: req.body.title,
+                short_description: req.body.short_description,
+                lang: req.body.lang,
+                treatment: req.body.treatment
             })
-            return res.redirect('/admin/sponsors');
+            return res.redirect('/admin/treatments');
         } else {
             res.redirect('/login');
         }
@@ -141,12 +143,12 @@ module.exports = {
     treatmentsDelete: async (req,res) =>{
         console.log('id', req.body.deleteTurnId)
         if (req.cookies.logged){
-            await db.Sponsor.destroy({
+            await db.Treatment.destroy({
                 where: {
                     id: req.body.deleteTurnId
                 }
             })
-            return res.redirect('/admin/sponsors');
+            return res.redirect('/admin/treatments');
         } else {
             res.redirect('/login');
         }
