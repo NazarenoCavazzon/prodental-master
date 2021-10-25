@@ -1,9 +1,9 @@
 const {sequelize, DataTypes} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-    const Sponsors = sequelize.define('Sponsors', {
+    const Sponsor = sequelize.define('Sponsor', {
         image: DataTypes.STRING,
         name: DataTypes.STRING,
     });
-    return Sponsors;
+    return Sponsor;
 }
