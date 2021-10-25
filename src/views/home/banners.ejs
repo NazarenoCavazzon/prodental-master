@@ -1,9 +1,9 @@
 <% if(banners.length != 0) { %>
-<section class="section-staff" id="staffSection">
+<!-- <section class="section-staff" id="staffSection"> -->
 
-  <h2 data-aos="fade-up" >Banners</h2>
+  <!-- <h2 data-aos="fade-up" >Banners</h2> -->
 <% let count = 1; %>
-  <div class="splide" id="staffCarousel-banner" style="width: 1300px; height: 810px;" data-splide='{
+  <div class="splide" id="staffCarousel-banner" style="width: 100vw; height: 60vw;" data-splide='{
       "type" : "loop", 
       "perMove": 1, 
       "perPage": 1, 
@@ -16,7 +16,7 @@
           }
       }}'>
 
-      <div class="splide__arrows" >
+      <div class="splide__arrows">
           <button class="splide__arrow splide__arrow--prev arrows-staff">
             <i class="fas fa-chevron-left"></i>
           </button>
@@ -25,15 +25,15 @@
           </button>
         </div>
 
-      <div class="splide__track staff-track banner">
+      <div class="splide__track staff-track banner" style="width: 100vw; height: auto; overflow: visible;">
         <ul class="splide__list">
           <% for (let i = 0; i < banners.length; i++) { %>
-              <li class="splide__slide staff-slide-container">
-                <div class="splide-staff" data-aos="fade-up" style="padding: 0;">
-                    <div style=" ">  
-                      <img src="<%=banners[i].image%>" style="width: 1300px; height: inherit ;object-fit: cover; border-radius: 12px;">
+              <li class="splide__slide staff-slide-container banner">
+                <div class="splide-staff" data-aos="fade-up">
+                    <div>  
+                      <img src="<%=banners[i].image%>" style="width: 100vw">
                     </div>
-                      <h4><%=banners[i].name%></h4>
+                      <!-- <h4><%=banners[i].name%></h4> -->
                       <p style="text-align: center;"><%=banners[i].description%></p>
                   </div>
               </li>
@@ -41,5 +41,5 @@
         </ul>
       </div>
     </div>
-</section>
+<!-- </section> -->
 <% } %>

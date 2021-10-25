@@ -2394,3 +2394,8 @@ section.dentalpro-experience button:hover {
     width: 70px !important;
   }
 }
+
+.splide__slide staff-slide-container banner {
+  width: 100vw;
+  height: auto;
+}
