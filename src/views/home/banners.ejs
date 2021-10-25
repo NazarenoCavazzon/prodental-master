@@ -1,0 +1,41 @@
+<section class="section-staff" id="staffSection">
+
+  <h2 data-aos="fade-up" >Banners</h2>
+<% let count = 1; %>
+  <div class="splide" id="staffCarousel" data-splide='{
+      "type" : "loop", 
+      "perMove": 1, 
+      "perPage": 3, 
+      "breakpoints": {
+          "768": {
+              "perPage":2
+          },
+          "576": {
+              "perPage":1
+          }
+      }}'>
+
+      <div class="splide__arrows" >
+          <button class="splide__arrow splide__arrow--prev arrows-staff">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="splide__arrow splide__arrow--next arrows-staff">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+      <div class="splide__track staff-track" >
+        <ul class="splide__list">
+          <% for (let i = 0; i < banners.length; i++) { %>
+              <li class="splide__slide staff-slide-container">
+                  <div class="splide-staff" data-aos="fade-up">
+                      <img src="<%=banners[i].image%>">
+                      <h4><%=banners[i].name%></h4>
+                      <p style="text-align: center;"><%=banners[i].description%></p>
+                  </div>
+              </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+</section>

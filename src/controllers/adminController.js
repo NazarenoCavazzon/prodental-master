@@ -126,22 +126,40 @@ module.exports = {
             res.redirect('/login');
         }
     },
-    turnCreate: async (req,res) =>{
+    bannersCreate: async (req,res) =>{
 
         if (req.cookies.logged){
-            if (req.body.user!='null'){
-                await db.Turn.create({
-                    treatment_id: req.body.treatment,
-                    user_id: req.body.user,
-                    date: req.body.datetime
-                })
-            }else{
-                await db.Turn.create({
-                    treatment_id: req.body.treatment,
-                    date: req.body.datetime
-                })
-            }
-            return res.redirect('/admin/turns');
+            await db.Banner.create({
+                name: req.body.name,
+                image: req.body.image,
+                description: req.body.description
+            })
+            return res.redirect('/admin/banners');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    treatmentsDelete: async (req,res) =>{
+        console.log('id', req.body.deleteTurnId)
+        if (req.cookies.logged){
+            await db.Treatment.destroy({
+                where: {
+                    id: req.body.deleteTurnId
+                }
+            })
+            return res.redirect('/admin/treatments');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    treatmentsCreate: async (req,res) =>{
+
+        if (req.cookies.logged){
+            await db.Treatment.create({
+                treatment_id: req.body.treatment,
+                date: req.body.datetime
+            })
+            return res.redirect('/admin/treatments');
         } else {
             res.redirect('/login');
         }
@@ -149,7 +167,7 @@ module.exports = {
     turnDelete: async (req,res) =>{
 
         if (req.cookies.logged){
-            await db.Turn.destroy({
+            await db.Treatment.destroy({
                 where: {
                     id: req.body.deleteTurnId
                 }
@@ -210,6 +228,43 @@ module.exports = {
                 }
             })
             return res.redirect('/admin/sponsors');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    banners: async (req, res) => {
+        if (req.cookies.logged){
+            const banners = await db.Banner.findAll();
+            return res.render('admin/banners', {
+                banners,
+                title: 'Admin banners | Dentalpro',
+            })
+        } else {
+            return res.redirect('/login');
+        }
+    },
+    bannersCreate: async (req,res) =>{
+
+        if (req.cookies.logged){
+            await db.Banner.create({
+                name: req.body.name,
+                image: req.body.image,
+                description: req.body.description
+            })
+            return res.redirect('/admin/banners');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    bannersDelete: async (req,res) =>{
+        console.log('id', req.body.deleteTurnId)
+        if (req.cookies.logged){
+            await db.Banner.destroy({
+                where: {
+                    id: req.body.deleteTurnId
+                }
+            })
+            return res.redirect('/admin/banners');
         } else {
             res.redirect('/login');
         }

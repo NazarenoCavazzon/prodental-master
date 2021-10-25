@@ -8,12 +8,17 @@ router.get('/turns', adminController.turns);
 router.get('/staff', adminController.staff);
 router.get('/account', adminController.account);
 router.get('/treatments', adminController.treatments);
+router.post('/treatments', adminController.treatmentsCreate);
+router.delete('/treatments', adminController.treatmentsDelete);
 router.post('/turn', adminController.turnCreate);
 router.put('/turn', adminController.turnEdit);
 router.delete('/turn', adminController.turnDelete);
 router.get('/sponsors', adminController.sponsors);
 router.post('/sponsors', adminController.sponsorCreate);
 router.delete('/sponsors', adminController.sponsorDelete);
+router.get('/banners', adminController.banners);
+router.post('/banners', adminController.bannersCreate);
+router.delete('/banners', adminController.bannersDelete);
 
 module.exports = router;
 

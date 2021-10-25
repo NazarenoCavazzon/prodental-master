@@ -34,6 +34,7 @@ module.exports = {
     });
     let staffs = await db.Staff.findAll();
     let sponsors = await db.Sponsor.findAll();
+    let banners = await db.Banner.findAll();
 
     res.render("home", {
       title: "HOME | Prodental",
@@ -53,7 +54,8 @@ module.exports = {
       navbarDat: language._navbar,
       experienciaDat: language.experiencia,
       dentalPro: language.dentalPro,
-      sponsors
+      sponsors,
+      banners
     });
   },
 

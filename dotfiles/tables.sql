@@ -89,3 +89,11 @@ CREATE TABLE sponsors (
   image VARCHAR(1000), 
   name VARCHAR(50) 
 );
+
+DROP TABLE IF EXISTS banners;
+CREATE TABLE banners ( 
+  id INT AUTO_INCREMENT PRIMARY KEY, 
+  image VARCHAR(1000), 
+  name VARCHAR(50),
+  description VARCHAR(250)
+);
