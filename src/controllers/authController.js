@@ -3,8 +3,6 @@ const bcrypt = require('bcrypt');
 const loadLang = require('./loadLangController');
 const url = require('url');
 
-var cookieParser = require('cookie-parser');
-
 module.exports = {
 
     login: (req,res) =>{
@@ -31,7 +29,7 @@ module.exports = {
     logout: (req,res) =>{
         if (req.cookies.logged){
             res.clearCookie("logged");
-            req.session.destroy();
+            res.clearCookie("userLog");
         }
         res.redirect('/');
     },
@@ -45,12 +43,11 @@ module.exports = {
     
         if (user){
             if (bcrypt.compare(req.body.password,user.password)){
-                req.session.userLog = user.id; 
+                res.cookie('logged', true, {expire : new Date() + 900000});
+                res.cookie('userLog', user.id, {expire : new Date() + 900000});
                 if (user.dataValues.is_admin){
-                    res.cookie('logged', true, {expire : new Date() + 900000});
                     res.redirect('/admin/');
                 }else{
-                    res.cookie('logged', true, {expire : new Date() + 900000});
                     res.redirect('/account');
                 }
             }
@@ -87,7 +84,7 @@ module.exports = {
               password: bcrypt.hashSync(req.body.password,10) 
             });
 
-            req.session.userLog = user.id; 
+            res.cookie('userLog', user.id, {expire : new Date() + 900000});
             res.cookie('logged', true, {expire : new Date() + 900000});
 
             res.redirect('/account');

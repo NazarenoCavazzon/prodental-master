@@ -1,7 +1,16 @@
-body {
+splide__track staff-trackbody {
   background-image: url("/img/background.png");
   background-size: cover;
   overflow-x: hidden;
+}
+
+splide__track staff-trackbody sponsor {
+  background-image: url("/img/background.png");
+  background-size: cover;
+  overflow-x: hidden;
+  width: 800px;
+  margin: auto;
+  max-height: 150px;
 }
 
 * {
