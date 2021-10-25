@@ -64,7 +64,11 @@ module.exports = {
                         id: req.cookies.userLog
                     }
                 })
-                let treatments = await db.Treatment.findAll();
+                let treatments = await db.Treatment.findAll({
+                    where:{
+                        lang: lang
+                    }
+                });
                 return res.render('account/turn-treatment',
                 { 
                     treatments: treatments, 
