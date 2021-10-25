@@ -2,13 +2,13 @@
 
   <h2 data-aos="fade-up" >Banners</h2>
 <% let count = 1; %>
-  <div class="splide" id="staffCarousel" data-splide='{
+  <div class="splide" id="staffCarousel-banner" style="width: 1300px; height: 810px;" data-splide='{
       "type" : "loop", 
       "perMove": 1, 
-      "perPage": 3, 
+      "perPage": 1, 
       "breakpoints": {
           "768": {
-              "perPage":2
+              "perPage":1
           },
           "576": {
               "perPage":1
@@ -24,12 +24,14 @@
           </button>
         </div>
 
-      <div class="splide__track staff-track" >
+      <div class="splide__track staff-track banner">
         <ul class="splide__list">
           <% for (let i = 0; i < banners.length; i++) { %>
               <li class="splide__slide staff-slide-container">
-                  <div class="splide-staff" data-aos="fade-up">
-                      <img src="<%=banners[i].image%>">
+                <div class="splide-staff" data-aos="fade-up" style="padding: 0;">
+                    <div style=" ">  
+                      <img src="<%=banners[i].image%>" style="width: 1300px; height: inherit ;object-fit: cover; border-radius: 12px;">
+                    </div>
                       <h4><%=banners[i].name%></h4>
                       <p style="text-align: center;"><%=banners[i].description%></p>
                   </div>

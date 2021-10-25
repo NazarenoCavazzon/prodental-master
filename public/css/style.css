@@ -3,6 +3,13 @@ splide__track staff-trackbody {
   background-size: cover;
   overflow-x: hidden;
 }
+splide__track staff-trackbody banner {
+  background-image: url("/img/background.png");
+}
+#staffCarousel-track-banner{
+  height:810px;
+  width: 1440px
+}
 
 splide__track staff-trackbody sponsor {
   background-image: url("/img/background.png");
