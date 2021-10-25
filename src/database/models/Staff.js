@@ -9,8 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: DataTypes.STRING,
         matricula:DataTypes.STRING,
-    })
-
-    
+    });
     return Staff;
 }
