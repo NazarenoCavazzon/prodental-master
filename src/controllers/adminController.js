@@ -7,7 +7,7 @@ module.exports = {
 
     index: async(req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if(user.dataValues.is_admin){
                 res.redirect('/admin/users');
             }else{
@@ -19,7 +19,7 @@ module.exports = {
     },
     users: async (req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
 
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
@@ -38,7 +38,7 @@ module.exports = {
     },
     staff: async (req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
 
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
@@ -57,7 +57,7 @@ module.exports = {
     turns: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
@@ -96,7 +96,7 @@ module.exports = {
     account: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
@@ -111,7 +111,7 @@ module.exports = {
     treatments: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
@@ -126,15 +126,14 @@ module.exports = {
             res.redirect('/login');
         }
     },
-    bannersCreate: async (req,res) =>{
+    treatmentsCreate: async (req,res) =>{
 
         if (req.cookies.logged){
-            await db.Banner.create({
+            await db.Sponsor.create({
                 name: req.body.name,
-                image: req.body.image,
-                description: req.body.description
+                image: req.body.image
             })
-            return res.redirect('/admin/banners');
+            return res.redirect('/admin/sponsors');
         } else {
             res.redirect('/login');
         }
@@ -142,24 +141,32 @@ module.exports = {
     treatmentsDelete: async (req,res) =>{
         console.log('id', req.body.deleteTurnId)
         if (req.cookies.logged){
-            await db.Treatment.destroy({
+            await db.Sponsor.destroy({
                 where: {
                     id: req.body.deleteTurnId
                 }
             })
-            return res.redirect('/admin/treatments');
+            return res.redirect('/admin/sponsors');
         } else {
             res.redirect('/login');
         }
     },
-    treatmentsCreate: async (req,res) =>{
+    turnCreate: async (req,res) =>{
 
         if (req.cookies.logged){
-            await db.Treatment.create({
-                treatment_id: req.body.treatment,
-                date: req.body.datetime
-            })
-            return res.redirect('/admin/treatments');
+            if (req.body.user!='null'){
+                await db.Turn.create({
+                    treatment_id: req.body.treatment,
+                    user_id: req.body.user,
+                    date: req.body.datetime
+                })
+            }else{
+                await db.Turn.create({
+                    treatment_id: req.body.treatment,
+                    date: req.body.datetime
+                })
+            }
+            return res.redirect('/admin/turns');
         } else {
             res.redirect('/login');
         }
@@ -167,7 +174,7 @@ module.exports = {
     turnDelete: async (req,res) =>{
 
         if (req.cookies.logged){
-            await db.Treatment.destroy({
+            await db.Turn.destroy({
                 where: {
                     id: req.body.deleteTurnId
                 }
