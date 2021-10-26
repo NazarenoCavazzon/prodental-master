@@ -171,8 +171,8 @@ module.exports = {
 
   sendMessage: async function (req, res) {
     await db.Message.create({
-        first_name: req.body.firstName,
-        last_name: req.body.lastName,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
         message: req.body.message,
         subject: req.body.subject

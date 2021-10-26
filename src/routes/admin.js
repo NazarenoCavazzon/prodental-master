@@ -19,6 +19,8 @@ router.delete('/sponsors', adminController.sponsorDelete);
 router.get('/banners', adminController.banners);
 router.post('/banners', adminController.bannersCreate);
 router.delete('/banners', adminController.bannersDelete);
+router.get('/messages', adminController.messages);
+router.delete('/messages', adminController.messagesDelete);
 
 module.exports = router;
 

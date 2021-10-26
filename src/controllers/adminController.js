@@ -278,4 +278,28 @@ module.exports = {
             res.redirect('/login');
         }
     },
+    messages: async (req, res) => {
+        if (req.cookies.logged){
+            const messages = await db.Message.findAll();
+            return res.render('admin/messages', {
+                messages,
+                title: 'Admin messages | Dentalpro',
+            })
+        } else {
+            return res.redirect('/login');
+        }
+    },
+    messagesDelete: async (req,res) =>{
+        console.log('id', req.body.deleteTurnId)
+        if (req.cookies.logged){
+            await db.Message.destroy({
+                where: {
+                    id: req.body.deleteTurnId
+                }
+            })
+            return res.redirect('/admin/messages');
+        } else {
+            res.redirect('/login');
+        }
+    },
 }
