@@ -168,4 +168,15 @@ module.exports = {
     }
     res.redirect(dire);
   },
+
+  sendMessage: async function (req, res) {
+    await db.Message.create({
+        first_name: req.body.firstName,
+        last_name: req.body.lastName,
+        email: req.body.email,
+        message: req.body.message,
+        subject: req.body.subject
+    });
+    return res.redirect('/')
+  }
 };

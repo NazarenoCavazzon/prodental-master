@@ -15,5 +15,6 @@ router.get('/faq', homeController.faq);
 router.post('/signup', authController.processSignup);
 router.get('/experiencia-dentalpro', homeController.experienceDentalPro);
 router.post('/lang', homeController.langChange);
+router.post('/message', homeController.sendMessage);
 
 module.exports = router;

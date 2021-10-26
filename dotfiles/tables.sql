@@ -97,3 +97,15 @@ CREATE TABLE banners (
   name VARCHAR(50),
   description VARCHAR(250)
 );
+
+ALTER TABLE staffs ADD COLUMN image VARCHAR(300);
+
+DROP TABLE IF EXISTS messages;
+CREATE TABLE messages (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(100),
+  last_name VARCHAR(100),
+  email VARCHAR(200),
+  subject VARCHAR(100),
+  message VARCHAR(1000)
+);
