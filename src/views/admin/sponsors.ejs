@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%-include('../partials/head')%>
-    <title>Document</title>
+    <title>Sponsors</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -24,11 +24,13 @@
         <div class="modal-body">
           <form  class="row g-3" action="/admin/sponsors" method="POST">
             
-            <label for="name" class="col-form-label">Nombre</label>
+            <label for="name" class="admin-forms">Nombre</label>
             <input class="form-control" type="text" name="name" id="name">
             
-            <label for="image">URL Imagen</label>
+            <label for="image" class="admin-forms">URL Imagen</label>
             <input class="form-control" type="text" name="image" id="image">
+            <p>Para generar URLS de una imagen <a href="https://es.imgbb.com/">usen esta pagina</a></p>
+
 
         </div>
         <div class="modal-footer d-flex justify-content-center pt-4">
@@ -58,7 +60,7 @@
             <h3>Are you sure to delete?</h3>
             <h5>This action cannot be undoned</h5>
           </div>
-          <div class="moda-footer">
+          <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
             <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
             <form action="/admin/sponsors?_method=DELETE" method="POST">
               <input type="text" id="deleteTurn" name="deleteTurnId" class="hidden-checkbox-input">

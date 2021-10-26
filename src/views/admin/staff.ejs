@@ -5,45 +5,164 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%-include('../partials/head')%>
-    <title>Document</title>
+    <title>Staff</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    
-    <div class="section-admin">
-        <%-include('sidebar')%>
-        <div class="content">
-            <div class="control-section">
-                <button class="btn btn-primary"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#adminTurnCreateModal"
-                >Crear tratamiento</button>
-            </div>
-           
-            <table class="table" style="width: 90%;">
-                <thead>
-                  <tr>
-                    <th scope="col" style="width: 25%;">Name</th>
-                    <th scope="col" style="width: 25%;">Matricule</th>
-                    <th scope="col" style="width: 25%;">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% for (let i = 0; i < staffs.length; i++){ %>
-                    <tr>
-                      <td><%=staffs[i].name%></td>
-                      <td><%=staffs[i].matricula%></td>
-                      <td>
-                        <button class="btn btn-warning"><i class="fal fa-pencil"></i></button>
-                        <button class="btn btn-danger turnField"><i class="fal fa-trash-alt"></i></button>
-                      </td>
-                    </tr>
-                  <% } %>
-                </tbody>
-            </table>
+  <div class="section-admin">
+    <%-include('sidebar')%>
+  <div class="content">
+    <!-- USER CREATE MODAL -->
+  <div class="modal fade" id="createStaffModal" tabindex="-1" aria-labelledby="createStaffModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5>Añadir Staff</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form  class="row g-3" action="/admin/staff" method="POST">
+            
+            <label for="name" class="admin-forms">Nombre</label>
+            <input class="form-control" type="text" name="name" id="name">
+            
+            <label for="matricula" class="admin-forms">Matricula</label>
+            <input class="form-control" type="text" name="matricula" id="matricula">
+            
+            <label for="en_description" class="admin-forms">Descripcion en Ingles</label>
+            <input class="form-control" type="text" name="en_description" id="en_description">
+            
+            <label for="es_description" class="admin-forms">Descripcion en Español</label>
+            <input class="form-control" type="text" name="es_description" id="es_description">
+            
+            <label for="image" class="admin-forms">URL de la Imagen</label>
+            <input class="form-control" type="text" name="image" id="image">
+            <p>Para generar URLS de una imagen <a href="https://es.imgbb.com/">usen esta pagina</a></p>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center pt-4">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-success">Crear</button>
+          </form>
+        </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </div>
+      <div class="control-section">
+          <button class="btn btn-primary" 
+          data-bs-toggle="modal" 
+          data-bs-target="#createStaffModal"
+          >Agregar un nuevo Staff</button>
+      </div>
+
+    <!-- USER EDIT MODAL -->
+  <div class="modal fade" id="editStaffModal" tabindex="-1" aria-labelledby="createStaffModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-body">
+          <form  class="row g-3" method="POST" action="/admin/staff?_method=PUT">
+            
+            <label for="name" class="admin-forms">Nombre</label>
+            <input class="form-control" type="text" name="name" id="name">
+            
+            <label for="matricula" class="admin-forms">Matricula</label>
+            <input class="form-control" type="text" name="matricula" id="matricula">
+            
+            <label for="en_description" class="admin-forms">Descripcion en Ingles</label>
+            <input class="form-control" type="text" name="en_description" id="en_description">
+            
+            <label for="es_description" class="admin-forms">Descripcion en Español</label>
+            <input class="form-control" type="text" name="es_description" id="es_description">
+            
+            <label for="image" class="admin-forms">URL de la Imagen</label>
+            <input class="form-control" type="text" name="image" id="image" value="">
+            <p>Para generar URLS de una imagen <a href="https://es.imgbb.com/">usen esta pagina</a></p>
+            <input type="text" id="editStaff" name="editStaffId" class="hidden-checkbox-input">
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center pt-4">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-success">Editar</button>
+          </form>
+        </div>
+        </div>
+    </div>
+    </div>
+   
+      <!-- DELETE TURN MODAL -->
+    <div class="modal fade" id="deleteStaffModal" tabindex="-1" aria-labelledby="deleteStaffModal" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header">
+              <h5>ATTENTION</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h3>Are you sure to delete?</h3>
+            <h5>This action cannot be undoned</h5>
+          </div>
+          <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
+            <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
+            <form action="/admin/staff?_method=DELETE" method="POST">
+              <input type="text" id="deleteTurn" name="deleteStaffId" class="hidden-checkbox-input">
+              <button type="submit" class="btn btn-success mx-3">Confirm</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <table class="table" style="width: 90%;">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 25%;">Sponsor</th>
+            <th scope="col" style="width: 25%;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < staffs.length; i++){ %>
+            <tr>
+              <td><%=staffs[i].name%></td>
+              <td>
+                <button class="btn btn-warning" data-bs-toggle="modal" 
+                data-bs-target="#editStaffModal"
+                data-bs-turnTitle="<%=staffs[i].name%>"
+                data-bs-turnTime="<%=staffs[i].matricula%>"
+                data-bs-idTurn="<%=staffs[i].id%>"><i class="fal fa-pencil"></i></button>
+
+                <button class="btn btn-danger turnField"
+                          data-bs-toggle="modal" 
+                          data-bs-target="#deleteStaffModal"
+                          data-bs-turnTitle="<%=staffs[i].name%>"
+                          data-bs-turnTime="<%=staffs[i].matricula%>"
+                          data-bs-idTurn="<%=staffs[i].id%>"
+                        ><i class="fal fa-trash-alt"></i></button>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+    </table>
+</div>
+</div>
+<script>
+  let deleteModal = document.getElementById('deleteStaffModal')
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let deleteTurn = document.getElementById('deleteTurn');
+    console.log('att', button.getAttribute('data-bs-idTurn'));
+    deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
+  });    
+  
+  let editStaff = document.getElementById('editStaffModal')
+  editStaff.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let editStaff = document.getElementById('editStaff');
+    console.log('att', button.getAttribute('data-bs-idTurn'));
+    editStaff.setAttribute('value',button.getAttribute('data-bs-idTurn'));
+  });    
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

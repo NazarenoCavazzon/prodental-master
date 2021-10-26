@@ -56,14 +56,14 @@
       <div class="modal-dialog">
           <div class="modal-content">
           <div class="modal-header">
-              <h5>ATTENCION</h5>
+              <h5>ATTENTION</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <h3>Are you sure to delete <span id="turnTitle"></span> date at <span id="turnTime"></span>?</h3>
             <h5>This action cannot be undoned</h5>
           </div>
-          <div class="moda-footer">
+          <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
             <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
             <form action="/admin/turn?_method=DELETE" method="POST">
               <input type="text" id="deleteTurn" name="deleteTurnId" class="hidden-checkbox-input">

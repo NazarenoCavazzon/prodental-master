@@ -6,6 +6,12 @@ splide__track staff-trackbody {
 splide__track staff-trackbody banner {
   background-image: url("/img/background.png");
 }
+
+.admin-forms{
+  padding: 0px; 
+  margin-bottom: -15px;
+}
+
 #staffCarousel-track-banner{
   height:810px;
   width: 1440px

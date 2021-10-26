@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         name: DataTypes.STRING,
         matricula:DataTypes.STRING,
+        en_description:DataTypes.STRING,
+        es_description:DataTypes.STRING,
+        image:DataTypes.STRING,
     });
     return Staff;
 }

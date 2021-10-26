@@ -205,6 +205,86 @@ module.exports = {
         }
     },
 
+    staffCreate: async (req,res) =>{
+        console.log(req.body)
+        if (req.cookies.logged){
+            await db.Staff.create({
+                name: req.body.name,
+                matricula: req.body.matricula,
+                en_description: req.body.en_description,
+                es_description: req.body.es_description,
+                image: req.body.image,
+            })
+            return res.redirect('/admin/staff');
+        } else {
+            res.redirect('/login');
+        }
+    },
+    staffDelete: async (req,res) =>{
+
+        if (req.cookies.logged){
+            await db.Staff.destroy({
+                where: {
+                    id: req.body.deleteStaffId
+                }
+            })
+            return res.redirect('/admin/staff');
+        } else {
+            res.redirect('/login');
+        }
+    },
+
+    staffEdit: async (req,res) =>{
+
+        if (req.cookies.logged){
+            staff = await db.Staff.findOne({
+                where: {
+                    id: req.body.editStaffId
+                }
+            });
+            await console.log("ID: ",req.body.editStaffId);
+            if (req.body.name != ''){
+                staffName = req.body.name;
+            }else{
+                staffName = staff.dataValues.name;
+            }
+            if (req.body.matricula != ''){
+                staffMatricula = req.body.matricula;
+            }else{
+                staffMatricula = staff.dataValues.matricula;
+            }
+            if (req.body.en_description != ''){
+                en_description = req.body.en_description;
+            }else{
+                en_description = staff.dataValues.en_description;
+            }
+            if (req.body.es_description != ''){
+                es_description = req.body.es_description;
+            }else{
+                es_description = staff.dataValues.es_description;
+            }
+            if (req.body.image != ''){
+                staffImage = req.body.image;
+            }else{
+                staffImage = staff.dataValues.image;
+            }
+            await db.Staff.update({
+                name: staffName,
+                matricula: staffMatricula,
+                image: staffImage,
+                es_description: es_description,
+                en_description: en_description
+            },{
+                where: {
+                    id: req.body.editStaffId
+                }
+            })
+            return res.redirect('/admin/staff')
+        } else {
+            res.redirect('/login');
+        }
+    },
+
     sponsors: async (req, res) => {
         if (req.cookies.logged){
             const sponsors = await db.Sponsor.findAll();
