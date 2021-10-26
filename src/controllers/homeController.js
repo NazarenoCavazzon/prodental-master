@@ -43,7 +43,7 @@ module.exports = {
       principalDat: language._principal,
       aboutusDat: language._aboutus,
       treatmentsDat: language._treatments,
-      staffDat: language._staff,
+      staffDat: lang,
       staffs: staffs,
       testimonialsDat: language._testimonials,
       faqDat: language._faq,

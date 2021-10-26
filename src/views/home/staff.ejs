@@ -35,7 +35,11 @@
                         <h4><%=staffs[i].name%></h4>
                         <h5><%=staffs[i].matricula%></h5>
                     </div>
-                    <p style="text-align: center; margin: 1vh; border: .1vmin solid #00bac6; padding: 1vmin; border-radius: 1vmin; max-width: 50%"><%= staffDat[i] %></p>
+                    <% if (staffDat == "esp") { %>
+                      <p style="text-align: center; margin: 1vh; border: .1vmin solid #00bac6; padding: 1vmin; border-radius: 1vmin; max-width: 50%"><%= staffs[i].es_description %></p>
+                    <% } else if (staffDat == "eng") { %>
+                      <p style="text-align: center; margin: 1vh; border: .1vmin solid #00bac6; padding: 1vmin; border-radius: 1vmin; max-width: 50%"><%= staffs[i].en_description %></p>
+                    <% } %>
                 </li>
             <% } %>
           </ul>
