@@ -6,20 +6,20 @@
     <div class="links-container">
         <div class="links">
             <% for (let i = 0; i < footerDat.company.length; i++ ) { %> 
-                <p><%=footerDat.company[i]%></p>
+                <a href="<%=footerDat.links[i]%>" style="color: white; text-decoration: none;"><p><%=footerDat.company[i]%></p></a>
             <% } %>
         </div>
 
         <div class="links">
-            <p>FAQ</p>
-            <p>Contact Us</p>
-            <p>News</p>
+            <a href="/faq" style="color: white; text-decoration: none;">FAQ</a>
+            <a href="/login" style="color: white; text-decoration: none;">Contact Us</p>
+            <a href="https://instagram.com/dental.pro?utm_medium=copy_link" style="color: white; text-decoration: none;">News</p>
         </div>
 
         <div class="links">
-            <p>Reserve</p>
-            <p>Report a Problem</p>
-            <p>Privacy Policy</p>
+            <a href="/login" style="color: white; text-decoration: none;">Reserve</p>
+            <a href="/login" style="color: white; text-decoration: none;">Report a Problem</p>
+            <a href="/" style="color: white; text-decoration: none;">Privacy Policy</p>
         </div>
         <div class="links">
             <p>Install App</p>

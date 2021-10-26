@@ -1,5 +1,6 @@
 {
     "company": ["DENTALPRO", "ABOUT US", "TREATMENTS", "OUR TEAM", "OPINIONS"],
+    "links": ["/", "/aboutus", "/", "/", "/"],
     "info": ["FAQ", "CONTACT", "NEWS"],
     "account": ["APPOINTMENTS", "ACCOUNT", "TERMS AND CONDITIONS"],
     "app": ["Download on Google Play", "Download on the App Store"]
