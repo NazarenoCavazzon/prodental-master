@@ -54,15 +54,15 @@
                         <li class="bullet <%=bulletsTreatment[i].icon%>">
                             <span class="titulo"><%=bulletsTreatment[i].title%>:</span>
                             <div class="desc">
-                                <% if (bulletsTreatment[i].icon == 'number') { %>
+                                <% if (bulletsTreatment[i].icon) { %>
                                     <% if (treatment.id > 9) { %>
                                         <div class="iconWithNumber">
-                                            <span class="idNumber"><%=i%></span>
+                                            <!-- <span class="idNumber"><%=i%></span> -->
                                             <img src="/img/treatments/treatment-<%=treatment.id - 9%>-bullet-<%=i-9%>.png" class="imgIcon" alt="">
                                         </div>
                                     <% } else { %>
                                         <div class="iconWithNumber">
-                                            <span class="idNumber"><%=i%></span>
+                                            <!-- <span class="idNumber"><%=i%></span> -->
                                             <img src="/img/treatments/treatment-<%=treatment.id%>-bullet-<%=i%>.png" class="imgIcon" alt="">
                                         </div>
                                     <% } %>
