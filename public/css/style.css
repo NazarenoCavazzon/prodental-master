@@ -1093,10 +1093,14 @@ section.dentalpro-experience button:hover {
 .section-contact .contact-box .info .social-icons {
   display: flex;
   width: 30%;
+  justify-content: space-evenly;
+  text-decoration: none;
 }
 .section-contact .contact-box .info .social-icons .fab {
   font-size: x-large;
   margin: 0 16px;
+  color: white;
+
 }
 .section-contact .contact-box .message {
   padding: 40px 20px;
