@@ -37,9 +37,9 @@ splide__track staff-trackbody sponsor {
 .login-btn {
   height: 15%;
 }
-.turn-btn:hover {
+/* .turn-btn:hover {
   transform: scale(1.2);
-}
+} */
 
 .hidden-checkbox-input {
   position: absolute;
