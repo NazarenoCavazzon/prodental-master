@@ -31,7 +31,8 @@
     'bullets_treatment1',
     null,
     'Los implantes dentales tienen el mayor índice de éxito y son también la opción que actúa de forma más parecida a los dientes naturales. Ayudan a mantener los niveles de hueso donde se han extraído los dientes. Tienen un índice de éxito excelente y en la mayoría de los casos, duran toda la vida. En términos de aspecto y función, pueden tratarse exactamente igual que un diente natural. En DENTAL PRO  ofrecemos las mejores técnicas de implantes dentales para que nuestros pacientes recuperen su sonrisa. Si te lo estás planteando, no dudes en llamarnos al 6546432154',
-    'esp'
+    'esp',
+    1
 ),
 (
     2,
@@ -48,7 +49,8 @@
     'bullets_treatment2',
     null,
     null,
-    'esp'
+    'esp',
+    2
 ),
 (
     3,
@@ -65,7 +67,8 @@
     'bullets_treatment3',
     '¿Cuándo son aconsejables?',
     'Estas prótesis son aconsejadas en casos de dientes muy destruidos, por grandes caries o traumatismos, en los que una carilla o un empaste tendrían muy escasa retención. Son adecuadas en dientes endodonciados, para dar consistencia a toda la pieza y evitar posibles fracturas en estas piezas que es muy frecuente que se debiliten con el paso del tiempo. Gracias a su alta estética, se utilizan también dichas prótesis en rehabilitaciones de una o varias piezas cuyo color o anatomía no son del agrado del paciente.',
-    'esp'
+    'esp',
+    3
 ),
 (
     4,
@@ -82,7 +85,8 @@
     'bullets_treatment4',
     null,
     null,
-    'esp'
+    'esp',
+    4
 ),
 (
     5,
@@ -99,7 +103,8 @@
     'bullets_treatment5',
     null,
     null,
-    'esp'
+    'esp',
+    5
 ),
 (
     6,
@@ -116,7 +121,8 @@
     'bullets_treatment6',
     null,
     null,
-    'esp'
+    'esp',
+    6
 ),
 (
     7,
@@ -133,7 +139,8 @@
     null,
     null,
     null,
-    'esp'
+    'esp',
+    7
 ),
 (
     8,
@@ -150,7 +157,8 @@
     'bullets_treatment8',
     null,
     null,
-    'esp'
+    'esp',
+    8
 ),
 (
     9,
@@ -167,22 +175,23 @@
     null,
     null,
     null,
-    'esp'
+    'esp',
+    9
 ),
-(10,'Dental Implants','The most modern method to solve this problem is the prosthesis fixed by dental implants.',' Meticulous oral hygiene and regular dental visits are essential for dental implants to be successful in the long term.','treatment-1','What are dental implants?','Dental implants are devices intended to replace teeth and to create, either in the upper jaw or in the mandible, stable, resistant and effective supports on which a prosthesis is adapted in order to return the patient, partially or completely edentulous, to a function adequate and an aesthetic compatible with all its social function. <br> Therefore, a dental implant can be defined as an element that is placed in the place of one or more absent teeth with the aim of serving as an artificial root, on the to be placed, either screwed or cemented, an individual crown or a bridge.','https://www.youtube.com/watch?v=g-i3P-D6p7M','Dental implant treatment at DENTALPRO','At Dental Pro, this treatment is generally a two-part process. In the first step, our dentist surgically places the implant in the jaw, followed by a healing screw. It takes a few months to wait (approximately 3 in the mandible and 5 in the upper jaw) for the implant to heal properly in the bone, a process called "osseointegration", during which periodical check-ups and control digital X-rays will be performed. In the second step, and after this time, the measurements are taken for the manufacture of the crown or bridge that will have the size, shape, color and adjustment that harmonize with the other teeth of the patient. In the second step, and after this time, the measurements are taken for the manufacture of the crown or bridge that will have the size, shape, color and adjustment that harmonize with the other teeth of the patient. Once done, it will be placed by screwing or cementing it and it will remain fixed, allowing the patient to enjoy a totally normal life from the moment they leave the clinic. The patient must also assume the commitment to keep these structures healthy.','','Dental implants have the highest success rate and are also the option that acts most similar to natural teeth. They help maintain bone levels where teeth have been extracted. They have an excellent success rate and in most cases last a lifetime. In terms of appearance and function, they can be treated exactly like a natural tooth. At DENTAL PRO we offer the best dental implant techniques for our patients to regain their smile. If you are considering it, do not hesitate to call us at 6546432154','Reasons to replace missing teeth','bullets_treatment1','eng'),
+(10,'Dental Implants','The most modern method to solve this problem is the prosthesis fixed by dental implants.',' Meticulous oral hygiene and regular dental visits are essential for dental implants to be successful in the long term.','treatment-1','What are dental implants?','Dental implants are devices intended to replace teeth and to create, either in the upper jaw or in the mandible, stable, resistant and effective supports on which a prosthesis is adapted in order to return the patient, partially or completely edentulous, to a function adequate and an aesthetic compatible with all its social function. <br> Therefore, a dental implant can be defined as an element that is placed in the place of one or more absent teeth with the aim of serving as an artificial root, on the to be placed, either screwed or cemented, an individual crown or a bridge.','https://www.youtube.com/watch?v=g-i3P-D6p7M','Dental implant treatment at DENTALPRO','At Dental Pro, this treatment is generally a two-part process. In the first step, our dentist surgically places the implant in the jaw, followed by a healing screw. It takes a few months to wait (approximately 3 in the mandible and 5 in the upper jaw) for the implant to heal properly in the bone, a process called "osseointegration", during which periodical check-ups and control digital X-rays will be performed. In the second step, and after this time, the measurements are taken for the manufacture of the crown or bridge that will have the size, shape, color and adjustment that harmonize with the other teeth of the patient. In the second step, and after this time, the measurements are taken for the manufacture of the crown or bridge that will have the size, shape, color and adjustment that harmonize with the other teeth of the patient. Once done, it will be placed by screwing or cementing it and it will remain fixed, allowing the patient to enjoy a totally normal life from the moment they leave the clinic. The patient must also assume the commitment to keep these structures healthy.','','Dental implants have the highest success rate and are also the option that acts most similar to natural teeth. They help maintain bone levels where teeth have been extracted. They have an excellent success rate and in most cases last a lifetime. In terms of appearance and function, they can be treated exactly like a natural tooth. At DENTAL PRO we offer the best dental implant techniques for our patients to regain their smile. If you are considering it, do not hesitate to call us at 6546432154','Reasons to replace missing teeth','bullets_treatment1','eng',1),
 
-(11,'Orthodontics','Traditional orthodontics with braces. Orthopedics',' Our orthodontic treatments at DENTAL PRO have the advantage of providing us with a healthy mouth, a pleasant-looking smile and teeth with a greater chance of lasting a lifetime.','treatment-2','What is orthodontics?','Orthodontics is a specialty of dentistry that deals with the correction of incorrectly positioned teeth and bones. Teeth in poor position and those that do not articulate properly with each other are difficult to keep clean, risk early loss due to tooth decay and periodontal disease, and cause extra stress on chewing muscles that can lead to headaches. TMJ syndrome and neck, shoulder and back discomfort. In addition, rotated or poorly positioned teeth compromise our aesthetics.','https://www.youtube.com/watch?v=l2uQyBCmj9I','','','','','If you have any of the following conditions, you may need orthodontic treatment:','bullets_treatment2','eng'),
+(11,'Orthodontics','Traditional orthodontics with braces. Orthopedics',' Our orthodontic treatments at DENTAL PRO have the advantage of providing us with a healthy mouth, a pleasant-looking smile and teeth with a greater chance of lasting a lifetime.','treatment-2','What is orthodontics?','Orthodontics is a specialty of dentistry that deals with the correction of incorrectly positioned teeth and bones. Teeth in poor position and those that do not articulate properly with each other are difficult to keep clean, risk early loss due to tooth decay and periodontal disease, and cause extra stress on chewing muscles that can lead to headaches. TMJ syndrome and neck, shoulder and back discomfort. In addition, rotated or poorly positioned teeth compromise our aesthetics.','https://www.youtube.com/watch?v=l2uQyBCmj9I','','','','','If you have any of the following conditions, you may need orthodontic treatment:','bullets_treatment2','eng',2),
 
-(12,'Dentures','Loss of a tooth can be fixed',' All prosthetic systems are effective and thanks to them, not only the shape, but the phonetics and chewing function of the mouth are recovered to a great extent.','treatment-3','What are the dental prostheses?','The immediate replacement of lost teeth is very important for our health. With the exception of the four wisdom teeth, any tooth loss has a negative impact on the rest. And it will not only affect our mouth, but it can even involve the ears, neck, jaw, make it difficult to chew food ... even constituting a deficit in chewing efficiency, with both functional and organic consequences. When a tooth is lost, there is a disorganization of the dental arches, with local consequences such as the separation and inclination of the adjacent teeth, greater plaque formation in these areas and, therefore, a greater possibility of suffering from cavities and periodontal disease ; and distant consequences, the most frequent being disorders of the temporomandibular joint (TMJ). With regard to aesthetics, a large lack of teeth gives a less youthful appearance to the whole face, as more pronounced furrows appear around the mouth and nose.','https://www.youtube.com/watch?v=s9i6psD-Ax8&ab_channel=OrlandoFereira','','','When are they advisable?','These prostheses are recommended in cases of very destroyed teeth, due to large cavities or trauma, in which a veneer or a filling would have very little retention. They are suitable for endodontic teeth, to give consistency to the entire piece and avoid possible fractures in these pieces, which are very often weakened over time. Thanks to their high aesthetics, these prostheses are also used in restorations of one or more pieces whose color or anatomy are not to the liking of the patient.','Types of Dental Prosthesis:','bullets_treatment3','eng'),
+(12,'Dentures','Loss of a tooth can be fixed',' All prosthetic systems are effective and thanks to them, not only the shape, but the phonetics and chewing function of the mouth are recovered to a great extent.','treatment-3','What are the dental prostheses?','The immediate replacement of lost teeth is very important for our health. With the exception of the four wisdom teeth, any tooth loss has a negative impact on the rest. And it will not only affect our mouth, but it can even involve the ears, neck, jaw, make it difficult to chew food ... even constituting a deficit in chewing efficiency, with both functional and organic consequences. When a tooth is lost, there is a disorganization of the dental arches, with local consequences such as the separation and inclination of the adjacent teeth, greater plaque formation in these areas and, therefore, a greater possibility of suffering from cavities and periodontal disease ; and distant consequences, the most frequent being disorders of the temporomandibular joint (TMJ). With regard to aesthetics, a large lack of teeth gives a less youthful appearance to the whole face, as more pronounced furrows appear around the mouth and nose.','https://www.youtube.com/watch?v=s9i6psD-Ax8&ab_channel=OrlandoFereira','','','When are they advisable?','These prostheses are recommended in cases of very destroyed teeth, due to large cavities or trauma, in which a veneer or a filling would have very little retention. They are suitable for endodontic teeth, to give consistency to the entire piece and avoid possible fractures in these pieces, which are very often weakened over time. Thanks to their high aesthetics, these prostheses are also used in restorations of one or more pieces whose color or anatomy are not to the liking of the patient.','Types of Dental Prosthesis:','bullets_treatment3','eng',3),
 
-(13,'Pediatric dentistry','Treatment focused on starting care from childhood.',' The goal of pediatric dentistry is to achieve good oral health from childhood to prevent the onset of oral diseases in adulthood. The essence of pediatric dentistry is prevention, education and diagnosis.','treatment-4','','','','','','','','Treatments indicated for children:','bullets_treatment4','eng'),
+(13,'Pediatric dentistry','Treatment focused on starting care from childhood.',' The goal of pediatric dentistry is to achieve good oral health from childhood to prevent the onset of oral diseases in adulthood. The essence of pediatric dentistry is prevention, education and diagnosis.','treatment-4','','','','','','','','Treatments indicated for children:','bullets_treatment4','eng',4),
 
-(14,'Teeth whitening','Having a healthy mouth means having white teeth',' Looking for a bright white smile? In DENTAL PRO, it is possible. We eliminate and lighten the tone of your teeth so that you obtain surprising and immediate results. Get a youthful and healthy smile back! Safe and effective dental aesthetic treatments that return the smile to our patients.','treatment-5','','','https://www.youtube.com/watch?v=1vwn0XXxdkM','','','','','','bullets_treatment5','eng'),
+(14,'Teeth whitening','Having a healthy mouth means having white teeth',' Looking for a bright white smile? In DENTAL PRO, it is possible. We eliminate and lighten the tone of your teeth so that you obtain surprising and immediate results. Get a youthful and healthy smile back! Safe and effective dental aesthetic treatments that return the smile to our patients.','treatment-5','','','https://www.youtube.com/watch?v=1vwn0XXxdkM','','','','','','bullets_treatment5','eng',5),
 
-(15,'Dental Veneers','A permanent cosmetic solution for fractured, discolored or slightly misaligned teeth.',' In a painless and minimally invasive way, without injections or perforations, the ultra-thin porcelain veneers provide a natural and luminous smile, improving the dental aesthetics of our patients.','treatment-6','','','https://www.youtube.com/watch?v=3_FWYaL_AyE&ab_channel=Periopixel','','','','','','bullets_treatment6','eng'),      
+(15,'Dental Veneers','A permanent cosmetic solution for fractured, discolored or slightly misaligned teeth.',' In a painless and minimally invasive way, without injections or perforations, the ultra-thin porcelain veneers provide a natural and luminous smile, improving the dental aesthetics of our patients.','treatment-6','','','https://www.youtube.com/watch?v=3_FWYaL_AyE&ab_channel=Periopixel','','','','','','bullets_treatment6','eng',6),      
 
-(16,'Preventive dentistry','The best treatment is always prevention.',' In oral health in adults and children, prevention is essential. Detecting any anomaly in time will serve to make the applied treatments more effective. It is important to visit the specialist at least once a year and to maintain oral hygiene habits throughout life.','treatment-7','Indicated treatments','Fluoride, X-rays, Measurement of pockets, Deep cleaning every 6 months and Periodontal exploration and periodontogram','','','','','','','','eng'),
+(16,'Preventive dentistry','The best treatment is always prevention.',' In oral health in adults and children, prevention is essential. Detecting any anomaly in time will serve to make the applied treatments more effective. It is important to visit the specialist at least once a year and to maintain oral hygiene habits throughout life.','treatment-7','Indicated treatments','Fluoride, X-rays, Measurement of pockets, Deep cleaning every 6 months and Periodontal exploration and periodontogram','','','','','','','','eng',7),
 
-(17,'Endodontics','Treatment of procedures performed on the dental pulp',' Endodontic treatment includes all those procedures performed on the dental pulp or part of it.','treatment-8','When is it necessary to perform a root canal?','A root canal is necessary when the pulp is irreversibly affected by deep caries or trauma. In these cases the tooth becomes sensitive to cold, heat, or chewing. The pain can be intermittent or constant. Even the tooth may change color or a phlegmon may appear. Endodontics might also be recommended for teeth that require exhaustive carvings for the subsequent placement of crowns or bridges. After endodontic treatment, you should follow the instructions required by your specialist.','','','','','','Technical means','','eng'),
+(17,'Endodontics','Treatment of procedures performed on the dental pulp',' Endodontic treatment includes all those procedures performed on the dental pulp or part of it.','treatment-8','When is it necessary to perform a root canal?','A root canal is necessary when the pulp is irreversibly affected by deep caries or trauma. In these cases the tooth becomes sensitive to cold, heat, or chewing. The pain can be intermittent or constant. Even the tooth may change color or a phlegmon may appear. Endodontics might also be recommended for teeth that require exhaustive carvings for the subsequent placement of crowns or bridges. After endodontic treatment, you should follow the instructions required by your specialist.','','','','','','Technical means','','eng',8),
 
-(18,'Periodontics','Treatments for all those diseases that are outside the tooth.',' Many people do not realize how common periodontal (around the tooth) diseases are that begin by injuring the gums. Three out of four adults have some type of this disease. In most cases, it is painless and therefore the problem goes unnoticed. However, its early detection and treatment are extremely important, since periodontal disease ends the life of the tooth (mobility, infection, extraction). We remind you that it is a chronic disease, that your professional will try to slow down the evolution to save your teeth and that they remain in your mouth for as long as possible.','treatment-9','What is it about?','Gingivitis, pyorrhea, periodontitis, tooth mobility, etc. Gum problems are infections caused by a film of bacteria ("bacterial plaque"), which adheres to the tooth surface just at the edge of the gums. It can occur at any age, but is usually common after age 40. In the early stages of the disease, called gingivitis, the gums turn red and bleed easily. As the infection progresses to the bone that supports the teeth, it is called periodontitis, and at this time it can cause irreversible damage. When it advances still further, the bone and the tissues that support the tooth are destroyed causing tooth loss. If plaque is not properly removed by brushing, it releases toxins that irritate, inflame, and infect the gums. Later they cause the tissues to separate from the tooth and form a deep space: "periodontal pockets". These pockets, in fact, accumulate more bacteria giving rise to a vicious circle that aggravates the situation, migrating towards the root of the tooth and giving it the appearance of much larger teeth, when what happens is that the bone is reabsorbed and the gum retracts.','','Treatments','Gingivectomy, Scaling and root planing, Periodontal surgery and treatment for gum recession','','','','','eng');
+(18,'Periodontics','Treatments for all those diseases that are outside the tooth.',' Many people do not realize how common periodontal (around the tooth) diseases are that begin by injuring the gums. Three out of four adults have some type of this disease. In most cases, it is painless and therefore the problem goes unnoticed. However, its early detection and treatment are extremely important, since periodontal disease ends the life of the tooth (mobility, infection, extraction). We remind you that it is a chronic disease, that your professional will try to slow down the evolution to save your teeth and that they remain in your mouth for as long as possible.','treatment-9','What is it about?','Gingivitis, pyorrhea, periodontitis, tooth mobility, etc. Gum problems are infections caused by a film of bacteria ("bacterial plaque"), which adheres to the tooth surface just at the edge of the gums. It can occur at any age, but is usually common after age 40. In the early stages of the disease, called gingivitis, the gums turn red and bleed easily. As the infection progresses to the bone that supports the teeth, it is called periodontitis, and at this time it can cause irreversible damage. When it advances still further, the bone and the tissues that support the tooth are destroyed causing tooth loss. If plaque is not properly removed by brushing, it releases toxins that irritate, inflame, and infect the gums. Later they cause the tissues to separate from the tooth and form a deep space: "periodontal pockets". These pockets, in fact, accumulate more bacteria giving rise to a vicious circle that aggravates the situation, migrating towards the root of the tooth and giving it the appearance of much larger teeth, when what happens is that the bone is reabsorbed and the gum retracts.','','Treatments','Gingivectomy, Scaling and root planing, Periodontal surgery and treatment for gum recession','','','','','eng',9);
