@@ -16,32 +16,32 @@
       <div class="modal-dialog">
           <div class="modal-content">
           <div class="modal-header">
-              <h5>Create a turn</h5>
+              <h5>Crear un turno</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form class="row g-3" method="POST" action="/admin/turn">
-              <label class="col-form-label" for="treatment">Treatment</label>
+              <label class="col-form-label" for="treatment">Tratamiento</label>
               <select class="form-select" id="treatment" name="treatment">
                 <% for (let i = 0; i < treatments.length; i++){ %>
                   <option value="<%=treatments[i].id%>"><%=treatments[i].title%></option>
                 <% } %>
               </select>
 
-              <label class="col-form-label" for="user">User</label>
+              <label class="col-form-label" for="user">Usuario</label>
               <select class="form-select" id="user" name="user">
-                <option selected value="null">Not asigned</option>
+                <option selected value="null">No asignado</option>
                 <% for (let j = 1; j < users.length; j++){ %>
                   <option value="<%=users[j].id%>"><%=users[j].name%></option>
                 <% } %>
               </select>
 
-              <label class="col-form-label" for="date">Date and time</label>
+              <label class="col-form-label" for="date">Dia y hora</label>
               <input class="form-control" type="datetime-local" name="datetime" id="date">
 
               <div class="button-container d-flex justify-content-center mt-6">
-                <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-success mx-3">Confirm</button>
+                <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success mx-3">Confirmar</button>
                 
               </div>
             </form>
@@ -56,12 +56,12 @@
       <div class="modal-dialog">
           <div class="modal-content">
           <div class="modal-header">
-              <h5>ATTENTION</h5>
+              <h5>ATENCION</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h3>Are you sure to delete <span id="turnTitle"></span> date at <span id="turnTime"></span>?</h3>
-            <h5>This action cannot be undoned</h5>
+            <h3>Seguro de borrar?</h3>
+            <h5>Esto no puede ser revertido</h5>
           </div>
           <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
             <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
@@ -79,34 +79,34 @@
       <div class="modal-dialog">
           <div class="modal-content">
           <div class="modal-header">
-              <h5>Edit a turn <span id="turnEditTitle"></span></h5>
+              <h5>Editar turno <span id="turnEditTitle"></span></h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form class="row g-3" method="POST" action="/admin/turn?_method=PUT">
-              <label class="col-form-label" for="treatmentEdit">Treatment</label>
+              <label class="col-form-label" for="treatmentEdit">Tratamiento</label>
               <select class="form-select" id="treatmentEdit" name="treatment">
                 <% for (let i = 0; i < treatments.length; i++){ %>
                   <option id="" value="<%=treatments[i].id%>"><%=treatments[i].title_eng%></option>
                 <% } %>
               </select>
 
-              <label class="col-form-label" for="userEdit">User</label>
+              <label class="col-form-label" for="userEdit">Usuario</label>
               <select class="form-select" id="userEdit" name="user">
-                <option selected value="null">Not asigned</option>
+                <option selected value="null">No asignado</option>
                 <% for (let j = 1; j < users.length; j++){ %>
                   <option value="<%=users[j].id%>"><%=users[j].name%></option>
                 <% } %>
               </select>
 
-              <label class="col-form-label" for="dateEdit">Date and time</label>
+              <label class="col-form-label" for="dateEdit">Dia y hora</label>
               <input class="form-control" type="datetime-local" name="datetime" id="dateEdit">
 
               <input type="text" id="hiddenTurnID" class="hidden-checkbox-input" name="idTurn">
 
               <div class="button-container d-flex justify-content-center mt-6">
-                <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-success mx-3">Save</button>
+                <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success mx-3">Guardar</button>
               </div>
             </form>
           </div>
@@ -134,10 +134,10 @@
             <table class="table" style="width: 90%;">
                 <thead>
                   <tr>
-                    <th scope="col" style="width: 25%;">Treatment</th>
-                    <th scope="col" style="width: 25%;">User</th>
-                    <th scope="col" style="width: 25%;">Date</th>
-                    <th scope="col" style="width: 25%;">Actions</th>
+                    <th scope="col" style="width: 25%;">Tratamiento</th>
+                    <th scope="col" style="width: 25%;">Usuario</th>
+                    <th scope="col" style="width: 25%;">Fecha</th>
+                    <th scope="col" style="width: 25%;">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -147,7 +147,7 @@
                       <% if (turns[i].user!=null) { %>
                         <td><%=turns[i].user.name%></td>
                       <% } else { %>
-                        <td>Not assigned</td>
+                        <td>No asignado</td>
                       <% } %>
                       <td><%=turns[i].dataValues.dateParsed%></td>
                       <td>
