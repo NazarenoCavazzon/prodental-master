@@ -115,7 +115,9 @@ module.exports = {
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
-                const treatments = await db.Treatment.findAll({ where: { lang: req.cookies.lang }});
+                const treatments = await db.Treatment.findAll({ 
+                    order: [['treatment', 'ASC']]
+                });
 
                 return res.render('admin/treatments', {
                     title: 'Admin treatments | Dentalpro',
