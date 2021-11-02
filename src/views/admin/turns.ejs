@@ -24,17 +24,17 @@
               <label class="col-form-label" for="treatment">Tratamiento</label>
               <select class="form-select" id="treatment" name="treatment">
                 <% for (let i = 0; i < treatments.length; i++){ %>
-                  <option value="<%=treatments[i].id%>"><%=treatments[i].title%></option>
+                  <option value="<%=treatments[i].treatment%>"><%=treatments[i].title%></option>
                 <% } %>
               </select>
 
-              <label class="col-form-label" for="user">Usuario</label>
+              <!-- <label class="col-form-label" for="user">Usuario</label>
               <select class="form-select" id="user" name="user">
                 <option selected value="null">No asignado</option>
                 <% for (let j = 1; j < users.length; j++){ %>
                   <option value="<%=users[j].id%>"><%=users[j].name%></option>
                 <% } %>
-              </select>
+              </select> -->
 
               <label class="col-form-label" for="date">Dia y hora</label>
               <input class="form-control" type="datetime-local" name="datetime" id="date">
@@ -87,7 +87,7 @@
               <label class="col-form-label" for="treatmentEdit">Tratamiento</label>
               <select class="form-select" id="treatmentEdit" name="treatment">
                 <% for (let i = 0; i < treatments.length; i++){ %>
-                  <option id="" value="<%=treatments[i].id%>"><%=treatments[i].title_eng%></option>
+                  <option id="" value="<%=treatments[i].id%>"><%=treatments[i].title%></option>
                 <% } %>
               </select>
 
@@ -120,9 +120,9 @@
             <div class="control-section">
               <label for="categoryFilter">Filtrar por Categoria</label>
               <select name="" id="categoryFilter">
-                <option disabled selected>Selecciona una categoria</option>
+                <option hidden selected>Selecciona una categoria</option>
                 <% for (let m=0; m < treatments.length; m++) {%>
-                  <option value="<%=treatments[m].id%>">"<%=treatments[m].title%>"</option>
+                  <option value="<%=treatments[m].treatment%>">"<%=treatments[m].title%>"</option>
                   <% } %>
                 </select>
                 <button class="btn btn-primary"
