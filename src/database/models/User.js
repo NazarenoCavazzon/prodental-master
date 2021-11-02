@@ -5,7 +5,10 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         email: DataTypes.STRING,
         password: DataTypes.STRING,
-        is_admin: DataTypes.BOOLEAN
+        is_admin: DataTypes.BOOLEAN,
+        dni: DataTypes.STRING,
+        plan: DataTypes.STRING,
+        security_code: DataTypes.STRING,
     })
 
     User.associate = (models =>{
