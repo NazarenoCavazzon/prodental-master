@@ -57,7 +57,7 @@
       </div>
 
     <!-- USER EDIT MODAL -->
-  <div class="modal fade" id="editStaffModal" tabindex="-1" aria-labelledby="createStaffModal" aria-hidden="true">
+  <div class="modal fade" id="editStaffModal" tabindex="-1" aria-labelledby="editStaffModal" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-body">
@@ -78,7 +78,7 @@
             <label for="image" class="admin-forms">URL de la Imagen</label>
             <input class="form-control" type="text" name="image" id="image" value="">
             <p>Para generar URLS de una imagen <a href="https://es.imgbb.com/">usen esta pagina</a></p>
-            <input type="text" id="editStaff" name="editStaffId" class="hidden-checkbox-input">
+            <input type="text" id="hiddenTurnID" name="hiddenTurnID" class="hidden-checkbox-input">
 
         </div>
         <div class="modal-footer d-flex justify-content-center pt-4">
@@ -128,8 +128,11 @@
               <td>
                 <button class="btn btn-warning" data-bs-toggle="modal" 
                 data-bs-target="#editStaffModal"
-                data-bs-turnTitle="<%=staffs[i].name%>"
-                data-bs-turnTime="<%=staffs[i].matricula%>"
+                data-bs-name="<%=staffs[i].name%>"
+                data-bs-matricula="<%=staffs[i].matricula%>"
+                data-bs-en_description="<%=staffs[i].en_description%>"
+                data-bs-es_description="<%=staffs[i].es_description%>"
+                data-bs-image="<%=staffs[i].image%>"
                 data-bs-idTurn="<%=staffs[i].id%>"><i class="fal fa-pencil"></i></button>
 
                 <button class="btn btn-danger turnField"
@@ -155,13 +158,24 @@
     deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
   });    
   
-  let editStaff = document.getElementById('editStaffModal')
-  editStaff.addEventListener('show.bs.modal', function (event) {
-    let button = event.relatedTarget
-    let editStaff = document.getElementById('editStaff');
-    console.log('att', button.getAttribute('data-bs-idTurn'));
-    editStaff.setAttribute('value',button.getAttribute('data-bs-idTurn'));
-  });    
+  let editModal = document.getElementById('editStaffModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+      let button = event.relatedTarget
+      let nombre = document.getElementById('name');
+      let matricula = document.getElementById('matricula');
+      let es_description = document.getElementById('es_description');
+      let en_description = document.getElementById('en_description');
+      let image = document.getElementById('image');
+      let hiddenTurnID = document.querySelector('#hiddenTurnID');
+
+      treatmentEdit.setAttribute('value',button.getAttribute('data-bs-turnTreatmentId'));
+      nombre.setAttribute('value',button.getAttribute('data-bs-name'));
+      matricula.setAttribute('value',button.getAttribute('data-bs-matricula'));
+      es_description.setAttribute('value',button.getAttribute('data-bs-es_description'));
+      en_description.setAttribute('value',button.getAttribute('data-bs-en_description'));
+      image.setAttribute('value',button.getAttribute('data-bs-image'));
+      hiddenTurnID.value = button.getAttribute('data-bs-idTurn')
+    })   
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
