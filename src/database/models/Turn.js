@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         treatment_id: DataTypes.INTEGER,
         user_id: {
             type: DataTypes.INTEGER,
-            defaultValue: 1
+            defaultValue: 0
         },
         date: DataTypes.DATE
     })

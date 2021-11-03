@@ -170,7 +170,7 @@
                   <% for (let i = 0; i < turns.length; i++){ %>
                     <tr class="campoAFiltrar" data-bs-filterID="<%= turns[i].treatment_id %>" data-bs-filterDNI="<%=turns[i].user.dni%>">
                       <td><%=turns[i].treatment.title%></td>
-                      <% if (turns[i].user.id!=1) { %>
+                      <% if (turns[i].user.id!=0) { %>
                         <td><%=turns[i].user.name%></td>
                         <td><%=turns[i].user.dni%></td>
                       <% } else { %>
