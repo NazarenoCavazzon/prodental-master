@@ -70,6 +70,7 @@ module.exports = {
             }else{
                 let dniList = [];
                 const turns = await db.Turn.findAll({include:['treatment', 'user'], order: [['date', 'ASC']]});
+                console.log(turns)
                 const treatments = await db.Treatment.findAll({where: {lang: 'esp'}});
                 const users = await db.User.findAll({where: {is_admin: false}});
                 for(let user in users){
