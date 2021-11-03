@@ -6,7 +6,10 @@ module.exports = (sequelize, DataTypes) => {
         email: DataTypes.STRING,
         password: DataTypes.STRING,
         is_admin: DataTypes.BOOLEAN,
-        dni: DataTypes.STRING,
+        dni: {
+            type: DataTypes.STRING,
+            defaultValue: "-"
+        },
         plan: DataTypes.STRING,
         security_code: DataTypes.STRING,
     })
