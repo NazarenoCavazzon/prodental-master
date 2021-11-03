@@ -17,10 +17,10 @@ module.exports = {
 
     let user;
 
-    if (req.session.userLog) {
+    if (req.cookies.userLog) {
       user = await db.User.findOne({
         where: {
-          id: req.session.userLog,
+          id: req.cookies.userLog,
         },
       });
     }
