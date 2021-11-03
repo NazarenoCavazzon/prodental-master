@@ -94,23 +94,25 @@
             <table class="table" style="width: 90%;">
                 <thead>
                   <tr>
-                    <th scope="col" style="width: 25%;">Nombre</th>
-                    <th scope="col" style="width: 25%;">Email</th>
-                    <th scope="col" style="width: 25%;">Detalles</th>
-                    <th scope="col" style="width: 25%;">Acciones</th>
+                    <th scope="col" style="width: 20%;">Nombre</th>
+                    <th scope="col" style="width: 20%;">DNI</th>
+                    <th scope="col" style="width: 20%;">Email</th>
+                    <th scope="col" style="width: 20%;">Detalles</th>
+                    <th scope="col" style="width: 20%;">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% for (let i = 1; i < users.length; i++){ %>
                     <tr class="campoAFiltrar">
                       <td><%=users[i].name%></td>
+                      <td><%=users[i].dni%></td>
                       <td><%=users[i].email%></td>
                       <td><button class="btn btn-success"
                         data-bs-toggle="modal" 
                         data-bs-target="#detailUserModal"
                         data-bs-userName="<%=JSON.stringify(users[i].name)%>"
                         data-bs-userEmail="<%=JSON.stringify(users[i].email)%>"
-                        data-bs-userTurnsInfo="<%=JSON.stringify(users[i].turns)%>"
+                        data-bs-userTurnsInfo="<%=treatments[users[i].turns.treatment_id]%>"
                         ><i class="fal fa-search"></i></button></td>
                       <td>
                         <button class="btn btn-warning"><i class="fal fa-pencil"></i></button>
@@ -134,20 +136,9 @@
           let userName = button.getAttribute('data-bs-userName');
           let userTurns = button.getAttribute('data-bs-userTurns');
 
-          // If necessary, you could initiate an AJAX request here
-          // and then do the updating in a callback.
-          // Update the modal's content.
           console.log(JSON.stringify(userName));
           console.log(JSON.stringify(userTurns));
 
-          /* let treatmentTitle = document.querySelector('.modal-body .treatment-title');
-          let treatmentTime = document.querySelector('.modal-body .treatment-time');
-          let treatmentDate = document.querySelector('.modal-body .treatment-date');
-
-          treatmentTitle.innerHTML = turnTitle;
-          treatmentTime.innerHTML = turnTime;
-          treatmentDate.innerHTML = turnDate;
-          cancelHiddenInput.setAttribute('value', turnId); */
       })
   </script>
 
@@ -160,6 +151,7 @@
       // Extract info from data-bs-* attributes
       let userName = button.getAttribute('data-bs-userName');
       let userEmail = button.getAttribute('data-bs-userEmail');
+      console.log(JSON.parse(button.getAttribute('data-bs-userTurnsInfo')))
       let userTurns = JSON.parse(button.getAttribute('data-bs-userTurnsInfo'));
 
       for (let i=0; i<userTurns.length; i++){
@@ -169,21 +161,7 @@
       /* FIELDS DEL MODAL */
       document.querySelector('.modal-body #userDetailName').innerHTML = userName;
       document.querySelector('.modal-body #userDetailEmail').innerHTML = userEmail;
-      /* document.querySelector('.modal-body #userDetailTurns').innerHTML = userTurns; */
-      // If necessary, you could initiate an AJAX request here
-      // and then do the updating in a callback.
-      // Update the modal's content.
-      
-      
 
-      /* let treatmentTitle = document.querySelector('.modal-body .treatment-title');
-      let treatmentTime = document.querySelector('.modal-body .treatment-time');
-      let treatmentDate = document.querySelector('.modal-body .treatment-date');
-
-      treatmentTitle.innerHTML = turnTitle;
-      treatmentTime.innerHTML = turnTime;
-      treatmentDate.innerHTML = turnDate;
-      cancelHiddenInput.setAttribute('value', turnId); */
   })
 </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

@@ -9,6 +9,7 @@ router.get('/staff', adminController.staff);
 router.get('/account', adminController.account);
 router.get('/treatments', adminController.treatments);
 router.post('/treatments', adminController.treatmentsCreate);
+router.put('/treatments', adminController.treatmentsEdit);
 router.delete('/treatments', adminController.treatmentsDelete);
 router.post('/turn', adminController.turnCreate);
 router.put('/turn', adminController.turnEdit);

@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         treatment_id: DataTypes.INTEGER,
-        user_id: DataTypes.INTEGER,
+        user_id: {
+            type: DataTypes.INTEGER,
+            defaultValue: 1
+        },
         date: DataTypes.DATE
     })
 

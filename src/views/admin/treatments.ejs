@@ -6,82 +6,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%-include('../partials/head')%>
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-    
     <div class="section-admin">
         <%-include('sidebar')%>
         <div class="content">
             <div class="control-section">
                 <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="createUserModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5>Crear banner</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form  class="row g-3" action="/admin/treatments" method="POST">
-            
-            <label for="name" class="col-form-label">Titulo</label>
-            <input class="form-control" type="text" name="title" id="title">
-            
-            <label for="image">Descripcion corta</label>
-            <input class="form-control" type="text" name="short_description" id="short_description">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5>Crear banner</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form  class="row g-3" action="/admin/treatments" method="POST">
 
-            <label for="image">Lang [esp / eng]</label>
-            <input class="form-control" type="text" name="lang" id="lang">
+                          <label for="name" class="admin-forms">Titulo</label>
+                          <input class="form-control" type="text" name="title" id="title">
 
-            <label for="image">Treatment (id)</label>
-            <input class="form-control" type="text" name="treatment" id="treatment">
+                          <label for="lang" class="admin-forms">Idioma del Tratamiento</label>
+                          <select name="lang" id="lang" class="form-select">
+                            <option value="esp">Español</option>
+                            <option value="eng">Ingles</option>
+                          </select>
+                          
+                          <label for="short_description" class="admin-forms">Descripcion corta</label>
+                          <input class="form-control" type="text" name="short_description" id="short_description">
 
-        </div>
-        <div class="modal-footer d-flex justify-content-center pt-4">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-success">Crear</button>
-          </form>
-        </div>
-        </div>
-    </div>
-    </div>
-      <div class="control-section">
-          <button class="btn btn-primary" 
-          data-bs-toggle="modal" 
-          data-bs-target="#createUserModal"
-          >Agregar un Tratamiento</button>
-      </div>
-   
+                          <label for="subtitle" class="admin-forms">Subtitulo</label>
+                          <input class="form-control" type="text" name="subtitle" id="subtitle">
+
+                          <label for="image_principal" class="admin-forms">URL de la Imagen</label>
+                          <input class="form-control" type="text" name="image_principal" id="image_principal">
+
+                          <label for="info_title" class="admin-forms">Titulo de Info</label>
+                          <input class="form-control" type="text" name="info_title" id="info_title">
+
+                          <label for="info" class="admin-forms">Info</label>
+                          <textarea class="form-control" name="info" id="info"></textarea>
+
+                          <label for="video_url" class="admin-forms">Video URL</label>
+                          <input class="form-control" type="text" name="video_url" id="video_url">
+
+                          <label for="description_title" class="admin-forms">Titulo de la Descripcion</label>
+                          <input class="form-control" type="text" name="description_title" id="description_title">
+
+                          <label for="description" class="admin-forms">Descripcion</label>
+                          <textarea class="form-control" name="description" id="description"></textarea>
+
+                          <label for="footer_title" class="admin-forms">Titulo del pie de pagina</label>
+                          <input class="form-control" type="text" name="footer_title" id="footer_title">
+                          
+                          <label for="footer" class="admin-forms">Pie de pagina</label>
+                          <textarea class="form-control" name="footer" id="footer"></textarea>            
+
+                          <label for="treatment" class="admin-forms">Codigo de Tratamiento</label>
+                          <input class="form-control" type="text" name="treatment" id="treatment">
+
+                      </div>
+                      <div class="modal-footer d-flex justify-content-center pt-4">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          <button type="submit" class="btn btn-success">Crear</button>
+                        </form>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <div class="control-section">
+              <button class="btn btn-primary" 
+              data-bs-toggle="modal" 
+              data-bs-target="#createUserModal"
+              >Agregar un Tratamiento</button>
+            </div>
+
+            <!-- EDIT TREATMENT MODAL -->
+            <div class="modal fade" id="editTurnModal" tabindex="-1" aria-labelledby="editTurnModal" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <form  class="row g-3" method="POST" action="/admin/treatments?_method=PUT">
+                        
+                        <label for="titleEdit" class="admin-forms">Titulo</label>
+                          <input class="form-control" type="text" name="titleEdit" id="titleEdit">
+
+                          <label for="langEdit" class="admin-forms">Idioma del Tratamiento</label>
+                          <select name="langEdit" id="langEdit" class="form-select">
+                            <option value="esp">Español</option>
+                            <option value="eng">Ingles</option>
+                          </select>
+                          
+                          <label for="short_descriptionEdit" class="admin-forms">Descripcion corta</label>
+                          <textarea class="form-control" name="short_descriptionEdit" id="short_descriptionEdit"></textarea>
+
+                          <label for="subtitleEdit" class="admin-forms">Subtitulo</label>
+                          <input class="form-control" type="text" name="subtitleEdit" id="subtitleEdit">
+
+                          <label for="image_principalEdit" class="admin-forms">URL de la Imagen</label>
+                          <input class="form-control" type="text" name="image_principalEdit" id="image_principalEdit">
+
+                          <label for="info_titleEdit" class="admin-forms">Titulo de Info</label>
+                          <input class="form-control" type="text" name="info_titleEdit" id="info_titleEdit">
+
+                          <label for="infoEdit" class="admin-forms">Info</label>
+                          <textarea class="form-control" name="infoEdit" id="infoEdit"></textarea>
+
+                          <label for="video_urlEdit" class="admin-forms">Video URL</label>
+                          <input class="form-control" type="text" name="video_urlEdit" id="video_urlEdit">
+
+                          <label for="description_titleEdit" class="admin-forms">Titulo de la Descripcion</label>
+                          <input class="form-control" type="text" name="description_titleEdit" id="description_titleEdit">
+
+                          <label for="descriptionEdit" class="admin-forms">Descripcion</label>
+                          <textarea class="form-control" name="descriptionEdit" id="descriptionEdit"></textarea>
+
+                          <label for="footer_titleEdit" class="admin-forms">Titulo del pie de pagina</label>
+                          <input class="form-control" type="text" name="footer_titleEdit" id="footer_titleEdit">
+                          
+                          <label for="footerEdit" class="admin-forms">Pie de pagina</label>
+                          <textarea class="form-control" name="footerEdit" id="footerEdit"></textarea>            
+
+                          <label for="treatmentEdit" class="admin-forms">Codigo de Tratamiento</label>
+                          <input class="form-control" type="text" name="treatmentEdit" id="treatmentEdit">
+                          <input type="text" id="hiddenTreatmentId" name="hiddenTreatmentId" class="hidden-checkbox-input">
+          
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center pt-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Editar</button>
+                      </form>
+                    </div>
+                    </div>
+                </div>
+              </div>
       <!-- DELETE TURN MODAL -->
-    <div class="modal fade" id="deleteTurnModal" tabindex="-1" aria-labelledby="deleteTurnModal" aria-hidden="true">
-      <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-              <h5>ATENCION</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <h3>Seguro de borrar?</h3>
-            <h5>Esto no puede ser revertido</h5>
-          </div>
-          <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
-            <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancelar</button>
-            <form action="/admin/treatments?_method=DELETE" method="POST">
-              <input type="text" id="deleteTurn" name="deleteTurnId" class="hidden-checkbox-input">
-              <button type="submit" class="btn btn-success mx-3">Confirmar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="modal fade" id="deleteTurnModal" tabindex="-1" aria-labelledby="deleteTurnModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>ATENCION</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h3>Seguro de borrar?</h3>
+                      <h5>Esto no puede ser revertido</h5>
+                    </div>
+                    <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
+                      <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancelar</button>
+                      <form action="/admin/treatments?_method=DELETE" method="POST">
+                        <input type="text" id="deleteTurn" name="deleteTurnId" class="hidden-checkbox-input">
+                        <button type="submit" class="btn btn-success mx-3">Confirmar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
            
             <table class="table" style="width: 90%;">
                 <thead>
                   <tr>
-                    <th scope="col" style="width: 40%;">Tratamiento</th>
-                    <th scope="col" style="width: 40%;">Codigo</th>
+                    <th scope="col" style="width: 20%;">Tratamiento</th>
+                    <th scope="col" style="width: 20%;">Codigo</th>
+                    <th scope="col" style="width: 20%;">Idioma</th>
                     <th scope="col" style="width: 25%;">Acciones</th>
                   </tr>
                 </thead>
@@ -90,8 +182,29 @@
                     <tr>
                       <td><%=treatments[i].title%></td>
                       <td><%=treatments[i].treatment%></td>
+                      <% if(treatments[i].lang == "esp") { %>
+                        <td>español</td>
+                      <% } else { %>
+                        <td>ingles</td>
+                      <% } %>
                       <td>
-                        <button class="btn btn-warning"><i class="fal fa-pencil"></i></button>
+                        <button class="btn btn-warning"
+                          data-bs-toggle="modal" 
+                          data-bs-target="#editTurnModal"
+                          data-bs-title="<%=treatments[i].title%>"
+                          data-bs-short_description="<%=treatments[i].short_description%>"
+                          data-bs-subtitle="<%=treatments[i].subtitle%>"
+                          data-bs-image_principal="<%=treatments[i].image_principal%>"
+                          data-bs-info_title="<%=treatments[i].info_title%>"
+                          data-bs-info="<%=treatments[i].info%>"
+                          data-bs-video="<%=treatments[i].video%>"
+                          data-bs-description_title="<%=treatments[i].description_title%>"
+                          data-bs-description="<%=treatments[i].description%>"
+                          data-bs-footer_title="<%=treatments[i].footer_title%>"
+                          data-bs-footer="<%=treatments[i].footer%>"
+                          data-bs-treatment="<%=treatments[i].treatment%>"
+                          data-bs-treatmentId="<%=treatments[i].id%>"
+                          data-bs-lang="<%=treatments[i].lang%>"><i class="fal fa-pencil"></i></button>
                         <button class="btn btn-danger turnField"
                           data-bs-toggle="modal" 
                           data-bs-target="#deleteTurnModal"
@@ -107,14 +220,62 @@
         </div>
     </div>
     <script>
-  let deleteModal = document.getElementById('deleteTurnModal')
-  deleteModal.addEventListener('show.bs.modal', function (event) {
-    let button = event.relatedTarget
-    let deleteTurn = document.getElementById('deleteTurn');
-    console.log('att', button.getAttribute('data-bs-idTurn'));
-    deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
-    
-  });
+    $(document).ready(function() {
+      let deleteModal = document.getElementById('deleteTurnModal')
+      deleteModal.addEventListener('show.bs.modal', function (event) {
+        let button = event.relatedTarget
+        let deleteTurn = document.getElementById('deleteTurn');
+        console.log('att', button.getAttribute('data-bs-idTurn'));
+        deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));      
+      });
+      let editModal = document.getElementById('editTurnModal')
+      editModal.addEventListener('show.bs.modal', function (event) {
+        console.log('modal');
+        let button = event.relatedTarget
+        let hiddenTreatmentId = document.getElementById('hiddenTreatmentId');
+        let title = button.getAttribute('data-bs-title');
+        let shortDescription = button.getAttribute('data-bs-short_description');
+        console.log(shortDescription)
+        let subtitle = button.getAttribute('data-bs-subtitle');
+        let imagePrincipal = button.getAttribute('data-bs-image_principal');
+        let infoTitle = button.getAttribute('data-bs-info_title');
+        console.log(infoTitle)
+        let info = button.getAttribute('data-bs-info');
+        let video = button.getAttribute('data-bs-video');
+        let descriptionTitle = button.getAttribute('data-bs-description_title');
+        let description = button.getAttribute('data-bs-description');
+        let footerTitle = button.getAttribute('data-bs-footer_title');
+        console.log(footerTitle)
+        let footer = button.getAttribute('data-bs-footer');
+        let treatment = button.getAttribute('data-bs-treatment');
+        let lang = button.getAttribute('data-bs-lang');
+  
+        hiddenTreatmentId.setAttribute('value',button.getAttribute('data-bs-treatmentId'));
+        let titleEdit = document.getElementById('titleEdit');
+        let subtitleEdit = document.getElementById('subtitleEdit');
+        let imagePrincipalEdit = document.getElementById('image_principalEdit');
+        let infoTitleEdit = document.getElementById('info_titleEdit');
+        let videoEdit = document.getElementById('video_urlEdit');
+        let descriptionTitleEdit = document.getElementById('description_titleEdit');
+        let footerTitleEdit = document.getElementById('footer_titleEdit');
+        let treatmentEdit = document.getElementById('treatmentEdit');
+  
+        titleEdit.setAttribute('value',title);
+        $('#short_descriptionEdit').val(shortDescription);
+        subtitleEdit.setAttribute('value',subtitle);
+        imagePrincipalEdit.setAttribute('value',imagePrincipal);
+        infoTitleEdit.setAttribute('value',infoTitle);
+        infoEdit.setAttribute('value',info);
+        $('#infoEdit').val(info);
+        videoEdit.setAttribute('value',video);
+        descriptionTitleEdit.setAttribute('value',descriptionTitle);
+        $('#descriptionEdit').val(description);
+        footerTitleEdit.setAttribute('value',footerTitle);
+        $('#footerEdit').val(footer);
+        treatmentEdit.setAttribute('value',treatment);
+        $('#langEdit').val(lang);
+      })
+    })
   </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

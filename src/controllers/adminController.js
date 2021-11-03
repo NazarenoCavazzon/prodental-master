@@ -20,6 +20,7 @@ module.exports = {
     users: async (req,res) =>{
         if (req.cookies.logged){
             const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const treatments = await db.Treatment.findAll();
 
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
@@ -29,7 +30,8 @@ module.exports = {
 
                 return res.render('admin/users', {
                     title: 'Admin users | Dentalpro',
-                    users: users
+                    users: users,
+                    treatments: treatments
                 });
             }
         } else {
@@ -61,11 +63,13 @@ module.exports = {
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
-
-                const turns = await db.Turn.findAll({include:['treatment', 'user']});
-                const treatments = await db.Treatment.findAll();
-                const users = await db.User.findAll();
-
+                let dniList = [];
+                const turns = await db.Turn.findAll({include:['treatment', 'user'], order: [['date', 'ASC']]});
+                const treatments = await db.Treatment.findAll({where: {lang: 'esp'}});
+                const users = await db.User.findAll({where: {is_admin: false}});
+                for(let user in users){
+                    dniList.push(users[user].dataValues.dni);
+                }
                 let lang = null;
                 if (req.cookies.lang == undefined){
                     lang='eng';
@@ -86,7 +90,8 @@ module.exports = {
                     title: 'Admin turns | Dentalpro',
                     turns: turns,
                     treatments: treatments,
-                    users: users
+                    users: users,
+                    dniList: dniList,
                 });
             }
         } else {
@@ -129,13 +134,56 @@ module.exports = {
         }
     },
     treatmentsCreate: async (req,res) =>{
-
         if (req.cookies.logged){
-            await db.Treatment.create({
-                title: req.body.title,
-                short_description: req.body.short_description,
-                lang: req.body.lang,
-                treatment: req.body.treatment
+            await db.Treatment.findOne({where: {treatment: req.body.treatment, lang: req.body.lang}}).then(async (treatment) => {
+                if (treatment != null){
+                    return res.redirect('/admin/treatments');
+                }else{
+                    await db.Treatment.create({
+                        title: req.body.title,
+                        short_description: req.body.short_description,
+                        subtitle: req.body.subtitle,
+                        lang: req.body.lang,
+                        image_principal: req.body.image_principal,
+                        info_title: req.body.info_title,
+                        info: req.body.info,
+                        treatment: req.body.treatment,
+                        title: req.body.title,
+                        video: req.body.video_url,
+                        description_title: req.body.description_title,
+                        description: req.body.description,
+                        footer_title: req.body.footer_title,
+                        footer: req.body.footer,
+                    })
+                    return res.redirect('/admin/treatments');
+                }
+            });
+        } else {
+            res.redirect('/login');
+        }
+    },
+    treatmentsEdit: async (req,res) =>{
+        if (req.cookies.logged){
+            console.log(req.body);
+            await db.Treatment.update({
+                title: req.body.titleEdit,
+                subtitle: req.body.subtitleEdit,
+                image_principal: req.body.image_principalEdit,
+                short_description: req.body.short_descriptionEdit,
+                info: req.body.infoEdit,
+                info_title: req.body.info_titleEdit,
+                video: req.body.video_urlEdit,
+                description_title: req.body.description_titleEdit,
+                description: req.body.descriptionEdit,
+                footer: req.body.footerEdit,
+                footer_title: req.body.footer_titleEdit,
+                title: req.body.titleEdit,
+                lang: req.body.langEdit,
+                treatment: req.body.treatmentEdit,
+            },{
+                where: {
+                    id: req.body.hiddenTreatmentId
+                }
             })
             return res.redirect('/admin/treatments');
         } else {
@@ -237,48 +285,17 @@ module.exports = {
     },
 
     staffEdit: async (req,res) =>{
-
+        console.log(req.body)
         if (req.cookies.logged){
-            staff = await db.Staff.findOne({
-                where: {
-                    id: req.body.editStaffId
-                }
-            });
-            await console.log("ID: ",req.body.editStaffId);
-            if (req.body.name != ''){
-                staffName = req.body.name;
-            }else{
-                staffName = staff.dataValues.name;
-            }
-            if (req.body.matricula != ''){
-                staffMatricula = req.body.matricula;
-            }else{
-                staffMatricula = staff.dataValues.matricula;
-            }
-            if (req.body.en_description != ''){
-                en_description = req.body.en_description;
-            }else{
-                en_description = staff.dataValues.en_description;
-            }
-            if (req.body.es_description != ''){
-                es_description = req.body.es_description;
-            }else{
-                es_description = staff.dataValues.es_description;
-            }
-            if (req.body.image != ''){
-                staffImage = req.body.image;
-            }else{
-                staffImage = staff.dataValues.image;
-            }
             await db.Staff.update({
-                name: staffName,
-                matricula: staffMatricula,
-                image: staffImage,
-                es_description: es_description,
-                en_description: en_description
+                name: req.body.nameEdit,
+                matricula: req.body.matriculaEdit,
+                image: req.body.imageEdit,
+                es_description: req.body.es_descriptionEdit,
+                en_description: req.body.en_descriptionEdit
             },{
                 where: {
-                    id: req.body.editStaffId
+                    id: req.body.hiddenStuffId
                 }
             })
             return res.redirect('/admin/staff')

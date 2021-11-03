@@ -1,7 +1,19 @@
 <!-- SIDEBAR -->
 <div class="flex-shrink-0 p-3 bg-white sidebar">
     <div class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <span class="fs-5 fw-semibold">Admin panel</span>
+      <a href="/" class="logo">
+        <img
+          src="/img/logoFull.png"
+          style="
+            margin-left: 5vmin;
+            overflow: hidden;
+            transform: scale(2);
+            margin-top: 4vh;
+            height: 10vh;
+          "
+          alt="Dentalpro Logo"
+        />
+      </a>
     </div>
     <ul class="list-unstyled ps-0">
       <li class="mb-1 button-side" id="button-turns">
@@ -67,6 +79,16 @@
         <button class="btn">
           <i class="fal fa-user-cog"></i>
           <span>Mensajes</span>
+        </button>
+      </a>
+      </li>
+      <li>
+        <br>
+      </li>
+      <li class="mb-1 button-side">
+      <a href="/logout">
+        <button class="btn btn-danger" style="width: 100%; text-align: center;">
+          <span>Cerrar Sesion</span>
         </button>
       </a>
       </li>

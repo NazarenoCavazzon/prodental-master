@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%-include('../partials/head')%>
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -22,7 +27,7 @@
           <div class="modal-body">
             <form class="row g-3" method="POST" action="/admin/turn">
               <label class="col-form-label" for="treatment">Tratamiento</label>
-              <select class="form-select" id="treatment" name="treatment">
+              <select class="form-control" id="treatment" name="treatment" >
                 <% for (let i = 0; i < treatments.length; i++){ %>
                   <option value="<%=treatments[i].treatment%>"><%=treatments[i].title%></option>
                 <% } %>
@@ -85,7 +90,7 @@
           <div class="modal-body">
             <form class="row g-3" method="POST" action="/admin/turn?_method=PUT">
               <label class="col-form-label" for="treatmentEdit">Tratamiento</label>
-              <select class="form-select" id="treatmentEdit" name="treatment">
+              <select class="form-select" data-live-search="true" id="treatmentEdit" name="treatmentEdit">
                 <% for (let i = 0; i < treatments.length; i++){ %>
                   <option id="" value="<%=treatments[i].id%>"><%=treatments[i].title%></option>
                 <% } %>
@@ -94,8 +99,8 @@
               <label class="col-form-label" for="userEdit">Usuario</label>
               <select class="form-select" id="userEdit" name="user">
                 <option selected value="null">No asignado</option>
-                <% for (let j = 1; j < users.length; j++){ %>
-                  <option value="<%=users[j].id%>"><%=users[j].name%></option>
+                <% for (let j = 0; j < users.length; j++){ %>
+                  <option value="<%=users[j].id%>"><%=users[j].name%> - <%=users[j].dni%></option>
                 <% } %>
               </select>
 
@@ -117,37 +122,60 @@
     <div class="section-admin">
         <%-include('sidebar')%>
         <div class="content">
-            <div class="control-section">
-              <label for="categoryFilter">Filtrar por Categoria</label>
-              <select name="" id="categoryFilter">
-                <option hidden selected>Selecciona una categoria</option>
-                <% for (let m=0; m < treatments.length; m++) {%>
-                  <option value="<%=treatments[m].treatment%>">"<%=treatments[m].title%>"</option>
-                  <% } %>
-                </select>
-                <button class="btn btn-primary"
-                  data-bs-toggle="modal" 
-                  data-bs-target="#adminTurnCreateModal"
-                >Crear un turno</button>
-            </div>
-           
+          <table style="margin-left: -10vh">
+            <thead>
+              <tr>
+                <th style="padding: 40px;">
+                  <div class="input-group">
+                    <div id="search-autocomplete" class="form-outline">
+                      <input type="text" id="searchBar" class="form-control" placeholder="DNI" style="height: 40px;"/>
+                      <input type="text" id="allUsersDNI" name="allUsersDNI" class="hidden-checkbox-input" value="<%=dniList%>">
+                      <input type="text" id="allUsers" name="allUsers" class="hidden-checkbox-input" value="<%=users%>">
+                    </div>
+                    <button type="button" class="btn btn-primary" style="height: 40px; margin-left: -5px;">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </th>
+                <th>
+                  <div class="control-section">
+                    <label for="categoryFilter">Filtrar por Categoria</label>
+                    <select name="" id="categoryFilter">
+                      <option hidden selected>Selecciona una categoria</option>
+                      <% for (let m=0; m < treatments.length; m++) {%>
+                        <option value="<%=treatments[m].treatment%>">"<%=treatments[m].title%>"</option>
+                        <% } %>
+                      </select>
+                      <button class="btn btn-primary"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#adminTurnCreateModal"
+                      >Crear un turno</button>
+                  </div> 
+                </th>
+              </tr>
+            </thead>            
+                      
+          </table>
             <table class="table" style="width: 90%;">
                 <thead>
                   <tr>
-                    <th scope="col" style="width: 25%;">Tratamiento</th>
-                    <th scope="col" style="width: 25%;">Usuario</th>
-                    <th scope="col" style="width: 25%;">Fecha</th>
-                    <th scope="col" style="width: 25%;">Acciones</th>
+                    <th scope="col" style="width: 20%;">Tratamiento</th>
+                    <th scope="col" style="width: 20%;">Usuario</th>
+                    <th scope="col" style="width: 20%;">DNI</th>
+                    <th scope="col" style="width: 20%;">Fecha</th>
+                    <th scope="col" style="width: 20%;">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <% for (let i = 0; i < turns.length; i++){ %>
-                    <tr class="campoAFiltrar" data-bs-filterID="<%= turns[i].treatment_id %>">
+                    <tr class="campoAFiltrar" data-bs-filterID="<%= turns[i].treatment_id %>" data-bs-filterDNI="<%=turns[i].user.dni%>">
                       <td><%=turns[i].treatment.title%></td>
-                      <% if (turns[i].user!=null) { %>
+                      <% if (turns[i].user.id!=1) { %>
                         <td><%=turns[i].user.name%></td>
+                        <td><%=turns[i].user.dni%></td>
                       <% } else { %>
                         <td>No asignado</td>
+                        <td> - </td>
                       <% } %>
                       <td><%=turns[i].dataValues.dateParsed%></td>
                       <td>
@@ -155,15 +183,17 @@
                           data-bs-toggle="modal" 
                           data-bs-target="#adminTurnEditModal"
                           data-bs-turnTreatmentId="<%=turns[i].treatment_id%>"
-                          data-bs-turnDate="<%=turns[i].date%>"
+                          data-bs-turnDate="<%=turns[i].dataValues.dateParsed%>"
                           data-bs-userId="<%=turns[i].user_id%>"
+                          data-bs-date="<%=turns[i].date%>"
                           data-bs-idTurn="<%=turns[i].id%>"
                         ><i class="fal fa-pencil"></i></button>
                         <button class="btn btn-danger turnField"
                           data-bs-toggle="modal" 
                           data-bs-target="#deleteTurnModal"
                           data-bs-turnTitle="<%=turns[i].treatment.title%>"
-                          data-bs-turnTime="<%=turns[i].date%>"
+                          data-bs-userId="<%=turns[i].user_id%>"
+                          data-bs-date="<%=turns[i].dataValues.dateParsed%>"
                           data-bs-idTurn="<%=turns[i].id%>"
                         ><i class="fal fa-trash-alt"></i></button>
                       </td>
@@ -172,44 +202,57 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    <script>
+</div>
+<script>
+  $(document).ready(function(){
+    $('search_select_box select').selectpicker();
+      let fields = document.querySelectorAll('.campoAFiltrar');
+      const searchBar = document.getElementById('searchBar');
+      searchBar.addEventListener('keyup', function(e){
+        console.log(e.target.value);
+        const searchString = e.target.value;
+        fields.forEach(field =>{
+          if(searchString == ""){
+            field.style.display = "table-row";
+          }else {
+            if (!field.getAttribute('data-bs-filterDNI').includes(searchString)) {
+              field.style.display = "none";
+            }else{
+              field.style.display = "table-row";
+            }
+          }
+        });
+      });
+  });
+
+  let deleteModal = document.getElementById('deleteTurnModal')
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let deleteTurn = document.getElementById('deleteTurn');
+    let modalTurnTitle = document.getElementById('turnTitle'); 
+    let modalTurnTime = document.getElementById('turnTime'); 
     
-
-    let deleteModal = document.getElementById('deleteTurnModal')
-    deleteModal.addEventListener('show.bs.modal', function (event) {
-      let button = event.relatedTarget
-      let deleteTurn = document.getElementById('deleteTurn');
-      let modalTurnTitle = document.getElementById('turnTitle'); 
-      let modalTurnTime = document.getElementById('turnTime'); 
-      
-      modalTurnTitle.innerHTML = button.getAttribute('data-bs-turnTitle');
-      modalTurnTime.innerHTML = button.getAttribute('data-bs-turnTime');
-      deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
-      
-    })
-
-
-    let editModal = document.getElementById('adminTurnEditModal')
-    editModal.addEventListener('show.bs.modal', function (event) {
-      let button = event.relatedTarget
-      let treatmentEdit = document.getElementById('treatmentEdit');
-      let userEdit = document.getElementById('userEdit'); 
-      let dateEdit = document.getElementById('dateEdit'); 
-      let dateConvert = new Date(button.getAttribute('data-bs-turnDate'));
-      let hiddenTurnID = document.querySelector('#hiddenTurnID');
-
-      treatmentEdit.setAttribute('value',button.getAttribute('data-bs-turnTreatmentId'));
-      userEdit.setAttribute('value',button.getAttribute('data-bs-userId'));
-      dateEdit.setAttribute('value',dateConvert) ;
-      hiddenTurnID.value = button.getAttribute('data-bs-idTurn')
-    })
-
+    modalTurnTitle.innerHTML = button.getAttribute('data-bs-turnTitle');
+    modalTurnTime.innerHTML = button.getAttribute('data-bs-turnTime');
+    deleteTurn.setAttribute('value',button.getAttribute('data-bs-idTurn'));
     
-    </script>
-    <script>
-let categoryFilter = document.querySelector('#categoryFilter');
-let fields = document.querySelectorAll('.campoAFiltrar');
+  })
+
+
+  let editModal = document.getElementById('adminTurnEditModal')
+  editModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    console.log(button.getAttribute('data-bs-date'));
+    let hiddenTurnID = document.querySelector('#hiddenTurnID');
+    let dateEdit = document.getElementById('dateEdit');
+    $('#treatmentEdit').val(button.getAttribute('data-bs-turnTreatmentId'));
+    $('#userEdit').val(button.getAttribute('data-bs-userId'));
+    hiddenTurnID.value = button.getAttribute('data-bs-idTurn')
+  })
+</script>
+<script>
+      let categoryFilter = document.querySelector('#categoryFilter');
+      let fields = document.querySelectorAll('.campoAFiltrar');
 
 
       categoryFilter.addEventListener('change', (e)=>{
@@ -226,10 +269,10 @@ let fields = document.querySelectorAll('.campoAFiltrar');
 
         })
       })
+</script>
 
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
