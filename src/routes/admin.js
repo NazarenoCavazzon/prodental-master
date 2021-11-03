@@ -4,6 +4,8 @@ const adminController = require('../controllers/adminController');
 
 router.get('/', adminController.index);
 router.get('/users', adminController.users);
+router.delete('/users', adminController.userDelete);
+router.put('/users', adminController.userEdit);
 router.get('/turns', adminController.turns);
 router.get('/staff', adminController.staff);
 router.get('/account', adminController.account);

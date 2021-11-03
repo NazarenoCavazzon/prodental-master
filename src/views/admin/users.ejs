@@ -68,15 +68,78 @@
                   <label id="userDetailTurns"></label>
                 </div>
             </div>
-          
-        </div>
+          </div>      
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-danger">Crear</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
           </form>
         </div>
         </div>
     </div>
+    </div>
+
+
+    <!-- EDIT USER MODAL -->
+            <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModal" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <form  class="row g-3" method="POST" action="/admin/users?_method=PUT">
+            
+                        <label for="nameEdit" class="admin-forms">Nombre</label>
+                          <input class="form-control" type="text" name="name" id="nameEdit">
+
+                        <label for="emailEdit" class="admin-forms">Email</label>
+                          <input class="form-control" type="text" name="email" id="emailEdit">
+
+                        <label for="passwordEdit" class="admin-forms">Password</label>
+                          <input class="form-control" type="text" name="password" id="passwordEdit">
+
+                        <label for="is_adminEdit" class="admin-forms">Admin [0 = NO / 1 = SI]</label>
+                          <input class="form-control" type="text" name="is_admin" id="is_adminEdit">
+
+                        <label for="dniEdit" class="admin-forms">DNI</label>
+                          <input class="form-control" type="text" name="dni" id="dniEdit">
+
+                        <label for="planEdit" class="admin-forms">Plan</label>
+                          <input class="form-control" type="text" name="plan" id="planEdit">
+
+                        <label for="security_codeEdit" class="admin-forms">Codigo de seguridad</label>
+                          <input class="form-control" type="text" name="security_code" id="security_codeEdit">
+                        
+                          <input type="text" id="hiddenUserId" name="hiddenUserId" class="hidden-checkbox-input">
+          
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center pt-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Editar</button>
+                      </form>
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+
+            <!-- DELETE USER MODAL -->
+    <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModal" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5>ATENCION</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h3>Seguro de borrar?</h3>
+              <h5>Esto no puede ser revertido</h5>
+            </div>
+            <div class="moda-footer" style="display:flex; padding-bottom: 15px;">
+              <button type="button" class="btn btn-secondary mx-3" data-bs-dismiss="modal">Cancel</button>
+              <form action="/admin/users?_method=DELETE" method="POST">
+                <input type="text" id="deleteUser" name="deleteUser" class="hidden-checkbox-input">
+                <button type="submit" class="btn btn-success mx-3">Confirm</button>
+              </form>
+            </div>
+          </div>
+      </div>
     </div>
     
     <div class="section-admin">
@@ -110,13 +173,28 @@
                       <td><button class="btn btn-success"
                         data-bs-toggle="modal" 
                         data-bs-target="#detailUserModal"
-                        data-bs-userName="<%=JSON.stringify(users[i].name)%>"
-                        data-bs-userEmail="<%=JSON.stringify(users[i].email)%>"
-                        data-bs-userTurnsInfo="<%=treatments[users[i].turns.treatment_id]%>"
+                        data-bs-userName="<%=users[i].name%>"
+                        data-bs-userEmail="<%=users[i].email%>"
+                        data-bs-userTurnsInfo="<%=JSON.stringify(users[i].turns)%>"
                         ><i class="fal fa-search"></i></button></td>
                       <td>
-                        <button class="btn btn-warning"><i class="fal fa-pencil"></i></button>
-                        <button class="btn btn-danger turnField"><i class="fal fa-trash-alt"></i></button>
+                        <button class="btn btn-warning"
+                          data-bs-toggle="modal" 
+                          data-bs-target="#editUserModal"
+                          data-bs-name="<%=users[i].name%>"
+                          data-bs-email="<%=users[i].email%>"
+                          data-bs-password="<%=users[i].password%>"
+                          data-bs-is_admin="<%=users[i].is_admin%>"
+                          data-bs-dni="<%=users[i].dni%>"
+                          data-bs-plan="<%=users[i].plan%>"
+                          data-bs-security_code="<%=users[i].security_code%>"
+                          data-bs-idUser="<%=users[i].id%>"><i class="fal fa-pencil"></i></button>
+                        <button class="btn btn-danger turnField"
+                          data-bs-toggle="modal" 
+                          data-bs-target="#deleteUserModal"
+                          data-bs-userName="<%=users[i].name%>"
+                          data-bs-idUser="<%=users[i].id%>"
+                        ><i class="fal fa-trash-alt"></i></button>
                       </td>
                     </tr>
                   <% } %>
@@ -127,7 +205,16 @@
 
 
     <script>
-      let createUserModal = document.getElementById('createUserModal')
+      let deleteModal = document.getElementById('deleteUserModal')
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let deleteTurn = document.getElementById('deleteUser');
+    console.log('att', button.getAttribute('data-bs-idUser'));
+    deleteTurn.setAttribute('value',button.getAttribute('data-bs-idUser'));
+  });   
+  </script>
+<script>
+  let createUserModal = document.getElementById('createUserModal')
       createUserModal.addEventListener('show.bs.modal', function (event) {
           // Button that triggered the modal
           let button = event.relatedTarget
@@ -136,12 +223,42 @@
           let userName = button.getAttribute('data-bs-userName');
           let userTurns = button.getAttribute('data-bs-userTurns');
 
-          console.log(JSON.stringify(userName));
-          console.log(JSON.stringify(userTurns));
+          // console.log(JSON.stringify(userName));
+          // console.log(JSON.stringify(userTurns));
 
       })
-  </script>
+</script>
+<script>
+  let editModal = document.getElementById('editUserModal')
+  editModal.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget
+    let hiddenUserId = document.getElementById("hiddenUserId");
+    let name = button.getAttribute('data-bs-name');
+    let email = button.getAttribute('data-bs-email');
+    let password = button.getAttribute('data-bs-password');
+    let is_admin = button.getAttribute('data-bs-is_admin');
+    let dni = button.getAttribute('data-bs-dni');
+    let plan = button.getAttribute('data-bs-plan');
+    let security_code = button.getAttribute('data-bs-security_code');
+    let nameEdit = document.getElementById("nameEdit");
+    let emailEdit = document.getElementById("emailEdit");
+    let passwordEdit = document.getElementById("passwordEdit");
+    let is_adminEdit = document.getElementById("is_adminEdit");
+    let dniEdit = document.getElementById("dniEdit");
+    let planEdit = document.getElementById("planEdit");
+    let security_codeEdit = document.getElementById("security_codeEdit");
 
+    nameEdit.setAttribute('value',name)
+    emailEdit.setAttribute('value',email)
+    passwordEdit.setAttribute('value',password)
+    is_adminEdit.setAttribute('value',is_admin)
+    dniEdit.setAttribute('value',dni)
+    planEdit.setAttribute('value',plan)
+    security_codeEdit.setAttribute('value',security_code)
+    
+    hiddenUserId.value = button.getAttribute('data-bs-idUser')
+  })   
+</script>
   <script>
   let detailUserModal = document.getElementById('detailUserModal')
   detailUserModal.addEventListener('show.bs.modal', function (event) {
@@ -151,11 +268,11 @@
       // Extract info from data-bs-* attributes
       let userName = button.getAttribute('data-bs-userName');
       let userEmail = button.getAttribute('data-bs-userEmail');
-      console.log(JSON.parse(button.getAttribute('data-bs-userTurnsInfo')))
+      console.log(button.getAttribute('data-bs-userTurnsInfo'))
       let userTurns = JSON.parse(button.getAttribute('data-bs-userTurnsInfo'));
-
+      document.querySelector('.modal-body #userDetailTurns').innerHTML = ''
       for (let i=0; i<userTurns.length; i++){
-        document.querySelector('.modal-body #userDetailTurns').innerHTML+= '<div style="display:flex; flex-direction: column;">'+JSON.stringify(userTurns[i])+'</div>'
+        document.querySelector('.modal-body #userDetailTurns').innerHTML+= '<div style="display:flex; flex-direction: column;">'+ 'ID: '+JSON.stringify(userTurns[i].id)+ ' FECHA: ' + JSON.stringify(userTurns[i].date)+'</div>'
       }     
 
       /* FIELDS DEL MODAL */

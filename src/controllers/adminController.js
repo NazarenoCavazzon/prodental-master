@@ -27,6 +27,11 @@ module.exports = {
             }else{
 
                 let users = await db.User.findAll({include:['turns']});
+                for(let u in users){
+                    console.log('u', users[u].turns.map((e)=>{
+                        return e.dataValues.date
+                    }))
+                }
 
                 return res.render('admin/users', {
                     title: 'Admin users | Dentalpro',
@@ -203,6 +208,19 @@ module.exports = {
             res.redirect('/login');
         }
     },
+    userDelete: async (req,res) =>{
+        console.log('id', req.body.deleteUser)
+        if (req.cookies.logged){
+            await db.User.destroy({
+                where: {
+                    id: req.body.deleteUser
+                }
+            })
+            return res.redirect('/admin/users');
+        } else {
+            res.redirect('/login');
+        }
+    },
     turnCreate: async (req,res) =>{
 
         if (req.cookies.logged){
@@ -250,6 +268,27 @@ module.exports = {
                 }
             })
             return res.redirect('/admin/turns')
+        } else {
+            res.redirect('/login');
+        }
+    },
+    userEdit: async (req,res) =>{
+
+        if (req.cookies.logged){
+            await db.User.update({
+                name: req.body.name,
+                email:  req.body.email,
+                password:  req.body.password,
+                is_admin:  req.body.is_admin,
+                dni:  req.body.dni,
+                plan:  req.body.plan,
+                security_code:  req.body.security_code,
+            },{
+                where: {
+                    id: req.body.hiddenUserId
+                }
+            })
+            return res.redirect('/admin/users')
         } else {
             res.redirect('/login');
         }
