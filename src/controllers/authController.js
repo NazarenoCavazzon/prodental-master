@@ -81,7 +81,8 @@ module.exports = {
             const user = await db.User.create({
               name: req.body.firstName + ' '+req.body.lastName,
               email: req.body.email,
-              password: bcrypt.hashSync(req.body.password,10) 
+              password: bcrypt.hashSync(req.body.password,10),
+              dni: req.body.dni,
             });
 
             res.cookie('userLog', user.id, {expire : new Date() + 900000});
