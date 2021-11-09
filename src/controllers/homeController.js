@@ -58,7 +58,11 @@ module.exports = {
       banners
     });
   },
-
+  thanks: (req, res) => {
+    res.render("thanks", {
+      title: "Thank you!"
+    })
+  },
   aboutus: (req, res) => {
     let lang = null;
     if (req.cookies.lang == undefined) {
@@ -177,6 +181,6 @@ module.exports = {
         message: req.body.message,
         subject: req.body.subject
     });
-    return res.redirect('/')
+    return res.redirect('/thankyou')
   }
 };
