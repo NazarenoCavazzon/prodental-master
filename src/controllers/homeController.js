@@ -3,6 +3,7 @@ const loadLang = require("./loadLangController");
 const fs = require("fs");
 const treatmentsJSON = require("../../public/json/eng/treatments.json");
 const aboutusJSON = require("../../public/json/eng/aboutus.json");
+const { SMTPClient } = require('emailjs');
 
 module.exports = {
   index: async (req, res) => {
@@ -174,6 +175,27 @@ module.exports = {
   },
 
   sendMessage: async function (req, res) {
+
+    const client = await new SMTPClient({
+    	user: 'dentalpromensajeria@gmail.com',
+    	password: 'dentalpro123',
+    	host: 'smtp.gmail.com',
+      ssl: true
+    });
+
+    // send the message and get a callback with an error or details of the message that was sent
+    await client.send(
+    	{
+    		text: req.body.message,
+    		from: req.body.email,
+    		to: 'dentalproclinicaodont@gmail.com',
+    		subject: `[${req.body.first_name} ${req.body.last_name}] ${req.body.subject}`,
+    	},
+    	(err, message) => {
+    		console.log(err || message);
+    	}
+    );
+
     await db.Message.create({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
