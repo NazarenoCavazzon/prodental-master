@@ -20,7 +20,8 @@ const loadLang = (lang) =>{
         _account: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/account.json'))),     
         _experiencia: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/experiencia.json'))),
         experiencia: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/experiencia.json'))),
-        dentalPro: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/dentalPro.json')))
+        dentalPro: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/dentalPro.json'))),
+        challenge: JSON.parse(fs.readFileSync(path.join(__dirname, '../../public/json/'+lang+'/home/challenge.json'))),
     }
 }
 

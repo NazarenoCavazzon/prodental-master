@@ -2410,3 +2410,10 @@ section.dentalpro-experience button:hover {
   width: 100vw;
   height: auto;
 }
+
+#challengeSection {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -55,6 +55,7 @@ module.exports = {
       navbarDat: language._navbar,
       experienciaDat: language.experiencia,
       dentalPro: language.dentalPro,
+      challengeDat: language.challenge,
       sponsors,
       banners
     });
