@@ -29,7 +29,7 @@ module.exports = {
     logout: (req,res) =>{
         if (req.cookies.logged){
             res.clearCookie("logged");
-            res.clearCookie("userLog");
+            req.session.userLog = undefined;
         }
         res.redirect('/');
     },
@@ -44,7 +44,7 @@ module.exports = {
         if (user){
             if (bcrypt.compare(req.body.password,user.password)){
                 res.cookie('logged', true, {expire : new Date() + 900000});
-                res.cookie('userLog', user.id, {expire : new Date() + 900000});
+                req.session.userLog = user.id;
                 if (user.dataValues.is_admin){
                     res.redirect('/admin/');
                 }else{

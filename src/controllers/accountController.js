@@ -18,7 +18,7 @@ module.exports = {
 
         let user = await db.User.findOne({
             where:{
-                id: req.cookies.userLog
+                id: req.session.userLog
             }
         })
         if (user.dataValues.is_admin){
@@ -27,7 +27,7 @@ module.exports = {
 
         let turns = await db.Turn.findAll({
             where:{
-                user_id: req.cookies.userLog
+                user_id: req.session.userLog
             },
             include: [
                 'treatment'
@@ -58,10 +58,10 @@ module.exports = {
             }
             let language = loadLang(lang);
 
-            if (req.cookies.userLog){
+            if (req.session.userLog){
                 let user = await db.User.findOne({
                     where:{
-                        id: req.cookies.userLog
+                        id: req.session.userLog
                     }
                 })
                 let treatments = await db.Treatment.findAll({
@@ -95,11 +95,11 @@ module.exports = {
             }
             let language = loadLang(lang);  
 
-            if (req.cookies.userLog){
+            if (req.session.userLog){
 
                 let user = await db.User.findOne({
                     where:{
-                        id: req.cookies.userLog
+                        id: req.session.userLog
                     }
                 })
             
@@ -165,10 +165,10 @@ module.exports = {
             }
             let language = loadLang(lang);
 
-            if (req.cookies.userLog){
+            if (req.session.userLog){
                 let user = await db.User.findOne({
                     where:{
-                        id: req.cookies.userLog
+                        id: req.session.userLog
                     }
                 })
                 let treatments = await db.Treatment.findAll();
@@ -193,7 +193,7 @@ module.exports = {
         if (req.cookies.logged){
             await db.Turn.update({
                 treatment_id: req.body.treatmentId,
-                user_id: req.cookies.userLog,
+                user_id: req.session.userLog,
             },{
                 where: {
                     id: req.body.dateTurn

@@ -7,7 +7,7 @@ module.exports = {
 
     index: async(req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if(user.dataValues.is_admin){
                 res.redirect('/admin/users');
             }else{
@@ -19,7 +19,7 @@ module.exports = {
     },
     users: async (req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             const treatments = await db.Treatment.findAll();
 
             if (!user.dataValues.is_admin){
@@ -45,7 +45,7 @@ module.exports = {
     },
     staff: async (req,res) =>{
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
 
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
@@ -64,7 +64,7 @@ module.exports = {
     turns: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
@@ -107,7 +107,7 @@ module.exports = {
     account: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
@@ -122,7 +122,7 @@ module.exports = {
     treatments: async (req,res) =>{
 
         if (req.cookies.logged){
-            const user = await db.User.findOne({where: {id: req.cookies.userLog}});
+            const user = await db.User.findOne({where: {id: req.session.userLog}});
             if (!user.dataValues.is_admin){
                 res.redirect('/account');
             }else{
