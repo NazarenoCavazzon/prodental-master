@@ -13,8 +13,8 @@
             <p class="title-desc"><%=treatment.subtitle%></p>
         </div>
         <div class="content">
-            <% if(treatment.treatment === 1){ %>
-            <img src="https://i.imgur.com/InDsdHq.png" alt="">
+            <% if(treatment.title === 'Implantes Dentales'){ %>
+            <img src="/img/treatments/treatment-1-img.png" alt="">
             <% } %>
             <p class="title"><%=treatment.info_title%></p>
             
@@ -52,13 +52,24 @@
             <% if(typeof bulletsTreatment != 'undefined'){ %>
                 <ul class="bullets">
                         <% for (let i = 0; i < bulletsTreatment.length; i++ ) { %>
-                        <li class="bullet row">
+                        <li class="bullet <%=bulletsTreatment[i].icon%>">
                             <span class="titulo"><%=bulletsTreatment[i].title%>:</span>
-                            <div class="desc" style="align-items: center;">
-                                <div class="iconWithNumber">
-                                    <!-- <span class="idNumber"><%=i%></span> -->
-                                    <img src="<%=bulletsTreatment[i].img_url%>" class="imgIcon" alt="">
-                                </div>                        
+                            <div class="desc">
+                                <% if (bulletsTreatment[i].icon) { %>
+                                    <% if (treatment.id > 9) { %>
+                                        <div class="iconWithNumber">
+                                            <!-- <span class="idNumber"><%=i%></span> -->
+                                            <img src="/img/treatments/treatment-<%=treatment.id - 9%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
+                                        </div>
+                                    <% } else { %>
+                                        <div class="iconWithNumber">
+                                            <!-- <span class="idNumber"><%=i%></span> -->
+                                            <img src="/img/treatments/treatment-<%=treatment.id%>-bullet-<%=i+1%>.png" class="imgIcon" alt="">
+                                        </div>
+                                    <% } %>
+                                <% } else { %>
+                                    <img src="/img/treatments/<%=treatment.image_principal%>.png" alt="">
+                                <% } %>
                                 <span><%=bulletsTreatment[i].description%></span>
                             </div>
                         </li>
@@ -73,20 +84,37 @@
             <div class="splide-container">
                 <div class="splide" data-splide='{"type" : "fade" , "drag": false , "rewind":true, "autoplay": false, "pagination": false}'>
                     <div class="splide__track" >
+                        <% if(treatment.id > 9) { %>
                         <ul class="splide__list">
                             <li class="splide__slide">
                                 <div class="after-before">
-                                    <img src="<%=treatment.before_img%>" alt="before">
+                                    <img src="/img/treatments/treatment-<%=treatment.id-9%>-before.png" alt="before">
                                     <p>BEFORE</p>
                                 </div>
                             </li>
                             <li class="splide__slide">
                                 <div class="after-before">
-                                    <img src="<%=treatment.after_img%>" alt="after">
+                                    <img src="/img/treatments/treatment-<%=treatment.id-9%>-after.png" alt="after">
                                     <p>AFTER</p>
                                 </div>
                             </li>
                         </ul>
+                        <% } else { %>
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="after-before">
+                                    <img src="/img/treatments/treatment-<%=treatment.id%>-before.png" alt="before">
+                                    <p>BEFORE</p>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="after-before">
+                                    <img src="/img/treatments/treatment-<%=treatment.id%>-after.png" alt="after">
+                                    <p>AFTER</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <% } %>
                     </div>
                 </div>
             </div>

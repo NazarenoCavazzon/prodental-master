@@ -21,7 +21,7 @@
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5>Crear Treatment</h5>
+                        <h5>Crear banner</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
@@ -42,11 +42,8 @@
                           <label for="subtitle" class="admin-forms">Subtitulo</label>
                           <input class="form-control" type="text" name="subtitle" id="subtitle">
 
-                          <label for="before_img" class="admin-forms">URL de la Imagen Antes</label>
-                          <input class="form-control" type="text" name="before_img" id="before_img">
-                          
-                          <label for="after_img" class="admin-forms">URL de la Imagen Despues</label>
-                          <input class="form-control" type="text" name="after_img" id="after_img">
+                          <label for="image_principal" class="admin-forms">URL de la Imagen</label>
+                          <input class="form-control" type="text" name="image_principal" id="image_principal">
 
                           <label for="info_title" class="admin-forms">Titulo de Info</label>
                           <input class="form-control" type="text" name="info_title" id="info_title">
@@ -110,11 +107,8 @@
                           <label for="subtitleEdit" class="admin-forms">Subtitulo</label>
                           <input class="form-control" type="text" name="subtitleEdit" id="subtitleEdit">
 
-                          <label for="before_imgEdit" class="admin-forms">URL de la Imagen Antes</label>
-                          <input class="form-control" type="text" name="before_imgEdit" id="before_imgEdit">
-                          
-                          <label for="after_imgEdit" class="admin-forms">URL de la Imagen Despues</label>
-                          <input class="form-control" type="text" name="after_imgEdit" id="after_imgEdit">
+                          <label for="image_principalEdit" class="admin-forms">URL de la Imagen</label>
+                          <input class="form-control" type="text" name="image_principalEdit" id="image_principalEdit">
 
                           <label for="info_titleEdit" class="admin-forms">Titulo de Info</label>
                           <input class="form-control" type="text" name="info_titleEdit" id="info_titleEdit">
@@ -200,8 +194,7 @@
                           data-bs-title="<%=treatments[i].title%>"
                           data-bs-short_description="<%=treatments[i].short_description%>"
                           data-bs-subtitle="<%=treatments[i].subtitle%>"
-                          data-bs-before_img="<%=treatments[i].before_img%>"
-                          data-bs-after_img="<%=treatments[i].after_img%>"
+                          data-bs-image_principal="<%=treatments[i].image_principal%>"
                           data-bs-info_title="<%=treatments[i].info_title%>"
                           data-bs-info="<%=treatments[i].info%>"
                           data-bs-video="<%=treatments[i].video%>"
@@ -244,8 +237,7 @@
         let shortDescription = button.getAttribute('data-bs-short_description');
         console.log(shortDescription)
         let subtitle = button.getAttribute('data-bs-subtitle');
-        let before_img = button.getAttribute('data-bs-before_img');
-        let after_img = button.getAttribute('data-bs-after_img');
+        let imagePrincipal = button.getAttribute('data-bs-image_principal');
         let infoTitle = button.getAttribute('data-bs-info_title');
         console.log(infoTitle)
         let info = button.getAttribute('data-bs-info');
@@ -261,8 +253,7 @@
         hiddenTreatmentId.setAttribute('value',button.getAttribute('data-bs-treatmentId'));
         let titleEdit = document.getElementById('titleEdit');
         let subtitleEdit = document.getElementById('subtitleEdit');
-        let before_imgEdit = document.getElementById('before_imgEdit');
-        let after_imgEdit = document.getElementById('after_imgEdit');
+        let imagePrincipalEdit = document.getElementById('image_principalEdit');
         let infoTitleEdit = document.getElementById('info_titleEdit');
         let videoEdit = document.getElementById('video_urlEdit');
         let descriptionTitleEdit = document.getElementById('description_titleEdit');
@@ -272,8 +263,7 @@
         titleEdit.setAttribute('value',title);
         $('#short_descriptionEdit').val(shortDescription);
         subtitleEdit.setAttribute('value',subtitle);
-        before_imgEdit.setAttribute('value',before_img);
-        after_imgEdit.setAttribute('value',after_img);
+        imagePrincipalEdit.setAttribute('value',imagePrincipal);
         infoTitleEdit.setAttribute('value',infoTitle);
         infoEdit.setAttribute('value',info);
         $('#infoEdit').val(info);

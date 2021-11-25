@@ -10,9 +10,7 @@
 	 description_title,
 	 description,
 	 bullets_title, 
-	 -- bullets_json --
-     after_img,
-     before_img, 
+	 bullets_json, 
 	 footer_title, 
 	 footer,
      lang

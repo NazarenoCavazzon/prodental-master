@@ -5,8 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     const Treatment = sequelize.define('Treatment', {
         title: DataTypes.STRING,
         subtitle: DataTypes.STRING,
-        before_img: DataTypes.STRING,
-        after_img: DataTypes.STRING,
+        image_principal: DataTypes.STRING,
         short_description: DataTypes.STRING,
         info: DataTypes.STRING,
         info_title: DataTypes.STRING,
@@ -16,8 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         footer: DataTypes.STRING,
         footer_title: DataTypes.STRING,
         bullets_title: DataTypes.STRING,
-        after_img: DataTypes.STRING,
-        before_img: DataTypes.STRING,
+        bullets_json: DataTypes.STRING,
         lang: DataTypes.STRING,
         treatment: DataTypes.INTEGER,
     })

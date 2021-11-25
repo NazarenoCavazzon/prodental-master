@@ -78,20 +78,11 @@ module.exports = {
     processSignup: async (req,res)  =>{
 
         try {
-            let dniReq = req.body.dni;
-            let dni = "";
-            if (dniReq.length == 8){
-                dni = dniReq.substring(0,2)+"."+dniReq.substring(2,5)+"."+dniReq.substring(5,8)
-            } else if (dniReq.length == 7){
-                dni = dniReq.substring(0,1)+"."+dniReq.substring(1,4)+"."+dniReq.substring(4,7)                
-            } else{
-                res.redirect('/signup');
-            }
             const user = await db.User.create({
               name: req.body.firstName + ' '+req.body.lastName,
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password,10),
-              dni: dni,
+              dni: req.body.dni,
             });
 
             res.cookie('userLog', user.id, {expire : new Date() + 900000});
