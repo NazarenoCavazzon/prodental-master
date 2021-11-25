@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 splide__track staff-trackbody {
   background-image: url("/img/background.png");
   background-size: cover;

@@ -144,6 +144,7 @@ module.exports = {
       where: { treatment_id: treatment.id },
     });
     let treatments = await db.Treatment.findAll();
+    console.log(bullets);
 
     res.render("treatments", {
       title: "Treatment | Dentalpro",

@@ -47,7 +47,8 @@ CREATE TABLE `treatments` (
   `footer_title` VARCHAR(2000),
   `footer` VARCHAR(2000),
   `bullets_title` VARCHAR(255),
-  `bullets_json` VARCHAR(60),
+  `after_img` VARCHAR(100),
+  `before_img` VARCHAR(100),
   `lang` VARCHAR(3) NOT NULL,
   `treatment` INT,
   PRIMARY KEY (`id`)
@@ -79,8 +80,9 @@ CREATE TABLE bullets (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(60),
   `description` VARCHAR(1000),
-  `icon` VARCHAR(20),
+  `icon` boolean default 1,
   `treatment_id` INT,
+  `img_url` VARCHAR(100),
   FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
 
