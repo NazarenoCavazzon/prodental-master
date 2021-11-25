@@ -187,7 +187,7 @@ module.exports = {
     // send the message and get a callback with an error or details of the message that was sent
     await client.send(
     	{
-    		text: req.body.message,
+    		text: req.body.message+req.body.email,
     		from: req.body.email,
     		to: 'dentalproclinicaodont@gmail.com',
     		subject: `[${req.body.first_name} ${req.body.last_name}] ${req.body.subject}`,
