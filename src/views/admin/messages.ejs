@@ -41,7 +41,7 @@
           <tr>
             <th scope="col" style="width: 25%;">Mensaje</th>
             <th scope="col" style="width: 25%;">Email</th>
-            <th scope="col" style="width: 25%;">Apellido</th>
+            <th scope="col" style="width: 25%;">Nombre - Apellido</th>
             <th scope="col" style="width: 25%;">Acciones</th>
           </tr>
         </thead>
@@ -50,7 +50,7 @@
             <tr>
               <td><%=messages[i].message%></td>
               <td><%=messages[i].email%></td>
-              <td><%=messages[i].last_name%></td>
+              <td><%=messages[i].first_name%><%=messages[i].last_name%></td>
               <td>
                 <button class="btn btn-danger turnField"
                           data-bs-toggle="modal" 
