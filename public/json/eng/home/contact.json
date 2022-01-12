@@ -1,6 +1,6 @@
 {
     "titles": ["CONTACT INF.", "SEND A MESSAGE"],
-    "contactMed": ["Juramento 2089 of.701/703", "INFO@DENTALPRO.COM", "11 3019-2090"],
+    "contactMed": ["Juramento 2089 of.701/703", "INFO@DENTALPRO.COM", "11 3017-2090"],
     "messageLabels": ["NAME", "LASTNAME", "EMAIL", "SUBJECT", "MESSAGE"],
     "messageSendButton": "SEND"
 }
